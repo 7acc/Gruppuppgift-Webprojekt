@@ -33,5 +33,11 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <p>Dont Have An Account?</p>
+    @Ajax.ActionLink(
+    "Register",
+    "Register",
+    "Account",
+    new AjaxOptions { UpdateTargetId = "FormContent" }
+)
 </div>
