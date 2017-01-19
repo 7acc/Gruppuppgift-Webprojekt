@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Webb4_DAL.Models
 {
-    class AdressDataModel
+    public class AdressDataModel
     {
         public Guid AdressID { get; set; }
         public string Street { get; set; }

@@ -52,6 +52,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IRepositories\IAdressDataModel.cs" />
+    <Compile Include="IRepositories\IAppartmentDataModel.cs" />
+    <Compile Include="IRepositories\IAppartmentPhotoDataModel.cs" />
+    <Compile Include="IRepositories\IFeaturesDataModel.cs" />
+    <Compile Include="IRepositories\IUserDataModel.cs" />
     <Compile Include="Models\AdressDataModel.cs" />
     <Compile Include="Models\AppartmentDataModel.cs" />
     <Compile Include="Models\AppartmentPhotoDataModel.cs" />
@@ -59,7 +64,13 @@
     <Compile Include="Models\UserDataModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AdressDataModelRepository.cs" />
     <Compile Include="Repositories\ApartmentRepository.cs" />
+    <Compile Include="Repositories\AppartmentDataModelRepository.cs" />
+    <Compile Include="Repositories\AppartmentPhotoDataModelRepository.cs" />
+    <Compile Include="Repositories\FeaturesDataModelRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IAppartmentRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IUserRepository.cs" />
     <Compile Include="Repositories\RepositoryInterfaces\IAppartmentRepository.cs" />
     <Compile Include="Repositories\RepositoryInterfaces\IUserRepository.cs" />
     <Compile Include="Repositories\UserRepository_Mock.cs" />

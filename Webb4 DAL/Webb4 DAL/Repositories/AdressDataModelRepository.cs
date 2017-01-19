@@ -7,19 +7,19 @@ using Webb4_DAL.IRepositories;
 
 namespace Webb4_DAL.Repositories
 {
-    class UserRepository_Mock<TEntity> : IAdressDataModel<TEntity> where TEntity : class
+   public class AdressDataModelRepository<TEntity> : IAdressDataModel<TEntity> where TEntity : class
     {
         protected DbSet<TEntity> DbSet;
 
         private readonly DbContext _dbContext;
 
-        public UserRepository_Mock(DbContext dbContext)
+        public AdressDataModelRepository(DbContext dbContext)
         {
             _dbContext = dbContext;
             DbSet = _dbContext.Set<TEntity>();
         }
 
-        public UserRepository_Mock()
+        public AdressDataModelRepository()
         {
         }
 

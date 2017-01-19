@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Webb4_DAL.Models
 {
-    class AppartmentDataModel
+    public class AppartmentDataModel
     {
      
 

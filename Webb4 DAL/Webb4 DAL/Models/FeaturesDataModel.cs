@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Webb4_DAL.Models
 {
-    class FeaturesDataModel
+    public class FeaturesDataModel
     {
 
         [Key]

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Webb4_DAL.Models
 {
-    class UserDataModel
+    public class UserDataModel
     {
         public UserDataModel()
         {

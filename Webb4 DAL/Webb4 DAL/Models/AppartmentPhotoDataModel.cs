@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Webb4_DAL.Models
 {
-    class AppartmentPhotoDataModel
+    public class AppartmentPhotoDataModel
     {
         [Key]
         public Guid PhotoId { get; set; }
