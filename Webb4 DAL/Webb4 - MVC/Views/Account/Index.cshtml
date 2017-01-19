@@ -1,21 +1,22 @@
-﻿
+﻿@{
+    Layout = null;
+}
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
-<div id="MainDiv">
-    <div id="ContentBox">
-
-        <h2>BästaWebbAppen</h2>
-
-        <div id="FormContent">
-            @{
-                Html.RenderAction("LogIn", "Account");
-            }
+<body>
+    
+    <div id="MainDiv">
+        <div id="ContentBox">
+            <div id="FormContent">
+                @{
+                    Html.RenderAction("LogIn", "Account");
+                }
+            </div>
         </div>
     </div>
-</div>
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <link href="~/CSS/LoginPage.css" rel="stylesheet" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+</body>

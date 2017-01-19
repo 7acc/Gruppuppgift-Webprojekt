@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Webb4___MVC.Models.User;
 
 namespace Webb4___MVC.Controllers
 {
-    public class AccountController : Controller
+    public class LogInController : Controller
     {
        
         public ActionResult Index()
@@ -16,6 +17,11 @@ namespace Webb4___MVC.Controllers
         public ActionResult LogIn()
         {
             return PartialView();
+        }
+        [HttpPost]
+        public ActionResult LogIn(UserLoginViewModel userToLogIn)
+        {
+            return RedirectToAction("Index", "Home");
         }
         [HttpGet]
         public ActionResult Register()

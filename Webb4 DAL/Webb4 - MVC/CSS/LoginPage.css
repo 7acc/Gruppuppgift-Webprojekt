@@ -1,0 +1,36 @@
+﻿body {
+   background-image:url(http://i1.wp.com/rositareser.se/wp-content/uploads/2013/12/K%C3%A4rnan-i-Helsingborg.jpg?resize=3648%2C2736);
+   background-size:cover;
+     background-repeat: no-repeat;
+    text-align: center;
+}
+
+#MainDiv {
+   
+}
+
+
+#ContentBox{
+     background-color: rgba(255, 255, 255, 0.9); /* Color white with alpha 0.9*/
+    position: absolute;
+    text-align: center;
+   height:auto;
+   width:30%;
+    top: 50%;
+    left: 50%;
+    padding: 15px;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    box-shadow: 0 3px 5px rgba(1, 2, 10, 0.5);
+}
+#FormContent {
+    position: relative;
+    display: inline-block
+ 
+}
+
+#FormContent > input{
+    margin-top: 100px;
+}
