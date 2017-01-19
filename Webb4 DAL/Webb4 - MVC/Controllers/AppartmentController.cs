@@ -2,14 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Threading.Tasks;
 using System.Web.Mvc;
+using Webb4_DAL.Repositories;
+using Webb4_DAL.Models;
+using Webb4_DAL;
 
 namespace Webb4___MVC.Controllers
 {
+    
     public class AppartmentController : Controller
     {
+    /*
 
-        AlbumRepository<Album> _albumRepository = new AlbumRepository<Album>(new BildGalleryContext());
+        AppartmentDataModelRepository<AppartmentDataModel> appartmentRepository = new AppartmentDataModelRepository<AppartmentDataModel>(new Webb4_Context());
 
         //private BildGalleryContext db = new BildGalleryContext();
 
@@ -17,14 +23,14 @@ namespace Webb4___MVC.Controllers
         // GET: /Appartment/
         public ActionResult Index()
         {
-            return View(_albumRepository.GetAll());
+            return View(appartmentRepository.GetAll());
         }
 
         //
         // GET: /Appartment/Details/5
         public async Task<ActionResult> Details(Guid id)
         {
-            Album album = await _albumRepository.GetByIdAsync(id);
+            AppartmentDataModel album = await appartmentRepository.GetByIdAsync(id);
             if (album == null)
             {
                 return HttpNotFound();
@@ -102,5 +108,6 @@ namespace Webb4___MVC.Controllers
             await _albumRepository.DeleteAsync(album);
             return RedirectToAction("Index");
         }
+        */
     }
 }

@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C92C9DCF-DD27-40E2-8B8F-438EDDCE165B}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{48DC9410-7462-4E8B-8E5C-E7600533E788}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Webb4_DAL</RootNamespace>
-    <AssemblyName>Webb4 DAL</AssemblyName>
+    <RootNamespace>Webb4_businesslayer</RootNamespace>
+    <AssemblyName>Webb4-businesslayer</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -52,30 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IRepositories\IAdressDataModel.cs" />
-    <Compile Include="IRepositories\IAppartmentDataModel.cs" />
-    <Compile Include="IRepositories\IAppartmentPhotoDataModel.cs" />
-    <Compile Include="IRepositories\IFeaturesDataModel.cs" />
-    <Compile Include="IRepositories\IUserDataModel.cs" />
-    <Compile Include="Models\AdressDataModel.cs" />
-    <Compile Include="Models\AppartmentDataModel.cs" />
-    <Compile Include="Models\AppartmentPhotoDataModel.cs" />
-    <Compile Include="Models\FeaturesDataModel.cs" />
-    <Compile Include="Models\UserDataModel.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="ApartmentMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\AdressDataModelRepository.cs" />
-    <Compile Include="Repositories\AppartmentDataModelRepository.cs" />
-    <Compile Include="Repositories\AppartmentPhotoDataModelRepository.cs" />
-    <Compile Include="Repositories\FeaturesDataModelRepository.cs" />
-    <Compile Include="Repositories\UserRepository_Mock.cs" />
-    <Compile Include="Webb4_Context.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Webb4 - MVC\Webb4 - MVC.csproj">
+      <Project>{921abbb0-fabe-472b-8ab0-d371550914ab}</Project>
+      <Name>Webb4 - MVC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webb4 DAL\Webb4 DAL.csproj">
+      <Project>{c92c9dcf-dd27-40e2-8b8f-438eddce165b}</Project>
+      <Name>Webb4 DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

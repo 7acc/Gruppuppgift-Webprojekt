@@ -25,6 +25,11 @@ namespace Webb4___MVC.Models.User
         [RegularExpression(@"^([\w-\.]+)@((\[[0-9]{1,3]\.)|(([\w-]+\.)+))([a-zA-Z{2,4}|[0-9]{1,3})(\]?)$", ErrorMessage = "Please enter valid email.")]
         public string Email { get; set; }
         [Required(ErrorMessage ="StreetName is required")]
+
+
+        //adressModel
+
+
         public string Street { get; set; }
         [Required(ErrorMessage = "Postalcode is required")]
         public string PostalNumber { get; set; }

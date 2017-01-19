@@ -17,6 +17,7 @@ namespace Webb4___MVC.Controllers
         {
             return PartialView();
         }
+        [HttpGet]
         public ActionResult Register()
         {
             return PartialView();
