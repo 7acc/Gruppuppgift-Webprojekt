@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Webb4_DAL.Models;
-using Webb4_DAL.Repositories.Interfaces;
 
 namespace Webb4_DAL.Repositories
 {
