@@ -5,7 +5,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h2>Log In</h2>
+        <h2>Log In</h2><br />
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -37,7 +37,7 @@
     @Ajax.ActionLink(
     "Register",
     "Register",
-    "Account",
+    "LogIn",
     new AjaxOptions { UpdateTargetId = "FormContent" }
 )
 </div>

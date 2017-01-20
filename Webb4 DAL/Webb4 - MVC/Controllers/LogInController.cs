@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Webb4___MVC.Models.User;
 
+
 namespace Webb4___MVC.Controllers
 {
     public class LogInController : Controller
@@ -21,6 +22,10 @@ namespace Webb4___MVC.Controllers
         [HttpPost]
         public ActionResult LogIn(UserLoginViewModel userToLogIn)
         {
+            if(ModelState.IsValid)
+            {
+
+            }
             return RedirectToAction("Index", "Home");
         }
         [HttpGet]

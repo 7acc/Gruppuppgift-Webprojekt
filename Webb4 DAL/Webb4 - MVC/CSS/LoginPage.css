@@ -26,11 +26,14 @@
     box-shadow: 0 3px 5px rgba(1, 2, 10, 0.5);
 }
 #FormContent {
-    position: relative;
+font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     position: relative;
     display: inline-block
  
 }
-
-#FormContent > input{
-    margin-top: 100px;
+#FormContent h2{
+  color:darkgoldenrod;
+}
+#FormContent hr{
+  width:400px;
 }

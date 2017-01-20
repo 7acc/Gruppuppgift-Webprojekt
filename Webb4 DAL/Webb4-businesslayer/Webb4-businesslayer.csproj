@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="ApartmentMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Webb4 - MVC\Webb4 - MVC.csproj">

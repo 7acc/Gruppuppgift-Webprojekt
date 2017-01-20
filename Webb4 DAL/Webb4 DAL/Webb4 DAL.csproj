@@ -68,7 +68,7 @@
     <Compile Include="Repositories\AppartmentDataModelRepository.cs" />
     <Compile Include="Repositories\AppartmentPhotoDataModelRepository.cs" />
     <Compile Include="Repositories\FeaturesDataModelRepository.cs" />
-    <Compile Include="Repositories\UserRepository_Mock.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Webb4_Context.cs" />
   </ItemGroup>
   <ItemGroup>
