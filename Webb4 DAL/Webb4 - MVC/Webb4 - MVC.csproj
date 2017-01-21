@@ -179,6 +179,12 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\Appartment\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Webb4 DAL\Webb4 DAL.csproj">
+      <Project>{c92c9dcf-dd27-40e2-8b8f-438eddce165b}</Project>
+      <Name>Webb4 DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
