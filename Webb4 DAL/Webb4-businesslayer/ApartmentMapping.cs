@@ -3,36 +3,51 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Threading.Tasks;
+using AutoMapper;
+using ViewModels.VyModels;
 using Webb4_DAL.Repositories;
 using Webb4_DAL.Models;
 using Webb4_DAL;
-using Webb4___MVC;
-using Webb4___MVC.Models;
 
 namespace Webb4_businesslayer
 {
     public class ApartmentMapping
     {
-        AppartmentDataModelRepository<AppartmentDataModel> appartmentRepository = new AppartmentDataModelRepository<AppartmentDataModel>(new Webb4_Context());
+        static AppartmentDataModelRepository<AppartmentDataModel> _appartmentRepository = new AppartmentDataModelRepository<AppartmentDataModel>(new Webb4Context());
 
-        public List<ApartmentViewModel> GetAllApartments()
+        public static IEnumerable<AppartmentDataViewModel> FromBltoUiGetAll()
         {
-            var appartments = appartmentRepository.GetAll();
-            var listOfApartments = appartments.Select(x => DataModelToViewModel(x)).ToList();
+            var getData = _appartmentRepository.GetAll().ToList();
+            var randomItem = Mapper.Map<List<AppartmentDataModel>, IEnumerable<AppartmentDataViewModel>>(getData);
+            return randomItem;
+        }
 
-            return listOfApartments;
+        public static async Task<AppartmentDataViewModel> FromBltoUiGetById(Guid id)
+        {
+            var getRepo = await _appartmentRepository.GetByIdAsync(id);
+            var detailsId = Mapper.Map<AppartmentDataModel, AppartmentDataViewModel>(getRepo);
+            return detailsId;
+        }
+
+        public static async Task FromBltoUiInser(AppartmentDataViewModel Appart)
+        {
+            var addMap = Mapper.Map<AppartmentDataViewModel, AppartmentDataModel>(Appart);
+            await _appartmentRepository.InsertAsync(addMap);
 
         }
 
-
-
-        public ApartmentViewModel DataModelToViewModel(AppartmentDataModel dataModel)
+        public static async Task FromBltoUiEditAsync(AppartmentDataViewModel Appart)
         {
-            ApartmentViewModel viewModel = new ApartmentViewModel();
-            
-            // logig goes here
+            var editMap = Mapper.Map<AppartmentDataViewModel, AppartmentDataModel>(Appart);
+            await _appartmentRepository.EditAsync(editMap);
 
-            return viewModel;
+        }
+
+        public static async Task FromBltoUiDeleteAsync(Guid id)
+        {
+            var getFromR = await _appartmentRepository.GetByIdAsync(id);
+            await _appartmentRepository.DeleteAsync(getFromR);
+
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Webb4_DAL.Models
+namespace ViewModels.VyModels
 {
-    public class AdressDataModel
+    public class AdressDataViewModel
     {
         public Guid AdressID { get; set; }
         public string Street { get; set; }

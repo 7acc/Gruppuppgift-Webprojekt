@@ -1,10 +1,15 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Webb4_DAL.Models;
 
-namespace Webb4_DAL.Models
+namespace ViewModels.VyModels
 {
-    public class FeaturesDataModel
+    public class FeaturesDataViewModel
     {
 
+        [Key]
+        [ForeignKey("FeaturesOfAppartment")]
         public Guid AppertmentID { get; set; }
         
         public bool Feature1 { get; set; }

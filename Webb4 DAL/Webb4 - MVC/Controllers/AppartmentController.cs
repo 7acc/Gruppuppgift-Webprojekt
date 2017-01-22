@@ -1,113 +1,106 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿
+using System;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using Webb4_DAL.Repositories;
-using Webb4_DAL.Models;
-using Webb4_DAL;
+using ViewModels.VyModels;
+using Webb4_businesslayer;
 
 namespace Webb4___MVC.Controllers
 {
     
     public class AppartmentController : Controller
     {
-    /*
 
-        AppartmentDataModelRepository<AppartmentDataModel> appartmentRepository = new AppartmentDataModelRepository<AppartmentDataModel>(new Webb4_Context());
-
-        //private BildGalleryContext db = new BildGalleryContext();
-
-        //
-        // GET: /Appartment/
+        // GET: /Apartment/
         public ActionResult Index()
         {
-            return View(appartmentRepository.GetAll());
+            var g = ApartmentMapping.FromBltoUiGetAll();
+            return View(g);
         }
 
         //
-        // GET: /Appartment/Details/5
+        // GET: /Apartment/Details/5
         public async Task<ActionResult> Details(Guid id)
         {
-            AppartmentDataModel album = await appartmentRepository.GetByIdAsync(id);
-            if (album == null)
+            var r = await ApartmentMapping.FromBltoUiGetById(id);
+            if (r == null)
             {
                 return HttpNotFound();
             }
-            return View(album);
+            return View(r);
         }
 
         //
-        // GET: /Appartment/Create
+        // GET: /Apartment/Create
         public ActionResult Create()
         {
             return View();
         }
 
         //
-        // POST: /Appartment/Create
+        // POST: /Apartment/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(Album album)
+        public async Task<ActionResult> Create(AppartmentDataViewModel appart)
         {
             if (ModelState.IsValid)
             {
-                await _albumRepository.InsertAsync(album);
+                appart.AppartmentId = Guid.NewGuid();
+                await ApartmentMapping.FromBltoUiInser(appart);
                 return RedirectToAction("Index");
             }
 
-            return View(album);
+            return View(appart);
         }
 
         //
-        // GET: /Appartment/Edit/5
+        // GET: /Apartment/Edit/5
         public async Task<ActionResult> Edit(Guid id)
         {
-            Album album = await _albumRepository.GetByIdAsync(id);
-            if (album == null)
+
+            var editMap = await ApartmentMapping.FromBltoUiGetById(id);
+
+            if (editMap == null)
             {
                 return HttpNotFound();
             }
-            return View(album);
+            return View(editMap);
         }
 
         //
-        // POST: /Appartment/Edit/5
+        // POST: /Apartment/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit(Album album)
+        public async Task<ActionResult> Edit(AppartmentDataViewModel appart)
         {
             if (ModelState.IsValid)
             {
-                await _albumRepository.EditAsync(album);
+                await ApartmentMapping.FromBltoUiEditAsync(appart);
                 return RedirectToAction("Index");
             }
-            return View(album);
+            return View(appart);
         }
 
         //
-        // GET: /Appartment/Delete/5
+        // GET: /Apartment/Delete/5
         public async Task<ActionResult> Delete(Guid id)
         {
-            Album album = await _albumRepository.GetByIdAsync(id);
-            if (album == null)
+            var getFromR = await ApartmentMapping.FromBltoUiGetById(id);
+            if (getFromR == null)
             {
                 return HttpNotFound();
             }
-            return View(album);
+            return View(getFromR);
         }
 
         //
-        // POST: /Appartment/Delete/5
+        // POST: /Apartment/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(Guid id)
         {
-            Album album = await _albumRepository.GetByIdAsync(id);
-            await _albumRepository.DeleteAsync(album);
+            await ApartmentMapping.FromBltoUiDeleteAsync(id);
             return RedirectToAction("Index");
         }
-        */
     }
 }

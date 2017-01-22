@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -50,13 +54,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApartmentMapping.cs" />
+    <Compile Include="AutoMapper\AutoMapperConfig.cs" />
+    <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
+    <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Webb4 - MVC\Webb4 - MVC.csproj">
-      <Project>{921abbb0-fabe-472b-8ab0-d371550914ab}</Project>
-      <Name>Webb4 - MVC</Name>
+    <ProjectReference Include="..\ViewModels\ViewModels.csproj">
+      <Project>{036a0e04-baae-411f-89d5-054311087a81}</Project>
+      <Name>ViewModels</Name>
     </ProjectReference>
     <ProjectReference Include="..\Webb4 DAL\Webb4 DAL.csproj">
       <Project>{c92c9dcf-dd27-40e2-8b8f-438eddce165b}</Project>
@@ -67,6 +74,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -138,6 +138,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
     <Content Include="Views\LogIn\Index.cshtml" />
@@ -151,7 +156,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Apartment\ApartmentViewModel.cs" />
     <Compile Include="Models\User\UserLoginViewModel.cs" />
     <Compile Include="Models\User\UserRegisterViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -168,6 +172,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Appartment\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -177,12 +182,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Appartment\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Webb4 DAL\Webb4 DAL.csproj">
-      <Project>{c92c9dcf-dd27-40e2-8b8f-438eddce165b}</Project>
-      <Name>Webb4 DAL</Name>
+    <ProjectReference Include="..\ViewModels\ViewModels.csproj">
+      <Project>{036A0E04-BAAE-411F-89D5-054311087A81}</Project>
+      <Name>ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webb4-businesslayer\Webb4-businesslayer.csproj">
+      <Project>{48dc9410-7462-4e8b-8e5c-e7600533e788}</Project>
+      <Name>Webb4-businesslayer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
