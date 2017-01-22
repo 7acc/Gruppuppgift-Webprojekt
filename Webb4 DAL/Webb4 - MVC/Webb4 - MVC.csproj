@@ -173,6 +173,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Appartment\Index.cshtml" />
+    <Content Include="Views\Appartment\Details.cshtml" />
+    <Content Include="Views\Appartment\Create.cshtml" />
+    <Content Include="Views\Appartment\Edit.cshtml" />
+    <Content Include="Views\Appartment\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -4,7 +4,7 @@ namespace Webb4_DAL.Models
 {
     public class AppartmentDataModel
     {
-        public Guid AppartmentId { get; set; }
+        public Guid Id { get; set; }
         public AdressDataModel AppartmentAdress { get; set; }
         public bool Available { get; set; }
 
