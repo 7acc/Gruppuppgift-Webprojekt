@@ -1,0 +1,122 @@
+﻿@model ViewModels.VyModels.ApartmentViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ApartmentViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AreaId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AreaId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdressId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdressId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SizeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HousingId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HousingId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApartPhotoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApartPhotoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FeatursId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FeatursId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BuildYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BuildYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ytakvm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ytakvm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Floor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Floor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Available)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Available)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SisstAnmälningsdag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SisstAnmälningsdag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VisningsDatum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VisningsDatum)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

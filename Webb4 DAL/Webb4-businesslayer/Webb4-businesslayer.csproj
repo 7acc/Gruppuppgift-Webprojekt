@@ -53,10 +53,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApartmentMapping.cs" />
+    <Compile Include="HelpMapper\ApartmentMapping.cs" />
     <Compile Include="AutoMapper\AutoMapperConfig.cs" />
     <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
     <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
+    <Compile Include="HelpMapper\AdressMapping.cs" />
+    <Compile Include="HelpMapper\ApartmentPhotoDataMapping.cs" />
+    <Compile Include="HelpMapper\AreaMapping.cs" />
+    <Compile Include="HelpMapper\FeaturesDataMapping.cs" />
+    <Compile Include="HelpMapper\FormHousingDataMapping.cs" />
+    <Compile Include="HelpMapper\SizeDataMapping.cs" />
+    <Compile Include="HelpMapper\UserDataMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserManager.cs" />
   </ItemGroup>

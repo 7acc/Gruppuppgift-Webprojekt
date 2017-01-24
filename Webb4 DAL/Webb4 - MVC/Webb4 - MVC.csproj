@@ -151,8 +151,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdressController.cs" />
+    <Compile Include="Controllers\ApartmentPhotoController.cs" />
+    <Compile Include="Controllers\AreaController.cs" />
+    <Compile Include="Controllers\FeatuerController.cs" />
+    <Compile Include="Controllers\FormHousingController.cs" />
     <Compile Include="Controllers\LogInController.cs" />
-    <Compile Include="Controllers\AppartmentController.cs" />
+    <Compile Include="Controllers\ApartmentController.cs" />
+    <Compile Include="Controllers\SizeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -172,11 +179,46 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Appartment\Index.cshtml" />
-    <Content Include="Views\Appartment\Details.cshtml" />
-    <Content Include="Views\Appartment\Create.cshtml" />
-    <Content Include="Views\Appartment\Edit.cshtml" />
-    <Content Include="Views\Appartment\Delete.cshtml" />
+    <Content Include="Views\Apartment\Index.cshtml" />
+    <Content Include="Views\Apartment\Edit.cshtml" />
+    <Content Include="Views\Apartment\Create.cshtml" />
+    <Content Include="Views\Apartment\Details.cshtml" />
+    <Content Include="Views\Apartment\Delete.cshtml" />
+    <Content Include="Views\Adress\Index.cshtml" />
+    <Content Include="Views\Adress\Details.cshtml" />
+    <Content Include="Views\Adress\Create.cshtml" />
+    <Content Include="Views\Adress\Edit.cshtml" />
+    <Content Include="Views\Adress\Delete.cshtml" />
+    <Content Include="Views\ApartmentPhoto\Index.cshtml" />
+    <Content Include="Views\ApartmentPhoto\Details.cshtml" />
+    <Content Include="Views\ApartmentPhoto\Create.cshtml" />
+    <Content Include="Views\ApartmentPhoto\Edit.cshtml" />
+    <Content Include="Views\ApartmentPhoto\Delete.cshtml" />
+    <Content Include="Views\Area\Index.cshtml" />
+    <Content Include="Views\Area\Details.cshtml" />
+    <Content Include="Views\Area\Create.cshtml" />
+    <Content Include="Views\Area\Edit.cshtml" />
+    <Content Include="Views\Area\Delete.cshtml" />
+    <Content Include="Views\Featuer\Index.cshtml" />
+    <Content Include="Views\Featuer\Details.cshtml" />
+    <Content Include="Views\Featuer\Create.cshtml" />
+    <Content Include="Views\Featuer\Edit.cshtml" />
+    <Content Include="Views\Featuer\Delete.cshtml" />
+    <Content Include="Views\FormHousing\Index.cshtml" />
+    <Content Include="Views\FormHousing\Details.cshtml" />
+    <Content Include="Views\FormHousing\Create.cshtml" />
+    <Content Include="Views\FormHousing\Edit.cshtml" />
+    <Content Include="Views\FormHousing\Delete.cshtml" />
+    <Content Include="Views\Size\Index.cshtml" />
+    <Content Include="Views\Size\Details.cshtml" />
+    <Content Include="Views\Size\Create.cshtml" />
+    <Content Include="Views\Size\Edit.cshtml" />
+    <Content Include="Views\Size\Delete.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

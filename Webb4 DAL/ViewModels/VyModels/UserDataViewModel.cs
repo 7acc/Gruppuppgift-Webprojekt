@@ -11,14 +11,14 @@ namespace ViewModels.VyModels
     {
         public UserDataViewModel()
         {
-            this.WatchList = new HashSet<AppartmentDataModel>();
+            this.WatchList = new HashSet<ApartmentViewModel>();
         }
-        public Guid UserId { get; set; }
+        public Guid Id { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
 
-        public AdressDataModel UserAdress { get; set; }
-        public virtual ICollection<AppartmentDataModel> WatchList { get; set; }
+        public AdressViewModel UserAdress { get; set; }
+        public virtual ICollection<ApartmentViewModel> WatchList { get; set; }
     }
 }

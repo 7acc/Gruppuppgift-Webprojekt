@@ -33,7 +33,7 @@ namespace Webb4___MVC.Models.User
         public string Street { get; set; }
         [Required(ErrorMessage = "Postalcode is required")]
         public string PostalNumber { get; set; }
-        [Required(ErrorMessage = "city is required")]
+        [Required(ErrorMessage = "City is required")]
         public string city { get; set; }
 
     }
