@@ -11,6 +11,8 @@ namespace ViewModels.VyModels
         {
             ApartmentUser = new HashSet<UserDataViewModel>();
         }
+
+
         [Key]
         public Guid Id { get; set; }
 
@@ -22,7 +24,7 @@ namespace ViewModels.VyModels
         public Guid? ApartImgId { get; set; }
         public int BuildYear { get; set; }
         public decimal ApartArea { get; set; }
-        public virtual string QuantityRooms { get; set; }
+        public string QuantityRooms { get; set; }
         public double Floor { get; set; }
         public double Price { get; set; }
         public string Address { get; set; }
