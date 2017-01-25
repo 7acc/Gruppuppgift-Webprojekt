@@ -79,6 +79,7 @@
     <Compile Include="Repositories\SizeDataIRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Webb4Context.cs" />
+    <Compile Include="Webb4MvcInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
