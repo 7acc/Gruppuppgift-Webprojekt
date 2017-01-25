@@ -7,19 +7,19 @@ using Webb4_DAL.IRepositories;
 
 namespace Webb4_DAL.Repositories
 {
-   public class AdressDataModelRepository<TEntity> : IAdressDataModel<TEntity> where TEntity : class
+   public class OrderApartDataModelRepository<TEntity> : IOrderApartDataModel<TEntity> where TEntity : class
     {
         protected DbSet<TEntity> DbSet;
 
         private readonly DbContext _dbContext;
 
-        public AdressDataModelRepository(DbContext dbContext)
+        public OrderApartDataModelRepository(DbContext dbContext)
         {
             _dbContext = dbContext;
             DbSet = _dbContext.Set<TEntity>();
         }
 
-        public AdressDataModelRepository()
+        public OrderApartDataModelRepository()
         {
         }
 

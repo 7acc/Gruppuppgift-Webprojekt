@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Webb4_DAL.Models;
 
 namespace ViewModels.VyModels
 {
@@ -11,13 +9,18 @@ namespace ViewModels.VyModels
 
         public ApartmentPhotoViewModel()
         {
-            this.ApartmentPhoto = new HashSet<ApartmentViewModel>();
+            PhotoInApart = new HashSet<ApartmentViewModel>();
         }
-        public virtual ICollection<ApartmentViewModel> ApartmentPhoto { get; set; }
+
+
         [Key]
         public Guid Id { get; set; }
-        
         public string Url { get; set; }
         public string Description { get; set; }
+        public DateTime UpdataDate { get; set; }
+        public bool Status { get; set; }
+        public int PhotoSize { get; set; }
+
+        public virtual ICollection<ApartmentViewModel> PhotoInApart { get; set; }
     }
 }

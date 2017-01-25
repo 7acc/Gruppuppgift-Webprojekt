@@ -10,34 +10,34 @@ using Webb4_DAL.Repositories;
 
 namespace Webb4_businesslayer.HelpMapper
 {
-    public class AdressMapping
+    public class OrderApartMapping
     {
-        static AdressDataModelRepository<AdressData> _adressRepository = new AdressDataModelRepository<AdressData>(new Webb4Context());
+        static OrderApartDataModelRepository<OrderApart> _adressRepository = new OrderApartDataModelRepository<OrderApart>(new Webb4Context());
 
-        public static IEnumerable<AdressViewModel> FromBltoUiGetAll()
+        public static IEnumerable<OrderApartViewModel> FromBltoUiGetAll()
         {
             var getData = _adressRepository.GetAll().ToList();
-            var randomItem = Mapper.Map<List<AdressData>, IEnumerable<AdressViewModel>>(getData);
+            var randomItem = Mapper.Map<List<OrderApart>, IEnumerable<OrderApartViewModel>>(getData);
             return randomItem;
         }
 
-        public static async Task<AdressViewModel> FromBltoUiGetById(Guid id)
+        public static async Task<OrderApartViewModel> FromBltoUiGetById(Guid id)
         {
             var getRepo = await _adressRepository.GetByIdAsync(id);
-            var detailsId = Mapper.Map<AdressData, AdressViewModel>(getRepo);
+            var detailsId = Mapper.Map<OrderApart, OrderApartViewModel>(getRepo);
             return detailsId;
         }
 
-        public static async Task FromBltoUiInser(AdressViewModel adress)
+        public static async Task FromBltoUiInser(OrderApartViewModel adress)
         {
-            var addMap = Mapper.Map<AdressViewModel, AdressData>(adress);
+            var addMap = Mapper.Map<OrderApartViewModel, OrderApart>(adress);
             await _adressRepository.InsertAsync(addMap);
 
         }
 
-        public static async Task FromBltoUiEditAsync(AdressViewModel adress)
+        public static async Task FromBltoUiEditAsync(OrderApartViewModel adress)
         {
-            var editMap = Mapper.Map<AdressViewModel, AdressData>(adress);
+            var editMap = Mapper.Map<OrderApartViewModel, OrderApart>(adress);
             await _adressRepository.EditAsync(editMap);
 
         }

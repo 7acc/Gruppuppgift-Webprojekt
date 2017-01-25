@@ -1,42 +1,46 @@
 ﻿using System;
-using Webb4_DAL.Models;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ViewModels.VyModels
 {
     public class ApartmentViewModel
     {
 
+        public ApartmentViewModel()
+        {
+            ApartmentUser = new HashSet<UserDataViewModel>();
+        }
+        [Key]
         public Guid Id { get; set; }
-        //ForeignKey
-        public Guid AreaId { get; set; }
-        //ForeignKey
-        public Guid AdressId { get; set; }
-        //ForeignKey
-        public Guid SizeId { get; set; }
-        //ForeignKey
-        public Guid HousingId { get; set; }
-        //ForeignKey
-        public Guid ApartPhotoId { get; set; }
-        //ForeignKey
-        public Guid FeatursId { get; set; }
 
 
+        public Guid? FormHId { get; set; }
+        public Guid? SizeId { get; set; }
+        public Guid? FeatureId { get; set; }
+        public Guid? AreaId { get; set; }
+        public Guid? ApartImgId { get; set; }
         public int BuildYear { get; set; }
-        public decimal Ytakvm { get; set; }
-        public int Floor { get; set; }
-        public int Rent { get; set; } 
+        public decimal ApartArea { get; set; }
+        public virtual string QuantityRooms { get; set; }
+        public double Floor { get; set; }
+        public double Price { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string Region { get; set; }
+        public string PostalCode { get; set; }
+        public string Country { get; set; }
+        public DateTime? Available { get; set; } // Tillträde
+        public DateTime? DeadlineDate { get; set; } // Sista anmälsningsdatum
 
-        public DateTime Available { get; set; }
-        public DateTime SisstAnmälningsdag { get; set; }
-        public DateTime VisningsDatum { get; set; }
 
-
-        public FeaturesViewModel ApartmentFeature { get; set; }
+        public AreaViewModel ApartmentAreaV { get; set; }
         public ApartmentPhotoViewModel ApartmentPhoto { get; set; }
+        public virtual ICollection<UserDataViewModel> ApartmentUser { get; set; }
+        public FeaturesViewModel ApartmentFeature { get; set; }
+
         public FormHousingViewModel ApartmentFormHousing { get; set; }
         public SizeViewModel ApartmentSize { get; set; }
-        public AreaViewModel ApartmentArea { get; set; }
-        public AdressViewModel ApartmentAdress { get; set; }
 
     }
 }

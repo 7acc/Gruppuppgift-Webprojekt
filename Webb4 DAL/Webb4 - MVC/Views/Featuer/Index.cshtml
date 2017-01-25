@@ -12,31 +12,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Hiss)
+            @Html.DisplayNameFor(model => model.Elevator)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Balkog)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Stadsnät)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tvättmaskin)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Torltumlare)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Diskmaskin)
+            @Html.DisplayNameFor(model => model.Balcony)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Comhem)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Imd)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Säkerhetsdörr)
+            @Html.DisplayNameFor(model => model.WashingMachine)
         </th>
         <th></th>
     </tr>
@@ -44,31 +29,16 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Hiss)
+            @Html.DisplayFor(modelItem => item.Elevator)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Balkog)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Stadsnät)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tvättmaskin)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Torltumlare)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Diskmaskin)
+            @Html.DisplayFor(modelItem => item.Balcony)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Comhem)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Imd)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Säkerhetsdörr)
+            @Html.DisplayFor(modelItem => item.WashingMachine)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

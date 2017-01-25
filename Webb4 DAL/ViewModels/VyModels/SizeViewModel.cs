@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace ViewModels.VyModels
 {
@@ -12,9 +10,11 @@ namespace ViewModels.VyModels
         {
             this.SizeApartment = new HashSet<ApartmentViewModel>();
         }
-        public virtual ICollection<ApartmentViewModel> SizeApartment { get; set; }
-        public Guid Id { get; set; }
+       [Key]
+        public Guid SizeId { get; set; }
         public string SizekName { get; set; }
         public string Description { get; set; }
+
+        public virtual ICollection<ApartmentViewModel> SizeApartment { get; set; }
     }
 }

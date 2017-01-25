@@ -7,7 +7,7 @@ using Webb4_DAL.IRepositories;
 
 namespace Webb4_DAL.Repositories
 {
-    public class AppartmentDataModelRepository<TEntity> : IAdressDataModel<TEntity> where TEntity : class
+    public class AppartmentDataModelRepository<TEntity> : IAppartmentDataModel<TEntity> where TEntity : class
     {
         protected DbSet<TEntity> DbSet;
 

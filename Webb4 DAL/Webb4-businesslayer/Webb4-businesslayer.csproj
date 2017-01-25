@@ -53,11 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HelpMapper\OrderApartMapping.cs" />
     <Compile Include="HelpMapper\ApartmentMapping.cs" />
     <Compile Include="AutoMapper\AutoMapperConfig.cs" />
     <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
     <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
-    <Compile Include="HelpMapper\AdressMapping.cs" />
     <Compile Include="HelpMapper\ApartmentPhotoDataMapping.cs" />
     <Compile Include="HelpMapper\AreaMapping.cs" />
     <Compile Include="HelpMapper\FeaturesDataMapping.cs" />

@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IRepositories\IAdressDataModel.cs" />
+    <Compile Include="IRepositories\IOrderApartDataModel.cs" />
     <Compile Include="IRepositories\IAppartmentDataModel.cs" />
     <Compile Include="IRepositories\IAppartmentPhotoDataModel.cs" />
     <Compile Include="IRepositories\IAreaDataModel.cs" />
@@ -60,17 +60,17 @@
     <Compile Include="IRepositories\IFormHousingDataModel.cs" />
     <Compile Include="IRepositories\ISizeDataModel.cs" />
     <Compile Include="IRepositories\IUserDataModel.cs" />
-    <Compile Include="Models\AdressData.cs" />
     <Compile Include="Models\ApartmentPhotoData.cs" />
     <Compile Include="Models\ApartmentData.cs" />
     <Compile Include="Models\AreaData.cs" />
     <Compile Include="Models\FeaturesData.cs" />
     <Compile Include="Models\FormHousingData.cs" />
+    <Compile Include="Models\OrderApart.cs" />
     <Compile Include="Models\SizeData.cs" />
     <Compile Include="Models\UserData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\AdressDataModelRepository.cs" />
+    <Compile Include="Repositories\OrderApartDataModelRepository.cs" />
     <Compile Include="Repositories\AppartmentDataModelRepository.cs" />
     <Compile Include="Repositories\AppartmentPhotoDataModelRepository.cs" />
     <Compile Include="Repositories\AreaDataModelIRepository.cs" />

@@ -10,17 +10,15 @@ namespace Webb4_DAL.Models
         {
             this.FeatureApartmentM = new HashSet<ApartmentData>();
         }
-        public virtual ICollection<ApartmentData> FeatureApartmentM { get; set; }
+
         public Guid Id { get; set; }
-        public bool Hiss { get; set; }
-        public bool Balkog { get; set; }
-        public bool Stadsnät { get; set; }
-        public bool Tvättmaskin { get; set; }
-        public bool Torltumlare { get; set; }
-        public bool Diskmaskin { get; set; }
+        public bool Elevator { get; set; }
+        public bool Balcony { get; set; }
         public bool Comhem { get; set; }
-        public bool Imd { get; set; }
-        public bool Säkerhetsdörr { get; set; }
+        public bool WashingMachine { get; set; }
+
+        public virtual ICollection<ApartmentData> FeatureApartmentM { get; set; }
+
 
     }
 }

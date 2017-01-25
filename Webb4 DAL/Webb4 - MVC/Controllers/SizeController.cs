@@ -42,7 +42,7 @@ namespace Webb4___MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                size.Id = Guid.NewGuid();
+                size.SizeId = Guid.NewGuid();
                 await SizeDataMapping.FromBltoUiInser(size);
                 return RedirectToAction("Index");
             }

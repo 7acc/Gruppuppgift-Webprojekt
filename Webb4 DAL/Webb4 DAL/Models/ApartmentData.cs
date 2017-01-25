@@ -1,41 +1,45 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Webb4_DAL.Models
 {
     public class ApartmentData
     {
 
+        public ApartmentData()
+        {
+            ApartmentUserM = new HashSet<UserData>();
+        }
         public Guid Id { get; set; }
-        //ForeignKey
-        public Guid AreaId { get; set; }
-        //ForeignKey
-        public Guid AdressId { get; set; }
-        //ForeignKey
-        public Guid SizeId { get; set; }
-        //ForeignKey
-        public Guid HousingId { get; set; }
-        //ForeignKey
-        public Guid ApartPhotoId { get; set; }
-        //ForeignKey
-        public Guid FeatursId { get; set; }
 
 
+        public Guid? FormHId { get; set; }
+        public Guid? SizeId { get; set; }
+        public Guid? FeatureId { get; set; }
+        public Guid? AreaId { get; set; }
+        public Guid? ApartImgId { get; set; }
         public int BuildYear { get; set; }
-        public decimal Ytakvm { get; set; }
-        public int Floor { get; set; }
-        public int Rent { get; set; } 
+        public decimal ApartmentArea { get; set; }
+        public virtual string QuantityRooms { get; set; }
+        public double Floor { get; set; }
+        public double Price { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string Region { get; set; }
+        public string PostalCode { get; set; }
+        public string Country { get; set; }
+        public DateTime? Available { get; set; } // Tillträde
+        public DateTime? DeadlineDate { get; set; } // Sista anmälsningsdatum
 
-        public DateTime Available { get; set; }
-        public DateTime SisstAnmälningsdag { get; set; }
-        public DateTime VisningsDatum { get; set; }
-
-
-        public FeaturesData ApartmentFeatureM { get; set; }
+        public AreaData ApartmentAreaM { get; set; }
         public ApartmentPhotoData ApartmentPhotoM { get; set; }
+        public virtual ICollection<UserData> ApartmentUserM { get; set; }
+        public FeaturesData ApartmentFeatureM { get; set; }
+
         public FormHousingData ApartmentFormHousingM { get; set; }
         public SizeData ApartmentSizeM { get; set; }
-        public AreaData ApartmentAreaM { get; set; }
-        public AdressData ApartmentAdressM { get; set; }
+
+
 
     }
 }

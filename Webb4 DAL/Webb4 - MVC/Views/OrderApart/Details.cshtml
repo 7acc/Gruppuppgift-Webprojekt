@@ -1,0 +1,122 @@
+﻿@model ViewModels.VyModels.OrderApartViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OrderApartViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InterestDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InterestDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequiredDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequiredDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OccupancyDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OccupancyDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApartmentArea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApartmentArea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderRegion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderRegion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderPostalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderPostalCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderCountry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderCountry)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

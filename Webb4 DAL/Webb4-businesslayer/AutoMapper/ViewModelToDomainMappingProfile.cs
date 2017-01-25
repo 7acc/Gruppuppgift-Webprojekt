@@ -19,18 +19,17 @@ namespace Webb4_businesslayer.AutoMapper
 
         protected override void Configure()
         {
-            CreateMap<AdressViewModel, AdressData>()
-                .ForMember(dto => dto.AdressApartmentM, opt => opt.MapFrom(src => src.AdressApartment))
-                 .ForMember(dto => dto.AdressUserM, opt => opt.MapFrom(src => src.AdressUser));
+            //CreateMap<AdressViewModel, AdressData>()
+            //    .ForMember(dto => dto.AdressApartmentM, opt => opt.MapFrom(src => src.AdressApartment));
             CreateMap<ApartmentViewModel, ApartmentData>()
-                 .ForMember(dto => dto.ApartmentPhotoM, opt => opt.MapFrom(src => src.ApartmentPhoto))
-                .ForMember(dto => dto.ApartmentAdressM, opt => opt.MapFrom(src => src.ApartmentAdress))
-                .ForMember(dto => dto.ApartmentAreaM, opt => opt.MapFrom(src => src.ApartmentArea))
+                  .ForMember(dto => dto.ApartmentPhotoM, opt => opt.MapFrom(src => src.ApartmentPhoto))
+                .ForMember(dto => dto.ApartmentAreaM, opt => opt.MapFrom(src => src.ApartmentAreaV))
+                .ForMember(dto => dto.ApartmentUserM, opt => opt.MapFrom(src => src.ApartmentUser))
                 .ForMember(dto => dto.ApartmentFeatureM, opt => opt.MapFrom(src => src.ApartmentFeature))
                 .ForMember(dto => dto.ApartmentSizeM, opt => opt.MapFrom(src => src.ApartmentSize))
                 .ForMember(dto => dto.ApartmentFormHousingM, opt => opt.MapFrom(src => src.ApartmentFormHousing));
             CreateMap<ApartmentPhotoViewModel, ApartmentPhotoData>()
-                .ForMember(dto => dto.PhotoInApartM, opt => opt.MapFrom(src => src.ApartmentPhoto));
+                .ForMember(dto => dto.PhotoInApartM, opt => opt.MapFrom(src => src.PhotoInApart));
             CreateMap<AreaViewModel, AreaData>()
                 .ForMember(dto => dto.AreaApartmentM, opt => opt.MapFrom(src => src.AreaApartment));
             CreateMap<FeaturesViewModel, FeaturesData>()
@@ -40,7 +39,7 @@ namespace Webb4_businesslayer.AutoMapper
             CreateMap<SizeViewModel, SizeData>()
                  .ForMember(dto => dto.SizeApartmentM, opt => opt.MapFrom(src => src.SizeApartment));
             CreateMap<UserDataViewModel, UserData>()
-                .ForMember(dto => dto.UserAdressM, opt => opt.MapFrom(src => src.UserAdress));
+                .ForMember(dto => dto.UserApart, opt => opt.MapFrom(src => src.UserApart));
         }
     }
 }

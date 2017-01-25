@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace ViewModels.VyModels
 {
@@ -10,11 +8,12 @@ namespace ViewModels.VyModels
     {
         public FormHousingViewModel()
         {
-            this.FormHousingApartment = new HashSet<ApartmentViewModel>();
+            FormHousingApartment = new HashSet<ApartmentViewModel>();
         }
-        public virtual ICollection<ApartmentViewModel> FormHousingApartment { get; set; }
-        public Guid Id { get; set; }
+        [Key]
+      public Guid Id { get; set; }
         public string FormOfHousing { get; set; }
         public string Description { get; set; }
+        public virtual ICollection<ApartmentViewModel> FormHousingApartment { get; set; }
     }
 }

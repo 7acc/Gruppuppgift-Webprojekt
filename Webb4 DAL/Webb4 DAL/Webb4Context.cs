@@ -10,7 +10,10 @@ namespace Webb4_DAL
         {
             //SetInitializer<Webb4Context>(new DropCreateDatabaseIfModelChanges<Webb4Context>());
         }
-        public DbSet<AdressData> AdressDataModels { get; set; }
+
+
+
+        public DbSet<OrderApart> OrderDataModels { get; set; }
         public DbSet<ApartmentData> AppartmentDataModels { get; set; }
         public DbSet<ApartmentPhotoData> ApartmentPhotoDataModels { get; set; }
         public DbSet<AreaData> AreaDataModels { get; set; }
@@ -19,6 +22,19 @@ namespace Webb4_DAL
         public DbSet<SizeData> SizeDataModels { get; set; }
         public DbSet<UserData> UserDatagDataModels { get; set; }
 
+
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<ApartmentData>()
+        //        .HasMany(s => s.ApartmentFeatureM)
+        //        .WithMany(c => c.FeatureApartmentM)
+        //        .Map(cs =>
+        //        {
+        //            cs.MapLeftKey("ApartmentRefId");
+        //            cs.MapRightKey("FeatureRefId");
+        //            cs.ToTable("ApartmentFeature");
+        //        });
+        //}
     }
 
    

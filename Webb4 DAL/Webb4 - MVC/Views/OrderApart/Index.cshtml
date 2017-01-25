@@ -1,0 +1,105 @@
+﻿@model IEnumerable<ViewModels.VyModels.OrderApartViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InterestDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequiredDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OccupancyDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApartmentArea)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderRegion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderPostalCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderCountry)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InterestDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequiredDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OccupancyDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApartmentArea)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderRegion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderPostalCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderCountry)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

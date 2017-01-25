@@ -14,18 +14,17 @@ namespace Webb4_businesslayer.AutoMapper
 
         protected override void Configure()
         {
-            CreateMap<AdressData, AdressViewModel>()
-                 .ForMember(dto => dto.AdressApartment, opt => opt.MapFrom(src => src.AdressApartmentM))
-                 .ForMember(dto => dto.AdressUser, opt => opt.MapFrom(src => src.AdressUserM));
+            //CreateMap<AdressData, AdressViewModel>()
+            //     .ForMember(dto => dto.AdressApartment, opt => opt.MapFrom(src => src.AdressApartmentM));
             CreateMap<ApartmentData, ApartmentViewModel>()
                 .ForMember(dto => dto.ApartmentPhoto, opt => opt.MapFrom(src => src.ApartmentPhotoM))
-                .ForMember(dto => dto.ApartmentAdress, opt => opt.MapFrom(src => src.ApartmentAdressM))
-                .ForMember(dto => dto.ApartmentArea, opt => opt.MapFrom(src => src.ApartmentAreaM))
+                .ForMember(dto => dto.ApartmentAreaV, opt => opt.MapFrom(src => src.ApartmentAreaM))
+                .ForMember(dto => dto.ApartmentUser, opt => opt.MapFrom(src => src.ApartmentUserM))
                 .ForMember(dto => dto.ApartmentFeature, opt => opt.MapFrom(src => src.ApartmentFeatureM))
                 .ForMember(dto => dto.ApartmentSize, opt => opt.MapFrom(src => src.ApartmentSizeM))
                 .ForMember(dto => dto.ApartmentFormHousing, opt => opt.MapFrom(src => src.ApartmentFormHousingM));
             CreateMap<ApartmentPhotoData, ApartmentPhotoViewModel>()
-                .ForMember(dto => dto.ApartmentPhoto, opt => opt.MapFrom(src => src.PhotoInApartM));
+                .ForMember(dto => dto.PhotoInApart, opt => opt.MapFrom(src => src.PhotoInApartM));
             CreateMap<AreaData, AreaViewModel>()
                 .ForMember(dto => dto.AreaApartment, opt => opt.MapFrom(src => src.AreaApartmentM));
             CreateMap<FeaturesData, FeaturesViewModel>()
@@ -35,7 +34,7 @@ namespace Webb4_businesslayer.AutoMapper
             CreateMap<SizeData, SizeViewModel>()
                  .ForMember(dto => dto.SizeApartment, opt => opt.MapFrom(src => src.SizeApartmentM));
             CreateMap<UserData, UserDataViewModel>()
-                .ForMember(dto => dto.UserAdress, opt => opt.MapFrom(src => src.UserAdressM));
+                .ForMember(dto => dto.UserApart, opt => opt.MapFrom(src => src.UserApart));
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Webb4_DAL.IRepositories
 {
-    public interface IAdressDataModel<TEntity>
+    public interface IOrderApartDataModel<TEntity>
     {
 
         Task<TEntity> GetByIdAsync(Guid id);
