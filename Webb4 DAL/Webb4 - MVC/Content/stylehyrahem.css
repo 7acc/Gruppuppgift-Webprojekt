@@ -1,0 +1,66 @@
+﻿
+
+/*  --- Our new style för hyra hem ---*/
+
+html, body{
+    background: -moz-linear-gradient(91deg, rgba(210,245,240,1) 0%, rgba(235,245,210,1) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(235,245,210,1)), color-stop(100%, rgba(210,245,240,1))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(91deg, rgba(210,245,240,1) 0%, rgba(235,245,210,1) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(91deg, rgba(210,245,240,1) 0%, rgba(235,245,210,1) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(91deg, rgba(210,245,240,1) 0%, rgba(235,245,210,1) 100%); /* ie10+ */
+    background: linear-gradient(359deg, rgba(210,245,240,1) 0%, rgba(235,245,210,1) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf5d2', endColorstr='#d2f5f0',GradientType=0 ); /* ie6-9 */
+    height:100%;
+    
+    
+    
+
+    color: #477670;
+   
+    
+
+}
+
+
+.navbar-inverse {
+    background-color: #ffffff;
+    border-color: #ffffff;
+ }
+
+
+
+.navbar-inverse .navbar-brand {
+    color: #058a05;
+}
+
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+    color: #058a05;
+   
+}
+
+h1, h2, h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #6090bb;
+  
+}
+
+h2, .h2 {
+    font-size: 30px;
+    color: #6090bb;
+}
+
+.btn-default {
+    color: #333333;
+    background-color: #ffffff;
+    border-color: #50e170;
+    opacity: 0.8;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #209dd8;
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+    text-decoration: none;
+    background-color: #3096de;
+}
