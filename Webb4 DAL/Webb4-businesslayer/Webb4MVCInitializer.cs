@@ -15,37 +15,45 @@ namespace Webb4_businesslayer
             var size = new List<SizeData>
             {
                 new SizeData{Id = Guid.NewGuid(), SizekName= "Ettor", Description= "Ett sovrum & köket",},
-                new SizeData{Id = Guid.NewGuid(), SizekName= "Ettor", Description= "Ett sovrum & köket",},
-                new SizeData{Id = Guid.NewGuid(), SizekName= "Ettor", Description= "Ett sovrum & köket",},
-                new SizeData{Id = Guid.NewGuid(), SizekName= "Ettor", Description= "Ett sovrum & köket",},
-                new SizeData{Id = Guid.NewGuid(), SizekName= "Ettor", Description= "Ett sovrum & köket",}
+                new SizeData{Id = Guid.NewGuid(), SizekName= "Tvåor", Description= "2 sovrums & köket",},
+                new SizeData{Id = Guid.NewGuid(), SizekName= "Treor", Description= "3 sovrums & köket",},
+                new SizeData{Id = Guid.NewGuid(), SizekName= "Fyror", Description= "4 sovrums & köket",},
+                new SizeData{Id = Guid.NewGuid(), SizekName= "Femmor", Description= "5 sovrums & köket",},
+                 new SizeData{Id = Guid.NewGuid(), SizekName= "Sexor", Description= "6 sovrums & köket",}
             };
             size.ForEach(s => context.SizeDataModels.Add(s));
 
             var formHousingData = new List<FormHousingData>
             {
-                new FormHousingData{Id = Guid.NewGuid(),FormOfHousing ="FormOfHousing",Description="Description",},
-                new FormHousingData{Id = Guid.NewGuid(),FormOfHousing ="FormOfHousing",Description="Description",},
-                new FormHousingData{Id = Guid.NewGuid(),FormOfHousing ="FormOfHousing",Description="Description",},
-                new FormHousingData{Id = Guid.NewGuid(),FormOfHousing ="FormOfHousing",Description="Description",},
-                new FormHousingData{Id = Guid.NewGuid(),FormOfHousing ="FormOfHousing",Description="Description",}
+                new FormHousingData{Id = Guid.NewGuid(),FormOfHousing ="Student",Description="Du har möjlighet att anmäla ditt intresse till denna lägenhet om du är student.",},
+                new FormHousingData{Id = Guid.NewGuid(),FormOfHousing ="Seniorboende",Description="Du har möjlighet att anmäla ditt intresse till denna lägenhet från det år du fyller 55.",},
+                new FormHousingData{Id = Guid.NewGuid(),FormOfHousing ="Nybyggt",Description="Det är nybyggt lägenhet.",}
+             
             };
             formHousingData.ForEach(s => context.FormHousingDataModels.Add(s));
 
             var featuresData = new List<FeaturesData>
             {
                 new FeaturesData{Id = Guid.NewGuid(), Elevator=true, Balcony= true, Comhem=true, WashingMachine=true, },
-                new FeaturesData{Id = Guid.NewGuid(), Elevator=true, Balcony= true, Comhem=true, WashingMachine=true, },
-                new FeaturesData{Id = Guid.NewGuid(), Elevator=true, Balcony= true, Comhem=true, WashingMachine=true, },
-                new FeaturesData{Id = Guid.NewGuid(), Elevator=true, Balcony= true, Comhem=true, WashingMachine=true, },
-                new FeaturesData{Id = Guid.NewGuid(), Elevator=true, Balcony= true, Comhem=true, WashingMachine=true, }
+                new FeaturesData{Id = Guid.NewGuid(), Elevator=false, Balcony= true, Comhem=true, WashingMachine=true, },
+                new FeaturesData{Id = Guid.NewGuid(), Elevator=false, Balcony= false, Comhem=true, WashingMachine=true, },
+                new FeaturesData{Id = Guid.NewGuid(), Elevator=false, Balcony= false, Comhem=false, WashingMachine=true, },
+                new FeaturesData{Id = Guid.NewGuid(), Elevator=false, Balcony= false, Comhem=false, WashingMachine=false, }
             };
             featuresData.ForEach(s => context.FeatuersDataModels.Add(s));
 
             var areaData = new List<AreaData>
             {
-            new AreaData{Id = Guid.NewGuid(), AreaName = "SoderAD", ImageUrl = "ImageNameHar", Description = "Hello Helsingborg"
-            }
+            new AreaData{Id = Guid.NewGuid(), AreaName = "Centrum ", ImageUrl = "ImageNameHar", Description = "Centrum ligger precis vid havet. Våra hus i Norra Hamnen ligger på första parkett ut mot sundet och strandpromenaden och hör till de absolut mest attraktiva i vårt lägenhetsbestånd. "
+            },
+             new AreaData{Id = Guid.NewGuid(), AreaName = "Dalhem", ImageUrl = "ImageNameHar", Description = "I den nordöstra delen av Helsingborg ligger Dalhem. Ett område med mycket grönska, bilfria gårdar, fina lekplatser och ett eget litet centrum. "
+            },
+              new AreaData{Id = Guid.NewGuid(), AreaName = "Elineberg", ImageUrl = "ImageNameHar", Description = "Vid Helsingborgs södra infart, ca 2,5 km från centrum ligger det familjära Elineberg.  "
+            },
+              new AreaData{Id = Guid.NewGuid(), AreaName = "Fredriksdal", ImageUrl = "ImageNameHar", Description = "Fredriksdal är ett stabilt och trivsamt område, ca två km öster om centrum. I områdets sydvästra del ligger Fredriksdalsparken med friluftsteater, museum och trädgårdar. "
+            },
+               new AreaData{Id = Guid.NewGuid(), AreaName = "Gustavslund", ImageUrl = "ImageNameHar", Description = "Gustavslund ligger i Helsingborgs östra utkant, ca 3 km från centrum med Skånes åkerlandskap som granne i öst. "
+            },
             };
             areaData.ForEach(s => context.AreaDataModels.Add(s));
 
@@ -63,10 +71,10 @@ namespace Webb4_businesslayer
             var orderApart = new List<OrderApart>
             {
                 new OrderApart{Id=Guid.NewGuid(),Name="Katrina", UserId =userId.Id , InterestDate=DateTime.Now,RequiredDate=DateTime.Now,OccupancyDate=DateTime.Now,ApartmentArea=200,Price=300,OrderName="Dalyus",OrderAddress="Helsingborg",OrderCity="OrderCity",OrderRegion="OrderRegion",OrderPostalCode="OrderPostalCode",OrderCountry="OrderCountry", },
-                new OrderApart{Id=Guid.NewGuid(),Name="Katrina", UserId =userId.Id , InterestDate=DateTime.Now,RequiredDate=DateTime.Now,OccupancyDate=DateTime.Now,ApartmentArea=200,Price=300,OrderName="Dalyus",OrderAddress="Helsingborg",OrderCity="OrderCity",OrderRegion="OrderRegion",OrderPostalCode="OrderPostalCode",OrderCountry="OrderCountry", },
-                new OrderApart{Id=Guid.NewGuid(),Name="Katrina", UserId =userId.Id , InterestDate=DateTime.Now,RequiredDate=DateTime.Now,OccupancyDate=DateTime.Now,ApartmentArea=200,Price=300,OrderName="Dalyus",OrderAddress="Helsingborg",OrderCity="OrderCity",OrderRegion="OrderRegion",OrderPostalCode="OrderPostalCode",OrderCountry="OrderCountry", },
-                new OrderApart{Id=Guid.NewGuid(),Name="Katrina", UserId =userId.Id , InterestDate=DateTime.Now,RequiredDate=DateTime.Now,OccupancyDate=DateTime.Now,ApartmentArea=200,Price=300,OrderName="Dalyus",OrderAddress="Helsingborg",OrderCity="OrderCity",OrderRegion="OrderRegion",OrderPostalCode="OrderPostalCode",OrderCountry="OrderCountry", },
-                new OrderApart{Id=Guid.NewGuid(),Name="Katrina", UserId =userId.Id , InterestDate=DateTime.Now,RequiredDate=DateTime.Now,OccupancyDate=DateTime.Now,ApartmentArea=200,Price=300,OrderName="Dalyus",OrderAddress="Helsingborg",OrderCity="OrderCity",OrderRegion="OrderRegion",OrderPostalCode="OrderPostalCode",OrderCountry="OrderCountry", }
+                new OrderApart{Id=Guid.NewGuid(),Name="Anders", UserId =userId.Id , InterestDate=DateTime.Now,RequiredDate=DateTime.Now,OccupancyDate=DateTime.Now,ApartmentArea=100,Price=300,OrderName="Dalyus",OrderAddress="Helsingborg",OrderCity="OrderCity",OrderRegion="OrderRegion",OrderPostalCode="OrderPostalCode",OrderCountry="OrderCountry", },
+                new OrderApart{Id=Guid.NewGuid(),Name="Ali", UserId =userId.Id , InterestDate=DateTime.Now,RequiredDate=DateTime.Now,OccupancyDate=DateTime.Now,ApartmentArea=60,Price=300,OrderName="Dalyus",OrderAddress="Helsingborg",OrderCity="OrderCity",OrderRegion="OrderRegion",OrderPostalCode="OrderPostalCode",OrderCountry="OrderCountry", },
+                new OrderApart{Id=Guid.NewGuid(),Name="Dalius", UserId =userId.Id , InterestDate=DateTime.Now,RequiredDate=DateTime.Now,OccupancyDate=DateTime.Now,ApartmentArea=200,Price=300,OrderName="Dalyus",OrderAddress="Helsingborg",OrderCity="OrderCity",OrderRegion="OrderRegion",OrderPostalCode="OrderPostalCode",OrderCountry="OrderCountry", },
+                new OrderApart{Id=Guid.NewGuid(),Name="Anders", UserId =userId.Id , InterestDate=DateTime.Now,RequiredDate=DateTime.Now,OccupancyDate=DateTime.Now,ApartmentArea=200,Price=300,OrderName="Dalyus",OrderAddress="Helsingborg",OrderCity="OrderCity",OrderRegion="OrderRegion",OrderPostalCode="OrderPostalCode",OrderCountry="OrderCountry", }
             };
             orderApart.ForEach(s => context.OrderDataModels.Add(s));
             var apartid= new ApartmentData();
