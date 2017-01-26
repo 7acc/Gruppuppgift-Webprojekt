@@ -1,5 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System.Data.Entity;
+using System.Web.Mvc;
 using System.Web.Routing;
+using Webb4_businesslayer;
 using Webb4_businesslayer.AutoMapper;
 
 namespace Webb4___MVC
@@ -8,9 +10,12 @@ namespace Webb4___MVC
     {
         protected void Application_Start()
         {
+            //Database.SetInitializer<BlContext>(new DropCreateDatabaseIfModelChanges<BlContext>());
+            Database.SetInitializer(new Webb4MvcInitializer());
+
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-
+            
             AutoMapperConfig.RegisterMappings();
         }
     }

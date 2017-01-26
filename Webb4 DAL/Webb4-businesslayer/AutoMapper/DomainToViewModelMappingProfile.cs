@@ -35,6 +35,13 @@ namespace Webb4_businesslayer.AutoMapper
                  .ForMember(dto => dto.SizeApartment, opt => opt.MapFrom(src => src.SizeApartmentM));
             CreateMap<UserData, UserDataViewModel>()
                 .ForMember(dto => dto.UserApart, opt => opt.MapFrom(src => src.UserApart));
+            CreateMap<OrderApart, OrderApartViewModel>()
+               .ForMember(dto => dto.OrderAddress, opt => opt.MapFrom(src => src.OrderAddress))
+               .ForMember(dto => dto.OrderCity, opt => opt.MapFrom(src => src.OrderCity))
+               .ForMember(dto => dto.OrderCountry, opt => opt.MapFrom(src => src.OrderCountry))
+               .ForMember(dto => dto.OrderName, opt => opt.MapFrom(src => src.OrderName))
+               .ForMember(dto => dto.OrderPostalCode, opt => opt.MapFrom(src => src.OrderPostalCode))
+               .ForMember(dto => dto.OrderRegion, opt => opt.MapFrom(src => src.OrderRegion));
         }
     }
 }

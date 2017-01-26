@@ -6,6 +6,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Webb4_DAL.IRepositories;
+using Webb4_DAL.Models;
 
 namespace Webb4_DAL.Repositories
 {
@@ -42,7 +43,15 @@ namespace Webb4_DAL.Repositories
 
         public async Task EditAsync(TEntity entity)
         {
-            _dbContext.Entry(entity).State = EntityState.Modified;
+            //_dbContext.Entry(entity).State = EntityState.Modified;
+            var entry = _dbContext.Entry(entity);
+            if (entry.State == EntityState.Detached)
+            {
+                _dbContext.Set<TEntity>().Attach(entity);
+                entry.State = EntityState.Modified;
+            }
+
+
             await _dbContext.SaveChangesAsync();
         }
 

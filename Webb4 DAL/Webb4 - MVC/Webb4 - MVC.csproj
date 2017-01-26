@@ -236,6 +236,10 @@
       <Project>{036A0E04-BAAE-411F-89D5-054311087A81}</Project>
       <Name>ViewModels</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Webb4 DAL\Webb4 DAL.csproj">
+      <Project>{C92C9DCF-DD27-40E2-8B8F-438EDDCE165B}</Project>
+      <Name>Webb4 DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Webb4-businesslayer\Webb4-businesslayer.csproj">
       <Project>{48dc9410-7462-4e8b-8e5c-e7600533e788}</Project>
       <Name>Webb4-businesslayer</Name>

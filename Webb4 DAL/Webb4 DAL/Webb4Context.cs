@@ -25,15 +25,12 @@ namespace Webb4_DAL
 
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)
         //{
-        //    modelBuilder.Entity<ApartmentData>()
-        //        .HasMany(s => s.ApartmentFeatureM)
-        //        .WithMany(c => c.FeatureApartmentM)
-        //        .Map(cs =>
-        //        {
-        //            cs.MapLeftKey("ApartmentRefId");
-        //            cs.MapRightKey("FeatureRefId");
-        //            cs.ToTable("ApartmentFeature");
-        //        });
+        //    modelBuilder.Entity<UserData>().HasRequired(m => m.UserApart)
+        //       .WithMany(m => m.ApartmentUserM).HasForeignKey(m => m.ApartmentId);
+        //    modelBuilder.Entity<ApartmentData>().HasRequired(m => m.ApartmentSizeM)
+        //        .WithMany(m => m.SizeApartmentM).HasForeignKey(m => m.SizeId);
+        //    modelBuilder.Entity<Entity2>().HasMany(e => e.Entity1s)
+        //        .WithMany(e => e.Entity2s);
         //}
     }
 
