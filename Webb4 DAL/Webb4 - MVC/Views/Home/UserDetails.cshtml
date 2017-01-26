@@ -1,0 +1,70 @@
+﻿@model ViewModels.VyModels.UserDataViewModel
+
+@{
+    ViewBag.Title = "UserDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /> 
+<div class="container"> 
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-6">
+                En bild kanske ??? ....
+            </div>
+            <div class="col-md-6">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Personal Information</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @*<tr>
+                                <td>@Html.DisplayNameFor(model => model.ApartmentId) : </td>
+                                <td>@Html.DisplayFor(model => model.ApartmentId)</td>
+                            </tr>*@
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.UserName) : </td>
+                            <td>@Html.DisplayFor(model => model.UserName)</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.Email) :</td>
+                            <td>@Html.DisplayFor(model => model.Email)</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.Address) :</td>
+                            <td>@Html.DisplayFor(model => model.Address)</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.PostalCode) :</td>
+                            <td>@Html.DisplayFor(model => model.PostalCode)</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.City) :</td>
+                            <td>@Html.DisplayFor(model => model.City)</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.Region) :</td>
+                            <td>@Html.DisplayFor(model => model.Region)</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.Country) :</td>
+                            <td>@Html.DisplayFor(model => model.Country)</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.Phone) :</td>
+                            <td>@Html.DisplayFor(model => model.Phone)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    @Html.ActionLink("Edit", "Edit", "User", new { id = Model.Id }, null) |
+                    @Html.ActionLink("Back to List", "Index")
+                </p>
+
+            </div>
+        </div>
+    </div>
+        </div>
+

@@ -27,5 +27,17 @@ namespace Webb4___MVC.Controllers
             }
             return View(r);
         }
+
+        //
+        // GET: /UserData/Details/5
+        public async Task<ActionResult> UserDetails(Guid id)
+        {
+            var r = await UserDataMapping.FromBltoUiGetById(id);
+            if (r == null)
+            {
+                return HttpNotFound();
+            }
+            return View(r);
+        } 
     }
 }
