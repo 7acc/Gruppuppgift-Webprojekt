@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
+﻿using System.Security.Claims;
 using System.Threading.Tasks;
-using System.Web;
-using Owin;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
 using ViewModels.VyModels;
 using Webb4___MVC.Models.User;
 using Webb4_businesslayer;
 using Webb4___MVC.Models;
+using System.Web;
+
 
 
 namespace Webb4___MVC.Controllers
