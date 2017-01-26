@@ -99,5 +99,7 @@ namespace Webb4___MVC.Controllers
             await UserDataMapping.FromBltoUiDeleteAsync(id);
             return RedirectToAction("Index");
         }
+
+       
     }
 }

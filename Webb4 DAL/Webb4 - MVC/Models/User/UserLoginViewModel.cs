@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace Webb4___MVC.Models.User
+namespace Webb4___MVC.Models
 {
     public class UserLoginViewModel
     {

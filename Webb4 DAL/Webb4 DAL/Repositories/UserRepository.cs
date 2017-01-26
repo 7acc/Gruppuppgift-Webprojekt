@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Webb4_DAL.IRepositories;
+using Webb4_DAL.Models;
 
 namespace Webb4_DAL.Repositories
 {
@@ -55,6 +56,15 @@ namespace Webb4_DAL.Repositories
         {
             DbSet.Remove(entity);
             await _dbContext.SaveChangesAsync();
+        }
+
+        public UserData LoginUser(string Email, string password)
+        {
+            using (var ctx = new Webb4Context())
+            {
+                var userToLogin = ctx.UserDatagDataModels.FirstOrDefault(x => x.Email == Email && x.Password == password);
+                return userToLogin;
+            }
         }
     }
 }

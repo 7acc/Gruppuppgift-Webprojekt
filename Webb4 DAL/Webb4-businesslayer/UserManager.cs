@@ -1,17 +1,28 @@
 ﻿
+using System.Threading.Tasks;
+using ViewModels.VyModels;
+using Webb4_businesslayer.HelpMapper;
 using Webb4_DAL;
-using Webb4_DAL.Repositories;
 using Webb4_DAL.Models;
+using Webb4_DAL.Repositories;
+
 
 namespace Webb4_businesslayer
 {
-    class UserManager
+   public class UserManager
     {
         UserRepository<UserData> userRepository = new UserRepository<UserData>(new Webb4Context());
         
-        //public bool LogInUser(UserLoginViewModel User)
-        //{
-        //    UserDataModel userToLogIn = userRepository.
-        //}
+        public async Task<UserDataViewModel> GetUserToLogin(string Email, string password)
+        {
+            UserDataViewModel userToLogin = null;
+
+            var user = userRepository.LoginUser(Email, password);
+            if (user != null)
+            {
+                userToLogin = await UserDataMapping.FromBltoUiGetById(user.Id);
+            }
+            return userToLogin;
+        }
     }
 }

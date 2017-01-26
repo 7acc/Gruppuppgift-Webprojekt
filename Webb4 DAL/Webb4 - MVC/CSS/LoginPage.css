@@ -23,7 +23,7 @@
 
 
 #ContentBox{
-     background-color: rgba(255, 255, 255, 0.9); /* Color white with alpha 0.9*/
+     background-color: rgba(255, 255, 255, 0.8); /* Color white with alpha 0.9*/
     position: absolute;
     text-align: center;
    height:auto;
@@ -40,12 +40,14 @@
 #FormContent {
 font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
      position: relative;
-    display: inline-block
+    display: inline-block;
+    width: auto;
+    height: auto;
  
 }
-#FormContent h2{
+#FormContent h1{
   color:darkgoldenrod;
 }
 #FormContent hr{
-  width:400px;
+  width:100%;
 }
