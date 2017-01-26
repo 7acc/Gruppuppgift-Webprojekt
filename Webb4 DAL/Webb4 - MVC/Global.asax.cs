@@ -17,6 +17,10 @@ namespace Webb4___MVC
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             
             AutoMapperConfig.RegisterMappings();
+
+
+            System.Web.Helpers.AntiForgeryConfig.UniqueClaimTypeIdentifier =
+          System.Security.Claims.ClaimTypes.NameIdentifier;
         }
     }
 }

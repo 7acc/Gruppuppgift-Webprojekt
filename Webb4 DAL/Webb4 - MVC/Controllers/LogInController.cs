@@ -34,8 +34,7 @@ namespace Webb4___MVC.Controllers
                 return View(userToLogIn);
             }
             await LogInUser(userToLogIn.Email, userToLogIn.Password);
-                return RedirectToAction("Index", "Home");
-            
+            return RedirectToAction("Index", "Home");
 
         }
 
@@ -49,7 +48,7 @@ namespace Webb4___MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                
+
             }
             return RedirectToAction("Index");
         }
@@ -70,7 +69,7 @@ namespace Webb4___MVC.Controllers
 
         private void SignInUser(UserDataViewModel userToLogin)
         {
-                 
+
             {
                 var identity = new ClaimsIdentity(new[]
                  {
@@ -78,8 +77,8 @@ namespace Webb4___MVC.Controllers
                     new Claim(ClaimTypes.Email, userToLogin.Email),
                     new Claim(ClaimTypes.Sid, userToLogin.Id.ToString()),
                     new Claim(ClaimTypes.NameIdentifier, userToLogin.Id.ToString()),
-                  
-                },"ApplicationCookie");
+
+                }, "ApplicationCookie");
 
                 var ctx = Request.GetOwinContext();
                 var authManager = ctx.Authentication;
@@ -87,7 +86,7 @@ namespace Webb4___MVC.Controllers
 
 
                 authManager.SignIn(identity);
-            
+
             }
         }
     }
