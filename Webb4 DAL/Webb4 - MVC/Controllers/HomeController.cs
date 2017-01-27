@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using ViewModels.VyModels;
 using Webb4_businesslayer.HelpMapper;
+using System.Collections.Generic;
 
 namespace Webb4___MVC.Controllers
 {
@@ -19,9 +20,7 @@ namespace Webb4___MVC.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var g = ApartmentMapping.FromBltoUiGetAll();
-
-            return View(g);
+            return View();
         }
 
         // GET: /Apartment/Details
@@ -45,6 +44,14 @@ namespace Webb4___MVC.Controllers
                 return HttpNotFound();
             }
             return View(r);
-        } 
+        }
+
+        // GET: /UserData/Apartments // Alltså hämta en list av lägenheter som en user har gjort intresse för.
+        public ActionResult InterestApartment ()
+        {
+            var ListOfUsers = UserDataMapping.FromBltoUiGetAll();
+
+            return View(ListOfUsers);
+        }
     }
 }
