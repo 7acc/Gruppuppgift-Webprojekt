@@ -80,17 +80,23 @@ namespace Webb4_businesslayer
             var apartid= new ApartmentData();
             var userData = new List<UserData>
             {
-            new UserData{Id = Guid.NewGuid(),ApartmentId = apartid.Id, UserName="Chemistry"     ,Password="password", Email="Email@E.se", Address="HemLos",City="helsingobrg",Region="Skåne",PostalCode="1",Country="Sweden",Phone="0011223344", },
-            new UserData{Id = Guid.NewGuid(),ApartmentId = apartid.Id, UserName="Microeconomics",Password="password", Email="Email@E.se", Address="HemLos",City="helsingobrg",Region="Skåne",PostalCode="1",Country="Sweden",Phone="0011223344", },
-            new UserData{Id = Guid.NewGuid(),ApartmentId = apartid.Id, UserName="Macroeconomics",Password="password", Email="Email@E.se", Address="HemLos",City="helsingobrg",Region="Skåne",PostalCode="1",Country="Sweden",Phone="0011223344", },
-            new UserData{Id = Guid.NewGuid(),ApartmentId = apartid.Id, UserName="Calculus"      ,Password="password", Email="Email@E.se", Address="HemLos",City="helsingobrg",Region="Skåne",PostalCode="1",Country="Sweden",Phone="0011223344", },
-            new UserData{Id = Guid.NewGuid(),ApartmentId = apartid.Id, UserName="Trigonometry"  ,Password="password", Email="Email@E.se", Address="HemLos",City="helsingobrg",Region="Skåne",PostalCode="1",Country="Sweden",Phone="0011223344", },
-            new UserData{Id = Guid.NewGuid(),ApartmentId = apartid.Id, UserName="Composition"   ,Password="password", Email="Email@E.se", Address="HemLos",City="helsingobrg",Region="Skåne",PostalCode="1",Country="Sweden",Phone="0011223344", },
-            new UserData{Id = Guid.NewGuid(),ApartmentId = apartid.Id, UserName="Literature"    ,Password="password", Email="Email@E.se", Address="HemLos",City="helsingobrg",Region="Skåne",PostalCode="1",Country="Sweden",Phone="0011223344", }
+            new UserData{Id = Guid.NewGuid(),ApartmentId = apartid.Id, UserName="Ali"     ,Password="password", Email="Email@E.se", Address="HemLos",City="helsingobrg",Region="Skåne",PostalCode="1",Country="Sweden",Phone="0011223344", },
+            new UserData{Id = Guid.NewGuid(),ApartmentId = apartid.Id, UserName="Anders",Password="password", Email="Email@E.se", Address="HemLos",City="helsingobrg",Region="Skåne",PostalCode="1",Country="Sweden",Phone="0011223344", },
+            new UserData{Id = Guid.NewGuid(),ApartmentId = apartid.Id, UserName="Katrin",Password="password", Email="Email@E.se", Address="HemLos",City="helsingobrg",Region="Skåne",PostalCode="1",Country="Sweden",Phone="0011223344", },
+            new UserData{Id = Guid.NewGuid(),ApartmentId = apartid.Id, UserName="Anders"      ,Password="password", Email="Email@E.se", Address="HemLos",City="helsingobrg",Region="Skåne",PostalCode="1",Country="Sweden",Phone="0011223344", },
+            new UserData{Id = Guid.NewGuid(),ApartmentId = apartid.Id, UserName="Ali"  ,Password="password", Email="Email@E.se", Address="HemLos",City="helsingobrg",Region="Skåne",PostalCode="1",Country="Sweden",Phone="0011223344", },
+            new UserData{Id = Guid.NewGuid(),ApartmentId = apartid.Id, UserName="Katrin"   ,Password="password", Email="Email@E.se", Address="HemLos",City="helsingobrg",Region="Skåne",PostalCode="1",Country="Sweden",Phone="0011223344", },
+            new UserData{Id = Guid.NewGuid(),ApartmentId = apartid.Id, UserName="Password"    ,Password="password", Email="Email@E.se", Address="HemLos",City="helsingobrg",Region="Skåne",PostalCode="1",Country="Sweden",Phone="0011223344", }
             };
             userData.ForEach(s => context.UserDatagDataModels.Add(s));
+            var apartmentData = new List<ApartmentData>
+            {
+                new ApartmentData{Id = Guid.NewGuid(),BuildYear = 1980, ApartmentArea = 80, Floor = 4, Price = 8000, Address ="Långarödsvägen 99", City = "Helsingborg", Region = "Skåne", PostalCode ="23554", Country ="Sverige", Available =DateTime.Now.AddDays(5), DeadlineDate = DateTime.Now.AddDays(15)},
+                new ApartmentData{Id = Guid.NewGuid(),BuildYear = 1977, ApartmentArea = 80, Floor = 4, Price = 8000, Address ="Långarödsvägen 99", City = "Helsingborg", Region = "Skåne", PostalCode ="23554", Country ="Sverige", Available =DateTime.Now.AddDays(5), DeadlineDate = DateTime.Now.AddDays(15)},
+                new ApartmentData{Id = Guid.NewGuid(),BuildYear = 2000, ApartmentArea = 80, Floor = 4, Price = 8000, Address ="Långarödsvägen 99", City = "Helsingborg", Region = "Skåne", PostalCode ="23554", Country ="Sverige", Available =DateTime.Now.AddDays(5), DeadlineDate = DateTime.Now.AddDays(15)},
+                new ApartmentData{Id = Guid.NewGuid(),BuildYear = 2005, ApartmentArea = 80, Floor = 4, Price = 8000, Address ="Långarödsvägen 99", City = "Helsingborg", Region = "Skåne", PostalCode ="23554", Country ="Sverige", Available =DateTime.Now.AddDays(5), DeadlineDate = DateTime.Now.AddDays(15)},
+                new ApartmentData{Id = Guid.NewGuid(),BuildYear = 1999, ApartmentArea = 80, Floor = 4, Price = 8000, Address ="Långarödsvägen 99", City = "Helsingborg", Region = "Skåne", PostalCode ="23554", Country ="Sverige", Available =DateTime.Now.AddDays(5), DeadlineDate = DateTime.Now.AddDays(15)}
+            };
 
-           
-        }
-    }
+        }                            
 }
