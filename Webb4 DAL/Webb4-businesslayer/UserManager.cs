@@ -1,6 +1,7 @@
 ﻿
 using System.Threading.Tasks;
 using ViewModels.VyModels;
+
 using Webb4_businesslayer.HelpMapper;
 using Webb4_DAL;
 using Webb4_DAL.Models;
@@ -27,6 +28,10 @@ namespace Webb4_businesslayer
                 userToLogin = await UserDataMapping.FromBltoUiGetById(user.Id);
             }
             return userToLogin;
+        }
+        public void RegisterUser(UserDataViewModel Newuser)
+        {
+             UserDataMapping.FromBltoUiInser(Newuser);
         }
     }
 }
