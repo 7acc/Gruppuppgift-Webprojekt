@@ -44,11 +44,14 @@ namespace Webb4___MVC.Controllers
             return PartialView();
         }
 
-        public ActionResult Register(UserRegisterViewModel newUser)
+        public ActionResult Register(UserDataViewModel newUser)
         {
             if (ModelState.IsValid)
             {
-
+                var usermng = new UserManager();
+                usermng.RegisterUser(newUser);
+                ViewBag.msg = "Register Succsesfull";
+                return RedirectToAction("index");
             }
             return RedirectToAction("Index");
         }
