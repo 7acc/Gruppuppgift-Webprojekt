@@ -31,10 +31,14 @@ namespace Webb4___MVC.Controllers
             {
                 ModelState.AddModelError("", "You Did Something Wrong");
 
-                return View(userToLogIn);
+                return View("Index", userToLogIn);
             }
-            await LogInUser(userToLogIn.Email, userToLogIn.Password);
-            return RedirectToAction("Index", "Home");
+            if(await LogInUser(userToLogIn.Email, userToLogIn.Password))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            ModelState.AddModelError("", "Wrong");
+            return View("Index", userToLogIn);
 
         }
 
