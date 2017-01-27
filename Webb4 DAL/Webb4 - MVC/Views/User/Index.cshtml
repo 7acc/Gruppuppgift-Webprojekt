@@ -12,9 +12,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.ApartmentId)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.UserName)
         </th>
         <th>
@@ -47,9 +44,6 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.ApartmentId)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.UserName)
         </td>
         <td>
@@ -77,15 +71,9 @@
             @Html.DisplayFor(modelItem => item.Phone)
         </td>
         <td>
-            @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |*@
-            @*@Html.ActionLink("Details", "Details", new { id=item.Id }) |*@
-
-            @Html.ActionLink("aaaEdit", "UserDetailsEdit", "Home", new { id = item.Id }, null) |
-            @Html.ActionLink("aaa", "UserDetails", "Home", new { id = item.Id }, null) |
-            @*Använder detta för att skicka direkt HOMEController /UserDetails för att login ej fixat*@
-
-
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

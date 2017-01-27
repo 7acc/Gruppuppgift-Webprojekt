@@ -12,40 +12,41 @@ namespace Webb4_businesslayer.HelpMapper
 {
     public class FormHousingDataMapping
     {
-        static FormHousingDataModelIRepository<FormHousingData> _FormHousingRepository = new FormHousingDataModelIRepository<FormHousingData>(new Webb4Context());
+        // FormHousingDataModelIRepository<FormHousingData> _genericRepository = new FormHousingDataModelIRepository<FormHousingData>(new Webb4Context());
+        GenericRepository<FormHousingData> _genericRepository = new GenericRepository<FormHousingData>(new Webb4Context());
 
-        public static IEnumerable<FormHousingViewModel> FromBltoUiGetAll()
+        public  IEnumerable<FormHousingViewModel> FromBltoUiGetAll()
         {
-            var getData = _FormHousingRepository.GetAll().ToList();
+            var getData = _genericRepository.GetAll().ToList();
             var randomItem = Mapper.Map<List<FormHousingData>, IEnumerable<FormHousingViewModel>>(getData);
             return randomItem;
         }
 
-        public static async Task<FormHousingViewModel> FromBltoUiGetById(Guid id)
+        public  async Task<FormHousingViewModel> FromBltoUiGetById(int id)
         {
-            var getRepo = await _FormHousingRepository.GetByIdAsync(id);
+            var getRepo = await _genericRepository.GetByIdAsync(id);
             var detailsId = Mapper.Map<FormHousingData, FormHousingViewModel>(getRepo);
             return detailsId;
         }
 
-        public static async Task FromBltoUiInser(FormHousingViewModel housing)
+        public  async Task FromBltoUiInser(FormHousingViewModel housing)
         {
             var addMap = Mapper.Map<FormHousingViewModel, FormHousingData>(housing);
-            await _FormHousingRepository.InsertAsync(addMap);
+            await _genericRepository.InsertAsync(addMap);
 
         }
 
-        public static async Task FromBltoUiEditAsync(FormHousingViewModel housing)
+        public  async Task FromBltoUiEditAsync(FormHousingViewModel housing)
         {
             var editMap = Mapper.Map<FormHousingViewModel, FormHousingData>(housing);
-            await _FormHousingRepository.EditAsync(editMap);
+            await _genericRepository.EditAsync(editMap);
 
         }
 
-        public static async Task FromBltoUiDeleteAsync(Guid id)
+        public  async Task FromBltoUiDeleteAsync(int id)
         {
-            var getFromR = await _FormHousingRepository.GetByIdAsync(id);
-            await _FormHousingRepository.DeleteAsync(getFromR);
+            var getFromR = await _genericRepository.GetByIdAsync(id);
+            await _genericRepository.DeleteAsync(getFromR);
 
         }
     }

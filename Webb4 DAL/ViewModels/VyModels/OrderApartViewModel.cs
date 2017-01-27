@@ -14,9 +14,9 @@ namespace ViewModels.VyModels
         [Key]
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
-        public Guid? UserId { get; set; }
+        public int? UserId { get; set; }
         public DateTime? InterestDate { get; set; } // Intresseanmälan
         public DateTime? RequiredDate { get; set; }
         public DateTime? OccupancyDate { get; set; } // Inflyttningsdatum

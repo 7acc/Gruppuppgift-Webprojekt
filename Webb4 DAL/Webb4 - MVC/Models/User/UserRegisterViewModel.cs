@@ -8,7 +8,7 @@ namespace Webb4___MVC.Models.User
 {
     public class UserRegisterViewModel
     {
-        public Guid UserId { get; set; }
+        public int UserId { get; set; }
 
         [Required(ErrorMessage = "UserName Is Required")]
         public string UserName { get; set; }

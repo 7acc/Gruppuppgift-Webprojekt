@@ -9,6 +9,13 @@ namespace Webb4___MVC.Controllers
 {
     public class HomeController : Controller
     {
+        public ApartmentMapping ApartmentMapping { get; set; }
+        public UserDataMapping UserDataMapping { get; set; }
+        public HomeController()
+        {
+            ApartmentMapping = new ApartmentMapping();
+            UserDataMapping = new UserDataMapping();
+        }
         // GET: Home
         public ActionResult Index()
         {
@@ -18,7 +25,7 @@ namespace Webb4___MVC.Controllers
         }
 
         // GET: /Apartment/Details
-        public async Task<ActionResult> Details(Guid id)
+        public async Task<ActionResult> Details(int id)
         {
             var r = await ApartmentMapping.FromBltoUiGetById(id);
             if (r == null)
@@ -30,7 +37,7 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /UserData/Details/5
-        public async Task<ActionResult> UserDetails(Guid id)
+        public async Task<ActionResult> UserDetails(int id)
         {
             var r = await UserDataMapping.FromBltoUiGetById(id);
             if (r == null)

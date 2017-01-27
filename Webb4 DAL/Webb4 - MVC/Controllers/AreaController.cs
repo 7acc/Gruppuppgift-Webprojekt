@@ -10,6 +10,12 @@ namespace Webb4___MVC.Controllers
 {
     public class AreaController : Controller
     {
+
+        public AreaMapping AreaMapping { get; set; }
+        public AreaController()
+        {
+            AreaMapping = new AreaMapping();
+        }
         // GET: /Area/
         public ActionResult Index()
         {
@@ -19,7 +25,7 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /Area/Details/5
-        public async Task<ActionResult> Details(Guid id)
+        public async Task<ActionResult> Details(int id)
         {
             var r = await AreaMapping.FromBltoUiGetById(id);
             if (r == null)
@@ -44,7 +50,7 @@ namespace Webb4___MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                area.Id = Guid.NewGuid();
+               
                 await AreaMapping.FromBltoUiInser(area);
                 return RedirectToAction("Index");
             }
@@ -54,7 +60,7 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /Area/Edit/5
-        public async Task<ActionResult> Edit(Guid id)
+        public async Task<ActionResult> Edit(int id)
         {
 
             var editMap = await AreaMapping.FromBltoUiGetById(id);
@@ -82,7 +88,7 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /Area/Delete/5
-        public async Task<ActionResult> Delete(Guid id)
+        public async Task<ActionResult> Delete(int id)
         {
             var getFromR = await AreaMapping.FromBltoUiGetById(id);
             if (getFromR == null)
@@ -96,7 +102,7 @@ namespace Webb4___MVC.Controllers
         // POST: /Area/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(Guid id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
             await AreaMapping.FromBltoUiDeleteAsync(id);
             return RedirectToAction("Index");

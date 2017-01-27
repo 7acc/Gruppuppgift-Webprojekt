@@ -12,7 +12,7 @@ namespace ViewModels.VyModels
             FeatureApartment = new HashSet<ApartmentViewModel>();
         }
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public bool Elevator { get; set; }
         public bool Balcony { get; set; }
         public bool Comhem { get; set; }

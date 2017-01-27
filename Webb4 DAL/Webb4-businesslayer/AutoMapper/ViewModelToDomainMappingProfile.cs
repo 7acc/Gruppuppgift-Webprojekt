@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using AutoMapper;
 using ViewModels.VyModels;
 using Webb4_DAL.Models;
@@ -19,8 +15,8 @@ namespace Webb4_businesslayer.AutoMapper
 
         protected override void Configure()
         {
-            //CreateMap<AdressViewModel, AdressData>()
-            //    .ForMember(dto => dto.AdressApartmentM, opt => opt.MapFrom(src => src.AdressApartment));
+            CreateMap<AreaViewModel, ApartmentViewModel>()
+                .ForMember(dto => dto.ApartmentAreaV, opt => opt.MapFrom(src => src.AreaApartment));
             CreateMap<ApartmentViewModel, ApartmentData>()
                   .ForMember(dto => dto.ApartmentPhotoM, opt => opt.MapFrom(src => src.ApartmentPhoto))
                 .ForMember(dto => dto.ApartmentAreaM, opt => opt.MapFrom(src => src.ApartmentAreaV))
@@ -39,7 +35,7 @@ namespace Webb4_businesslayer.AutoMapper
             CreateMap<SizeViewModel, SizeData>()
                  .ForMember(dto => dto.SizeApartmentM, opt => opt.MapFrom(src => src.SizeApartment));
             CreateMap<UserDataViewModel, UserData>()
-                .ForMember(dto => dto.UserApart, opt => opt.MapFrom(src => src.UserApart));
+                .ForMember(dto => dto.UserApartmentM, opt => opt.MapFrom(src => src.ApartmentDatasV));
             CreateMap<OrderApartViewModel, OrderApart>()
                .ForMember(dto => dto.OrderAddress, opt => opt.MapFrom(src => src.OrderAddress))
                .ForMember(dto => dto.OrderCity, opt => opt.MapFrom(src => src.OrderCity))

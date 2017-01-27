@@ -8,6 +8,11 @@ namespace Webb4___MVC.Controllers
 {
     public class SizeController : Controller
     {
+        public SizeDataMapping SizeDataMapping { get; set; }
+        public SizeController()
+        {
+            SizeDataMapping = new SizeDataMapping();
+        }
         // GET: /SizeData/
         public ActionResult Index()
         {
@@ -17,7 +22,7 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /SizeData/Details/5
-        public async Task<ActionResult> Details(Guid id)
+        public async Task<ActionResult> Details(int id)
         {
             var r = await SizeDataMapping.FromBltoUiGetById(id);
             if (r == null)
@@ -42,7 +47,7 @@ namespace Webb4___MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                size.Id = Guid.NewGuid();
+               
                 await SizeDataMapping.FromBltoUiInser(size);
                 return RedirectToAction("Index");
             }
@@ -52,7 +57,7 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /SizeData/Edit/5
-        public async Task<ActionResult> Edit(Guid id)
+        public async Task<ActionResult> Edit(int id)
         {
 
             var editMap = await SizeDataMapping.FromBltoUiGetById(id);
@@ -80,7 +85,7 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /SizeData/Delete/5
-        public async Task<ActionResult> Delete(Guid id)
+        public async Task<ActionResult> Delete(int id)
         {
             var getFromR = await SizeDataMapping.FromBltoUiGetById(id);
             if (getFromR == null)
@@ -94,7 +99,7 @@ namespace Webb4___MVC.Controllers
         // POST: /SizeData/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(Guid id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
             await SizeDataMapping.FromBltoUiDeleteAsync(id);
             return RedirectToAction("Index");

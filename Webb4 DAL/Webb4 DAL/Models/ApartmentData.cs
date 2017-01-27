@@ -10,14 +10,14 @@ namespace Webb4_DAL.Models
         {
             ApartmentUserM = new HashSet<UserData>();
         }
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
 
-        public Guid? FormHId { get; set; }
-        public Guid? SizeId { get; set; }
-        public Guid? FeatureId { get; set; }
-        public Guid? AreaId { get; set; }
-        public Guid? ApartImgId { get; set; }
+        public int? FormHId { get; set; }
+        public int? SizeId { get; set; }
+        public int? FeatureId { get; set; }
+        public int? AreaId { get; set; }
+        public int? ApartImgId { get; set; }
         public int BuildYear { get; set; }
         public decimal ApartmentArea { get; set; }
         public virtual string QuantityRooms { get; set; }

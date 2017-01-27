@@ -11,7 +11,7 @@ namespace Webb4_DAL.Models
             SizeApartmentM = new HashSet<ApartmentData>();
         }
         
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string SizekName { get; set; }
         public string Description { get; set; }
 

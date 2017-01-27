@@ -6,8 +6,14 @@ using Webb4_businesslayer.HelpMapper;
 
 namespace Webb4___MVC.Controllers
 {
+
     public class UserController : Controller
     {
+        public UserDataMapping UserDataMapping { get; set; }
+        public UserController()
+        {
+            UserDataMapping = new UserDataMapping();
+        }
         // GET: /UserData/
         public ActionResult Index()
         {
@@ -17,7 +23,7 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /UserData/Details/5
-        public async Task<ActionResult> Details(Guid id)
+        public async Task<ActionResult> Details(int id)
         {
             var r = await UserDataMapping.FromBltoUiGetById(id);
             if (r == null)
@@ -42,7 +48,7 @@ namespace Webb4___MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                user.Id = Guid.NewGuid();
+               
                 await UserDataMapping.FromBltoUiInser(user);
                 return RedirectToAction("Index");
             }
@@ -52,7 +58,7 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /UserData/Edit/5
-        public async Task<ActionResult> Edit(Guid id)
+        public async Task<ActionResult> Edit(int id)
         {
 
             var editMap = await UserDataMapping.FromBltoUiGetById(id);
@@ -80,7 +86,7 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /UserData/Delete/5
-        public async Task<ActionResult> Delete(Guid id)
+        public async Task<ActionResult> Delete(int id)
         {
             var getFromR = await UserDataMapping.FromBltoUiGetById(id);
             if (getFromR == null)
@@ -94,7 +100,7 @@ namespace Webb4___MVC.Controllers
         // POST: /UserData/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(Guid id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
             await UserDataMapping.FromBltoUiDeleteAsync(id);
             return RedirectToAction("Index");

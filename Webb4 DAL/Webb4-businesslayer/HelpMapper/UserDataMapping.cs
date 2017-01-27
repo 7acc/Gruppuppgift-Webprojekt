@@ -12,40 +12,41 @@ namespace Webb4_businesslayer.HelpMapper
 {
     public class UserDataMapping
     {
-        static UserRepository<UserData> _userRepository = new UserRepository<UserData>(new Webb4Context());
+        // UserRepository<UserData> _genericRepository = new UserRepository<UserData>(new Webb4Context());
+        GenericRepository<UserData> _genericRepository = new GenericRepository<UserData>(new Webb4Context());
 
-        public static IEnumerable<UserDataViewModel> FromBltoUiGetAll()
+        public  IEnumerable<UserDataViewModel> FromBltoUiGetAll()
         {
-            var getData = _userRepository.GetAll().ToList();
+            var getData = _genericRepository.GetAll().ToList();
             var randomItem = Mapper.Map<List<UserData>, IEnumerable<UserDataViewModel>>(getData);
             return randomItem;
         }
 
-        public static async Task<UserDataViewModel> FromBltoUiGetById(Guid id)
+        public  async Task<UserDataViewModel> FromBltoUiGetById(int id)
         {
-            var getRepo = await _userRepository.GetByIdAsync(id);
+            var getRepo = await _genericRepository.GetByIdAsync(id);
             var detailsId = Mapper.Map<UserData, UserDataViewModel>(getRepo);
             return detailsId;
         }
 
-        public static async Task FromBltoUiInser(UserDataViewModel user)
+        public  async Task FromBltoUiInser(UserDataViewModel user)
         {
             var addMap = Mapper.Map<UserDataViewModel, UserData>(user);
-            await _userRepository.InsertAsync(addMap);
+            await _genericRepository.InsertAsync(addMap);
 
         }
 
-        public static async Task FromBltoUiEditAsync(UserDataViewModel user)
+        public  async Task FromBltoUiEditAsync(UserDataViewModel user)
         {
             var editMap = Mapper.Map<UserDataViewModel, UserData>(user);
-            await _userRepository.EditAsync(editMap);
+            await _genericRepository.EditAsync(editMap);
 
         }
 
-        public static async Task FromBltoUiDeleteAsync(Guid id)
+        public  async Task FromBltoUiDeleteAsync(int id)
         {
-            var getFromR = await _userRepository.GetByIdAsync(id);
-            await _userRepository.DeleteAsync(getFromR);
+            var getFromR = await _genericRepository.GetByIdAsync(id);
+            await _genericRepository.DeleteAsync(getFromR);
 
         }
     }

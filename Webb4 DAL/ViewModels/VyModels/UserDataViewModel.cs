@@ -13,14 +13,14 @@ namespace ViewModels.VyModels
     {
         public UserDataViewModel()
         {
-            //this.WatchListM = new HashSet<ApartmentData>();
+            this.ApartmentDatasV = new HashSet<ApartmentData>();
         }
         [Key]
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
-        public Guid? ApartmentId { get; set; }
+        //public int? ApartmentId { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
@@ -31,7 +31,7 @@ namespace ViewModels.VyModels
         public string Country { get; set; }
         public string Phone { get; set; }
 
-        public ApartmentData UserApart { get; set; }
-        //public virtual ICollection<ApartmentData> ApartmentDatas { get; set; }
+        //public ApartmentData UserApart { get; set; }
+        public virtual ICollection<ApartmentData> ApartmentDatasV { get; set; }
     }
 }

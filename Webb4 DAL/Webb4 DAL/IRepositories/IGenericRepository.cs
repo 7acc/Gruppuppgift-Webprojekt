@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace Webb4_DAL.IRepositories
 {
-    public interface IAreaDataModel<TEntity>
+    public interface IGenericRepository<TEntity>
     {
 
-        Task<TEntity> GetByIdAsync(Guid id);
+        Task<TEntity> GetByIdAsync(int id);
 
         IQueryable<TEntity> SearchFor(Expression<Func<TEntity, bool>> predicate);
 

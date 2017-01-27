@@ -12,40 +12,40 @@ namespace Webb4_businesslayer.HelpMapper
 {
    public class ApartmentPhotoDataMapping
     {
-        static AppartmentPhotoDataModelRepository<ApartmentPhotoData> _appartmentPhotoRepository = new AppartmentPhotoDataModelRepository<ApartmentPhotoData>(new Webb4Context());
-
-        public static IEnumerable<ApartmentPhotoViewModel> FromBltoUiGetAll()
+        // AppartmentPhotoDataModelRepository<ApartmentPhotoData> _genericRepository = new AppartmentPhotoDataModelRepository<ApartmentPhotoData>(new Webb4Context());
+        GenericRepository<ApartmentPhotoData> _genericRepository = new GenericRepository<ApartmentPhotoData>(new Webb4Context());
+        public  IEnumerable<ApartmentPhotoViewModel> FromBltoUiGetAll()
         {
-            var getData = _appartmentPhotoRepository.GetAll().ToList();
+            var getData = _genericRepository.GetAll().ToList();
             var randomItem = Mapper.Map<List<ApartmentPhotoData>, IEnumerable<ApartmentPhotoViewModel>>(getData);
             return randomItem;
         }
 
-        public static async Task<ApartmentPhotoViewModel> FromBltoUiGetById(Guid id)
+        public  async Task<ApartmentPhotoViewModel> FromBltoUiGetById(int id)
         {
-            var getRepo = await _appartmentPhotoRepository.GetByIdAsync(id);
+            var getRepo = await _genericRepository.GetByIdAsync(id);
             var detailsId = Mapper.Map<ApartmentPhotoData, ApartmentPhotoViewModel>(getRepo);
             return detailsId;
         }
 
-        public static async Task FromBltoUiInser(ApartmentPhotoViewModel appart)
+        public  async Task FromBltoUiInser(ApartmentPhotoViewModel appart)
         {
             var addMap = Mapper.Map<ApartmentPhotoViewModel, ApartmentPhotoData>(appart);
-            await _appartmentPhotoRepository.InsertAsync(addMap);
+            await _genericRepository.InsertAsync(addMap);
 
         }
 
-        public static async Task FromBltoUiEditAsync(ApartmentPhotoViewModel appart)
+        public  async Task FromBltoUiEditAsync(ApartmentPhotoViewModel appart)
         {
             var editMap = Mapper.Map<ApartmentPhotoViewModel, ApartmentPhotoData>(appart);
-            await _appartmentPhotoRepository.EditAsync(editMap);
+            await _genericRepository.EditAsync(editMap);
 
         }
 
-        public static async Task FromBltoUiDeleteAsync(Guid id)
+        public  async Task FromBltoUiDeleteAsync(int id)
         {
-            var getFromR = await _appartmentPhotoRepository.GetByIdAsync(id);
-            await _appartmentPhotoRepository.DeleteAsync(getFromR);
+            var getFromR = await _genericRepository.GetByIdAsync(id);
+            await _genericRepository.DeleteAsync(getFromR);
 
         }
     }

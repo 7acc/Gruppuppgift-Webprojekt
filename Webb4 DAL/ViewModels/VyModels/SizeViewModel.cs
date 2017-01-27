@@ -11,7 +11,7 @@ namespace ViewModels.VyModels
             this.SizeApartment = new HashSet<ApartmentViewModel>();
         }
        [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string SizekName { get; set; }
         public string Description { get; set; }
 

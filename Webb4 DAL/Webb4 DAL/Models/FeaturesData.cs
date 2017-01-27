@@ -11,7 +11,7 @@ namespace Webb4_DAL.Models
             this.FeatureApartmentM = new HashSet<ApartmentData>();
         }
 
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public bool Elevator { get; set; }
         public bool Balcony { get; set; }
         public bool Comhem { get; set; }

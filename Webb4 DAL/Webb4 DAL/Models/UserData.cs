@@ -9,14 +9,14 @@ namespace Webb4_DAL.Models
     {
         public UserData()
         {
-            //this.WatchListM = new HashSet<ApartmentData>();
+            this.UserApartmentM = new HashSet<ApartmentData>();
         }
         //[Key]
         //[Required]
         //[DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
-        public Guid? ApartmentId { get; set; }
+        //public int? ApartmentId { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
@@ -27,7 +27,7 @@ namespace Webb4_DAL.Models
         public string Country { get; set; }
         public string Phone { get; set; }
 
-        public ApartmentData UserApart { get; set; }
-        //public virtual ICollection<ApartmentData> ApartmentDatasM { get; set; }
+        //public ApartmentData UserApart { get; set; }
+        public virtual ICollection<ApartmentData> UserApartmentM{ get; set; }
     }
 }

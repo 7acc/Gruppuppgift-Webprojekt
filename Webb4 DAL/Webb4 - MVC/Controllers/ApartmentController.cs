@@ -10,6 +10,21 @@ namespace Webb4___MVC.Controllers
     
     public class ApartmentController : Controller
     {
+        private ApartmentMapping ApartmentMapping { get; set; }
+        private ApartmentPhotoDataMapping ApartmentPhotoDataMapping { get; set; }
+        private AreaMapping AreaMapping { get; set; }
+        private FeaturesDataMapping FeaturesDataMapping { get; set; }
+        private SizeDataMapping SizeDataMapping { get; set; }
+        private FormHousingDataMapping FormHousingDataMapping { get; set; }
+        public ApartmentController()
+        {
+            ApartmentMapping = new ApartmentMapping();
+            ApartmentPhotoDataMapping = new ApartmentPhotoDataMapping();
+            AreaMapping = new AreaMapping();
+            FeaturesDataMapping = new FeaturesDataMapping();
+            SizeDataMapping = new SizeDataMapping();
+            FormHousingDataMapping = new FormHousingDataMapping();
+        }
 
         // GET: /Apartment/
         public ActionResult Index()
@@ -20,7 +35,7 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /Apartment/Details/5
-        public async Task<ActionResult> Details(Guid id)
+        public async Task<ActionResult> Details(int id)
         {
             var r = await ApartmentMapping.FromBltoUiGetById(id);
             if (r == null)
@@ -34,6 +49,11 @@ namespace Webb4___MVC.Controllers
         // GET: /Apartment/Create
         public ActionResult Create()
         {
+            //ViewBag.ApartmentPhoto = new SelectList(ApartmentPhotoDataMapping.FromBltoUiGetAll(), "Id", "Url");
+            ViewBag.AreaViewModelId = new SelectList(AreaMapping.FromBltoUiGetAll(), "AreaViewModelId", "AreaName");
+            //ViewBag.ApartmentFeatureM_Id = new SelectList(FeaturesDataMapping.FromBltoUiGetAll(), "Id", "Id");
+            //ViewBag.ApartmentFormHousingM_Id = new SelectList(FormHousingDataMapping.FromBltoUiGetAll(), "Id", "FormOfHousing");
+            //ViewBag.ApartmentSizeM_Id = new SelectList(SizeDataMapping.FromBltoUiGetAll(), "Id", "SizekName");
             return View();
         }
 
@@ -45,17 +65,23 @@ namespace Webb4___MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                appart.Id = Guid.NewGuid();
+                
                 await ApartmentMapping.FromBltoUiInser(appart);
+
+                //ViewBag.ApartmentPhoto = new SelectList(ApartmentPhotoDataMapping.FromBltoUiGetAll(), "Id", "Url");
+                ViewBag.AreaViewModelId = new SelectList(AreaMapping.FromBltoUiGetAll(), "AreaViewModelId", "AreaName");
+                //ViewBag.ApartmentFeatureM_Id = new SelectList(FeaturesDataMapping.FromBltoUiGetAll(), "Id", "Id");
+                //ViewBag.ApartmentFormHousingM_Id = new SelectList(FormHousingDataMapping.FromBltoUiGetAll(), "Id", "FormOfHousing");
+                //ViewBag.ApartmentSizeM_Id = new SelectList(SizeDataMapping.FromBltoUiGetAll(), "Id", "SizekName");
                 return RedirectToAction("Index");
             }
-
+           
             return View(appart);
         }
 
         //
         // GET: /Apartment/Edit/5
-        public async Task<ActionResult> Edit(Guid id)
+        public async Task<ActionResult> Edit(int id)
         {
 
             var editMap = await ApartmentMapping.FromBltoUiGetById(id);
@@ -83,7 +109,7 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /Apartment/Delete/5
-        public async Task<ActionResult> Delete(Guid id)
+        public async Task<ActionResult> Delete(int id)
         {
             var getFromR = await ApartmentMapping.FromBltoUiGetById(id);
             if (getFromR == null)
@@ -97,7 +123,7 @@ namespace Webb4___MVC.Controllers
         // POST: /Apartment/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(Guid id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
             await ApartmentMapping.FromBltoUiDeleteAsync(id);
             return RedirectToAction("Index");

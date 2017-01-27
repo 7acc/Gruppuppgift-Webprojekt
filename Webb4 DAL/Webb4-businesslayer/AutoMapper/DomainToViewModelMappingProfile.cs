@@ -14,8 +14,8 @@ namespace Webb4_businesslayer.AutoMapper
 
         protected override void Configure()
         {
-            //CreateMap<AdressData, AdressViewModel>()
-            //     .ForMember(dto => dto.AdressApartment, opt => opt.MapFrom(src => src.AdressApartmentM));
+            CreateMap<ApartmentData, AreaViewModel>()
+                 .ForMember(dto => dto.AreaApartment, opt => opt.MapFrom(src => src.ApartmentAreaM));
             CreateMap<ApartmentData, ApartmentViewModel>()
                 .ForMember(dto => dto.ApartmentPhoto, opt => opt.MapFrom(src => src.ApartmentPhotoM))
                 .ForMember(dto => dto.ApartmentAreaV, opt => opt.MapFrom(src => src.ApartmentAreaM))
@@ -34,7 +34,7 @@ namespace Webb4_businesslayer.AutoMapper
             CreateMap<SizeData, SizeViewModel>()
                  .ForMember(dto => dto.SizeApartment, opt => opt.MapFrom(src => src.SizeApartmentM));
             CreateMap<UserData, UserDataViewModel>()
-                .ForMember(dto => dto.UserApart, opt => opt.MapFrom(src => src.UserApart));
+                .ForMember(dto => dto.ApartmentDatasV, opt => opt.MapFrom(src => src.UserApartmentM));
             CreateMap<OrderApart, OrderApartViewModel>()
                .ForMember(dto => dto.OrderAddress, opt => opt.MapFrom(src => src.OrderAddress))
                .ForMember(dto => dto.OrderCity, opt => opt.MapFrom(src => src.OrderCity))

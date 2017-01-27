@@ -8,6 +8,11 @@ namespace Webb4___MVC.Controllers
 {
     public class FormHousingController : Controller
     {
+        public FormHousingDataMapping FormHousingDataMapping { get; set; }
+        public FormHousingController()
+        {
+            FormHousingDataMapping = new FormHousingDataMapping();
+        }
         // GET: /FormHousing/
         public ActionResult Index()
         {
@@ -17,7 +22,7 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /FormHousing/Details/5
-        public async Task<ActionResult> Details(Guid id)
+        public async Task<ActionResult> Details(int id)
         {
             var r = await FormHousingDataMapping.FromBltoUiGetById(id);
             if (r == null)
@@ -42,7 +47,7 @@ namespace Webb4___MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                housing.Id = Guid.NewGuid();
+               
                 await FormHousingDataMapping.FromBltoUiInser(housing);
                 return RedirectToAction("Index");
             }
@@ -52,7 +57,7 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /FormHousing/Edit/5
-        public async Task<ActionResult> Edit(Guid id)
+        public async Task<ActionResult> Edit(int id)
         {
 
             var editMap = await FormHousingDataMapping.FromBltoUiGetById(id);
@@ -80,7 +85,7 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /FormHousing/Delete/5
-        public async Task<ActionResult> Delete(Guid id)
+        public async Task<ActionResult> Delete(int id)
         {
             var getFromR = await FormHousingDataMapping.FromBltoUiGetById(id);
             if (getFromR == null)
@@ -94,7 +99,7 @@ namespace Webb4___MVC.Controllers
         // POST: /FormHousing/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(Guid id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
             await FormHousingDataMapping.FromBltoUiDeleteAsync(id);
             return RedirectToAction("Index");

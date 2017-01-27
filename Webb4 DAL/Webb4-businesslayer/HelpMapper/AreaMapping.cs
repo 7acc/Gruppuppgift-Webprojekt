@@ -13,40 +13,40 @@ namespace Webb4_businesslayer.HelpMapper
 {
     public class AreaMapping
     {
-        static AreaDataModelIRepository<AreaData> _areaRepository = new AreaDataModelIRepository<AreaData>(new Webb4Context());
-
-        public static IEnumerable<AreaViewModel> FromBltoUiGetAll()
+        // AreaDataModelIRepository<AreaData> _genericRepository = new AreaDataModelIRepository<AreaData>(new Webb4Context());
+        GenericRepository<AreaData> _genericRepository = new GenericRepository<AreaData>(new Webb4Context());
+        public  List<AreaViewModel> FromBltoUiGetAll()
         {
-            var getData = _areaRepository.GetAll().ToList();
-            var randomItem = Mapper.Map<List<AreaData>, IEnumerable<AreaViewModel>>(getData);
+            var getData = _genericRepository.GetAll().ToList();
+            var randomItem = Mapper.Map<List<AreaData>, List<AreaViewModel>>(getData);
             return randomItem;
         }
 
-        public static async Task<AreaViewModel> FromBltoUiGetById(Guid id)
+        public  async Task<AreaViewModel> FromBltoUiGetById(int id)
         {
-            var getRepo = await _areaRepository.GetByIdAsync(id);
+            var getRepo = await _genericRepository.GetByIdAsync(id);
             var detailsId = Mapper.Map<AreaData, AreaViewModel>(getRepo);
             return detailsId;
         }
 
-        public static async Task FromBltoUiInser(AreaViewModel area)
+        public  async Task FromBltoUiInser(AreaViewModel area)
         {
             var addMap = Mapper.Map<AreaViewModel, AreaData>(area);
-            await _areaRepository.InsertAsync(addMap);
+            await _genericRepository.InsertAsync(addMap);
 
         }
 
-        public static async Task FromBltoUiEditAsync(AreaViewModel area)
+        public  async Task FromBltoUiEditAsync(AreaViewModel area)
         {
             var editMap = Mapper.Map<AreaViewModel, AreaData>(area);
-            await _areaRepository.EditAsync(editMap);
+            await _genericRepository.EditAsync(editMap);
 
         }
 
-        public static async Task FromBltoUiDeleteAsync(Guid id)
+        public  async Task FromBltoUiDeleteAsync(int id)
         {
-            var getFromR = await _areaRepository.GetByIdAsync(id);
-            await _areaRepository.DeleteAsync(getFromR);
+            var getFromR = await _genericRepository.GetByIdAsync(id);
+            await _genericRepository.DeleteAsync(getFromR);
 
         }
     }

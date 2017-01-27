@@ -11,6 +11,11 @@ namespace Webb4___MVC.Controllers
 {
     public class OrderApartController : Controller
     {
+        public OrderApartMapping OrderApartMapping { get; set; }
+        public OrderApartController()
+        {
+            OrderApartMapping = new OrderApartMapping();
+        }
 
         // GET: /OrderApart/
         public ActionResult Index()
@@ -21,7 +26,7 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /OrderApart/Details/5
-        public async Task<ActionResult> Details(Guid id)
+        public async Task<ActionResult> Details(int id)
         {
             var r = await OrderApartMapping.FromBltoUiGetById(id);
             if (r == null)
@@ -46,7 +51,7 @@ namespace Webb4___MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                appart.Id = Guid.NewGuid();
+              
                 await OrderApartMapping.FromBltoUiInser(appart);
                 return RedirectToAction("Index");
             }
@@ -56,7 +61,7 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /OrderApart/Edit/5
-        public async Task<ActionResult> Edit(Guid id)
+        public async Task<ActionResult> Edit(int id)
         {
 
             var editMap = await OrderApartMapping.FromBltoUiGetById(id);
@@ -84,7 +89,7 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /OrderApart/Delete/5
-        public async Task<ActionResult> Delete(Guid id)
+        public async Task<ActionResult> Delete(int id)
         {
             var getFromR = await OrderApartMapping.FromBltoUiGetById(id);
             if (getFromR == null)
@@ -98,7 +103,7 @@ namespace Webb4___MVC.Controllers
         // POST: /OrderApart/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(Guid id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
             await OrderApartMapping.FromBltoUiDeleteAsync(id);
             return RedirectToAction("Index");

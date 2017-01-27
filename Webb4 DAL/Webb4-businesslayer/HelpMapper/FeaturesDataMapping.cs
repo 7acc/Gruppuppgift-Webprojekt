@@ -12,40 +12,40 @@ namespace Webb4_businesslayer.HelpMapper
 {
     public class FeaturesDataMapping
     {
-        static FeaturesDataModelRepository<FeaturesData> _FeaturRepository = new FeaturesDataModelRepository<FeaturesData>(new Webb4Context());
-
-        public static IEnumerable<FeaturesViewModel> FromBltoUiGetAll()
+        // FeaturesDataModelRepository<FeaturesData> _genericRepository = new FeaturesDataModelRepository<FeaturesData>(new Webb4Context());
+        GenericRepository<FeaturesData> _genericRepository = new GenericRepository<FeaturesData>(new Webb4Context());
+        public  IEnumerable<FeaturesViewModel> FromBltoUiGetAll()
         {
-            var getData = _FeaturRepository.GetAll().ToList();
+            var getData = _genericRepository.GetAll().ToList();
             var randomItem = Mapper.Map<List<FeaturesData>, IEnumerable<FeaturesViewModel>>(getData);
             return randomItem;
         }
 
-        public static async Task<FeaturesViewModel> FromBltoUiGetById(Guid id)
+        public  async Task<FeaturesViewModel> FromBltoUiGetById(int id)
         {
-            var getRepo = await _FeaturRepository.GetByIdAsync(id);
+            var getRepo = await _genericRepository.GetByIdAsync(id);
             var detailsId = Mapper.Map<FeaturesData, FeaturesViewModel>(getRepo);
             return detailsId;
         }
 
-        public static async Task FromBltoUiInser(FeaturesViewModel featur)
+        public  async Task FromBltoUiInser(FeaturesViewModel featur)
         {
             var addMap = Mapper.Map<FeaturesViewModel, FeaturesData>(featur);
-            await _FeaturRepository.InsertAsync(addMap);
+            await _genericRepository.InsertAsync(addMap);
 
         }
 
-        public static async Task FromBltoUiEditAsync(FeaturesViewModel featur)
+        public  async Task FromBltoUiEditAsync(FeaturesViewModel featur)
         {
             var editMap = Mapper.Map<FeaturesViewModel, FeaturesData>(featur);
-            await _FeaturRepository.EditAsync(editMap);
+            await _genericRepository.EditAsync(editMap);
 
         }
 
-        public static async Task FromBltoUiDeleteAsync(Guid id)
+        public  async Task FromBltoUiDeleteAsync(int id)
         {
-            var getFromR = await _FeaturRepository.GetByIdAsync(id);
-            await _FeaturRepository.DeleteAsync(getFromR);
+            var getFromR = await _genericRepository.GetByIdAsync(id);
+            await _genericRepository.DeleteAsync(getFromR);
 
         }
     }

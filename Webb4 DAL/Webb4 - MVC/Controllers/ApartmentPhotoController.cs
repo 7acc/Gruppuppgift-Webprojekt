@@ -8,6 +8,11 @@ namespace Webb4___MVC.Controllers
 {
     public class ApartmentPhotoController : Controller
     {
+        public ApartmentPhotoDataMapping ApartmentPhotoDataMapping { get; set; }
+        public ApartmentPhotoController()
+        {
+            ApartmentPhotoDataMapping = new ApartmentPhotoDataMapping();
+        }
         // GET: /ApartmentPhoto/
         public ActionResult Index()
         {
@@ -17,7 +22,7 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /ApartmentPhoto/Details/5
-        public async Task<ActionResult> Details(Guid id)
+        public async Task<ActionResult> Details(int id)
         {
             var r = await ApartmentPhotoDataMapping.FromBltoUiGetById(id);
             if (r == null)
@@ -42,7 +47,7 @@ namespace Webb4___MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                adre.Id = Guid.NewGuid();
+                
                 await ApartmentPhotoDataMapping.FromBltoUiInser(adre);
                 return RedirectToAction("Index");
             }
@@ -52,7 +57,7 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /ApartmentPhoto/Edit/5
-        public async Task<ActionResult> Edit(Guid id)
+        public async Task<ActionResult> Edit(int id)
         {
 
             var editMap = await ApartmentPhotoDataMapping.FromBltoUiGetById(id);
@@ -80,7 +85,7 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /ApartmentPhoto/Delete/5
-        public async Task<ActionResult> Delete(Guid id)
+        public async Task<ActionResult> Delete(int id)
         {
             var getFromR = await ApartmentPhotoDataMapping.FromBltoUiGetById(id);
             if (getFromR == null)
@@ -94,7 +99,7 @@ namespace Webb4___MVC.Controllers
         // POST: /ApartmentPhoto/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(Guid id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
             await ApartmentPhotoDataMapping.FromBltoUiDeleteAsync(id);
             return RedirectToAction("Index");

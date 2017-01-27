@@ -11,8 +11,12 @@ namespace Webb4_businesslayer
 {
    public class UserManager
     {
-        UserRepository<UserData> userRepository = new UserRepository<UserData>(new Webb4Context());
-        
+        GenericRepository<UserData> userRepository = new GenericRepository<UserData>(new Webb4Context());
+        public UserDataMapping UserDataMapping { get; set; }
+        public UserManager()
+        {
+            UserDataMapping = new UserDataMapping();
+        }
         public async Task<UserDataViewModel> GetUserToLogin(string Email, string password)
         {
             UserDataViewModel userToLogin = null;
