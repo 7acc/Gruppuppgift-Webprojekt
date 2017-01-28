@@ -25,7 +25,7 @@ namespace Webb4___MVC.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> LogIn(UserLoginViewModel userToLogIn)
+        public ActionResult LogIn(UserLoginViewModel userToLogIn)
         {
             if (!ModelState.IsValid)
             {
@@ -33,10 +33,13 @@ namespace Webb4___MVC.Controllers
 
                 return View("Index", userToLogIn);
             }
-            if(await LogInUser(userToLogIn.Email, userToLogIn.Password))
+
+
+            if(LogInUser(userToLogIn.Email, userToLogIn.Password))
             {
                 return RedirectToAction("Index", "Home");
             }
+
             ModelState.AddModelError("", "Wrong");
             return View("Index", userToLogIn);
 
@@ -53,18 +56,18 @@ namespace Webb4___MVC.Controllers
             if (ModelState.IsValid)
             {
                 var usermng = new UserManager();
-                usermng.RegisterUser(newUser);
+                usermng.RegisterUser2(newUser);
                 ViewBag.msg = "Register Succsesfull";
                 return RedirectToAction("index");
             }
             return RedirectToAction("Index");
         }
 
-        public async Task<bool> LogInUser(string Email, string password)
+        public bool LogInUser(string Email, string password)
         {
             var usermng = new UserManager();
 
-            UserDataViewModel userToLogin = await usermng.GetUserToLogin(Email, password);
+            UserDataViewModel userToLogin = usermng.GetUserToLogin2(Email, password);
 
             if (userToLogin != null)
             {

@@ -61,7 +61,7 @@ namespace Webb4_DAL.Repositories
         {
             using (var ctx = new Webb4Context())
             {
-                var userToLogin = ctx.UserDatagDataModels.FirstOrDefault(x => x.Email == Email && x.Password == password);
+                var userToLogin = new UserData();
                 return userToLogin;
             }
         }

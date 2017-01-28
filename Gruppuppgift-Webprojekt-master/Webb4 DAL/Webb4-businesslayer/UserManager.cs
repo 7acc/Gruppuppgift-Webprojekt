@@ -33,5 +33,17 @@ namespace Webb4_businesslayer
         {
              UserDataMapping.FromBltoUiInser(Newuser);
         }
+        //----------------------------------------------------------------------------
+        public void RegisterUser2(UserDataViewModel UserToRegister)
+        {
+            var repo = new TestRepo();
+            repo.RegisterUser(UserToRegister.ViewModelToUser());
+        }
+        public UserDataViewModel GetUserToLogin2(string email, string password)
+        {
+            var repo = new TestRepo();
+            var userToLogin = repo.Login(email, password);
+            return userToLogin.UserToViewModel();
+        }
     }
 }

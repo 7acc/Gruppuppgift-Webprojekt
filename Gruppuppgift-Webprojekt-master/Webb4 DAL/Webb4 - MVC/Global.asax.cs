@@ -11,7 +11,7 @@ namespace Webb4___MVC
         protected void Application_Start()
         {
             //Database.SetInitializer<BlContext>(new DropCreateDatabaseIfModelChanges<BlContext>());
-            Database.SetInitializer(new Webb4MvcInitializer());
+            //Database.SetInitializer(new Webb4MvcInitializer());
 
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
