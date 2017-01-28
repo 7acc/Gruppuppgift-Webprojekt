@@ -69,6 +69,10 @@
     <Compile Include="UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ViewModels2\ViewModels2.csproj">
+      <Project>{52a3f234-922e-4c5b-8ad3-aeaefd5342eb}</Project>
+      <Name>ViewModels2</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ViewModels\ViewModels.csproj">
       <Project>{036a0e04-baae-411f-89d5-054311087a81}</Project>
       <Name>ViewModels</Name>

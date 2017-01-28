@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using Webb4_DAL.ModelsV2;
 
 
 namespace Webb4_DAL.ViewModels2
