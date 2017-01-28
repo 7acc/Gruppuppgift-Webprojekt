@@ -11,7 +11,7 @@ namespace Webb4_DAL
     public class Webb4Context : DbContext
     {
 
-        public Webb4Context() : base("Webb4ContextV2")
+        public Webb4Context()
         {
             
         }
