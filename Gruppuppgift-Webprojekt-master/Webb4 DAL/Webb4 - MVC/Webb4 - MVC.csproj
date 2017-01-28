@@ -273,6 +273,7 @@
     <Content Include="Views\Home\UserDetails.cshtml" />
     <Content Include="Views\LogIn\Register.cshtml" />
     <Content Include="Views\Home\InterestApartment.cshtml" />
+    <Content Include="Views\Home\ListOfApartments.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
