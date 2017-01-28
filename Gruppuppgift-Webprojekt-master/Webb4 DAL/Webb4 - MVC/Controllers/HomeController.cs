@@ -23,6 +23,14 @@ namespace Webb4___MVC.Controllers
             return View();
         }
 
+
+        // GET: /Apartment/Details
+        public ActionResult ListOfApartments( )
+        {
+            var g = ApartmentMapping.FromBltoUiGetAll();
+            return View(g);
+        }
+
         // GET: /Apartment/Details
         public async Task<ActionResult> Details(int id)
         {
