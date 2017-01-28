@@ -47,11 +47,11 @@ namespace Webb4___MVC.Controllers
         }
 
         // GET: /UserData/Apartments // Alltså hämta en list av lägenheter som en user har gjort intresse för.
-        public ActionResult InterestApartment ()
+        public ActionResult InterestApartment (int id)
         {
-            var ListOfUsers = UserDataMapping.FromBltoUiGetAll();
+            //var ListOfUsers = ApartmentMapping.FromBltoUiGetAllUserInterestApartment(id);
 
-            return View(ListOfUsers);
+            return View(/*ListOfUsers*/);
         }
     }
 }
