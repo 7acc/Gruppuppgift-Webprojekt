@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VyModels\AdressViewModel.cs" />
     <Compile Include="VyModels\ApartmentPhotoViewModel.cs" />
     <Compile Include="VyModels\ApartmentViewModel.cs" />
     <Compile Include="VyModels\BookingViewModel.cs" />
