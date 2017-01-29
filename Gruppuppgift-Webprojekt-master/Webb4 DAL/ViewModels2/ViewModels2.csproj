@@ -86,6 +86,7 @@
     <Compile Include="VyModels\DistrictViewModel.cs" />
     <Compile Include="VyModels\FeaturesViewModel.cs" />
     <Compile Include="VyModels\HousingTypeViewModel.cs" />
+    <Compile Include="VyModels\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Webb4 DAL\Webb4 DAL.csproj">

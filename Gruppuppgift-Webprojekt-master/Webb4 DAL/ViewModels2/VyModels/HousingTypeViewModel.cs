@@ -5,7 +5,7 @@ using Webb4_DAL.ModelsV2;
 
 namespace Webb4_DAL.ViewModels2
 {
-    public class FormHousingViewModel
+    public class HousingTypeViewModel
     { 
         [Key]
         public int Id { get; set; }
