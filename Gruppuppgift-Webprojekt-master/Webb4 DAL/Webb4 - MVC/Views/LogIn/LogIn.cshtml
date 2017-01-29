@@ -1,6 +1,7 @@
 ﻿@model Webb4___MVC.Models.UserLoginViewModel
 
-@using (Html.BeginForm()) 
+
+@using (Html.BeginForm("LogIn","LogIn",FormMethod.Post,null)) 
 {
     @Html.AntiForgeryToken()
     

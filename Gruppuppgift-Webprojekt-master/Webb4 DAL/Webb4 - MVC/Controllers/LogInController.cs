@@ -31,7 +31,7 @@ namespace Webb4___MVC.Controllers
             {
                 ModelState.AddModelError("", "You Did Something Wrong");
 
-                return View("Index", userToLogIn);
+                return PartialView("Index", userToLogIn);
             }
 
 
@@ -41,7 +41,7 @@ namespace Webb4___MVC.Controllers
             }
 
             ModelState.AddModelError("", "Wrong");
-            return View("Index", userToLogIn);
+            return PartialView("Index", userToLogIn);
 
         }
 

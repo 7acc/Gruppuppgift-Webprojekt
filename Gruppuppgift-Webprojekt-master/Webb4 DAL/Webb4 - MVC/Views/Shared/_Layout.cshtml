@@ -27,8 +27,24 @@
                     <ul class="nav navbar-nav">
                         <li>@Html.ActionLink("Lediga lägenheter", "Index", "Home")</li>
                         <li>@Html.ActionLink("Bolag", "Bolag", "Home")</li>
-                        <li>@Html.ActionLink("Registrera dig", "Registrera_dig", "Home")</li>
+                        @{
+                            if (User.Identity.IsAuthenticated)
+                            {
+                                <li>@Html.ActionLink("Mina Sidor", "view", "Controller")</li>
+                            }
+                            else
+                            {
+                                <li>@Html.ActionLink("Login", "Index", "LogIn")</li>
+                            }
+
+                        }
+                        
                     </ul>
+                   @{ 
+                       if (User.Identity.IsAuthenticated) {
+                          <span class="nav-userinfo">Logged In as: @User.Identity.Name</span>
+                       }
+                      }
                     @*@Html.Partial("_LoginPartial")*@
                 </div>
             </div>

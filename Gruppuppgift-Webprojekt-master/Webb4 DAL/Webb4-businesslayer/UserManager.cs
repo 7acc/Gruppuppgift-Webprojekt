@@ -18,21 +18,7 @@ namespace Webb4_businesslayer
         {
             UserDataMapping = new UserDataMapping();
         }
-        public async Task<UserDataViewModel> GetUserToLogin(string Email, string password)
-        {
-            UserDataViewModel userToLogin = null;
-
-            var user = userRepository.LoginUser(Email, password);
-            if (user != null)
-            {
-                userToLogin = await UserDataMapping.FromBltoUiGetById(user.Id);
-            }
-            return userToLogin;
-        }
-        public void RegisterUser(UserDataViewModel Newuser)
-        {
-             UserDataMapping.FromBltoUiInser(Newuser);
-        }
+   
         //----------------------------------------------------------------------------
         public void RegisterUser2(UserDataViewModel UserToRegister)
         {
@@ -43,7 +29,14 @@ namespace Webb4_businesslayer
         {
             var repo = new TestRepo();
             var userToLogin = repo.Login(email, password);
-            return userToLogin.UserToViewModel();
+            if (userToLogin != null)
+            {
+                return userToLogin.UserToViewModel();
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }
