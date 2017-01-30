@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Webb4_DAL.ModelsV2;
 
-namespace Webb4_DAL.ViewModels2
+namespace ViewModels2.VyModels
 {
     public class AppartmentPhotoViewModel
     { 

@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using ViewModels.VyModels;
+using ViewModels2.VyModels;
 using Webb4_businesslayer.HelpMapper;
 
 namespace Webb4___MVC.Controllers
@@ -10,26 +10,24 @@ namespace Webb4___MVC.Controllers
     
     public class ApartmentController : Controller
     {
-        private ApartmentMapping ApartmentMapping { get; set; }
-        private ApartmentPhotoDataMapping ApartmentPhotoDataMapping { get; set; }
-        private AreaMapping AreaMapping { get; set; }
-        private FeaturesDataMapping FeaturesDataMapping { get; set; }
-        private SizeDataMapping SizeDataMapping { get; set; }
-        private FormHousingDataMapping FormHousingDataMapping { get; set; }
+        private AppartmentMapping AppartmentMapping { get; set; }
+        private AppartmentPhotoMapping AppartmentPhotoMapping { get; set; }
+        private DistrictMapping DistrictMapping { get; set; }
+        private FeaturesMapping FeaturesMapping { get; set; }
+        private HousingTypeMapping HousingTypeMapping { get; set; }
         public ApartmentController()
         {
-            ApartmentMapping = new ApartmentMapping();
-            ApartmentPhotoDataMapping = new ApartmentPhotoDataMapping();
-            AreaMapping = new AreaMapping();
-            FeaturesDataMapping = new FeaturesDataMapping();
-            SizeDataMapping = new SizeDataMapping();
-            FormHousingDataMapping = new FormHousingDataMapping();
+            AppartmentMapping = new AppartmentMapping();
+            AppartmentPhotoMapping = new AppartmentPhotoMapping();
+            DistrictMapping = new DistrictMapping();
+            FeaturesMapping = new FeaturesMapping();
+            HousingTypeMapping = new HousingTypeMapping();
         }
 
         // GET: /Apartment/
         public ActionResult Index()
         {
-            var g = ApartmentMapping.FromBltoUiGetAll();
+            var g = AppartmentMapping.FromBltoUiGetAll();
             return View(g);
         }
 
@@ -37,7 +35,7 @@ namespace Webb4___MVC.Controllers
         // GET: /Apartment/Details/5
         public async Task<ActionResult> Details(int id)
         {
-            var r = await ApartmentMapping.FromBltoUiGetById(id);
+            var r = await AppartmentMapping.FromBltoUiGetById(id);
             if (r == null)
             {
                 return HttpNotFound();
@@ -49,11 +47,11 @@ namespace Webb4___MVC.Controllers
         // GET: /Apartment/Create
         public ActionResult Create()
         {
-            //ViewBag.ApartmentPhoto = new SelectList(ApartmentPhotoDataMapping.FromBltoUiGetAll(), "Id", "Url");
-            ViewBag.AreaViewModelId = new SelectList(AreaMapping.FromBltoUiGetAll(), "AreaViewModelId", "AreaName");
-            //ViewBag.ApartmentFeatureM_Id = new SelectList(FeaturesDataMapping.FromBltoUiGetAll(), "Id", "Id");
-            //ViewBag.ApartmentFormHousingM_Id = new SelectList(FormHousingDataMapping.FromBltoUiGetAll(), "Id", "FormOfHousing");
-            //ViewBag.ApartmentSizeM_Id = new SelectList(SizeDataMapping.FromBltoUiGetAll(), "Id", "SizekName");
+            //ViewBag.ApartmentPhoto = new SelectList(AppartmentPhotoMapping.FromBltoUiGetAll(), "Id", "Url");
+            ViewBag.AreaViewModelId = new SelectList(DistrictMapping.FromBltoUiGetAll(), "AreaViewModelId", "AreaName");
+            //ViewBag.ApartmentFeatureM_Id = new SelectList(FeaturesMapping.FromBltoUiGetAll(), "Id", "Id");
+            //ViewBag.ApartmentFormHousingM_Id = new SelectList(HousingTypeMapping.FromBltoUiGetAll(), "Id", "FormOfHousing");
+           
             return View();
         }
 
@@ -61,18 +59,17 @@ namespace Webb4___MVC.Controllers
         // POST: /Apartment/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(ApartmentViewModel appart)
+        public async Task<ActionResult> Create(AppartmentViewModel appart)
         {
             if (ModelState.IsValid)
             {
                 
-                await ApartmentMapping.FromBltoUiInser(appart);
+                await AppartmentMapping.FromBltoUiInser(appart);
 
-                //ViewBag.ApartmentPhoto = new SelectList(ApartmentPhotoDataMapping.FromBltoUiGetAll(), "Id", "Url");
-                ViewBag.AreaViewModelId = new SelectList(AreaMapping.FromBltoUiGetAll(), "AreaViewModelId", "AreaName");
-                //ViewBag.ApartmentFeatureM_Id = new SelectList(FeaturesDataMapping.FromBltoUiGetAll(), "Id", "Id");
-                //ViewBag.ApartmentFormHousingM_Id = new SelectList(FormHousingDataMapping.FromBltoUiGetAll(), "Id", "FormOfHousing");
-                //ViewBag.ApartmentSizeM_Id = new SelectList(SizeDataMapping.FromBltoUiGetAll(), "Id", "SizekName");
+                //ViewBag.ApartmentPhoto = new SelectList(AppartmentPhotoMapping.FromBltoUiGetAll(), "Id", "Url");
+                ViewBag.AreaViewModelId = new SelectList(DistrictMapping.FromBltoUiGetAll(), "AreaViewModelId", "AreaName");
+                //ViewBag.ApartmentFeatureM_Id = new SelectList(FeaturesMapping.FromBltoUiGetAll(), "Id", "Id");
+                //ViewBag.ApartmentFormHousingM_Id = new SelectList(HousingTypeMapping.FromBltoUiGetAll(), "Id", "FormOfHousing");
                 return RedirectToAction("Index");
             }
            
@@ -84,7 +81,7 @@ namespace Webb4___MVC.Controllers
         public async Task<ActionResult> Edit(int id)
         {
 
-            var editMap = await ApartmentMapping.FromBltoUiGetById(id);
+            var editMap = await AppartmentMapping.FromBltoUiGetById(id);
 
             if (editMap == null)
             {
@@ -97,11 +94,11 @@ namespace Webb4___MVC.Controllers
         // POST: /Apartment/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit(ApartmentViewModel appart)
+        public async Task<ActionResult> Edit(AppartmentViewModel appart)
         {
             if (ModelState.IsValid)
             {
-                await ApartmentMapping.FromBltoUiEditAsync(appart);
+                await AppartmentMapping.FromBltoUiEditAsync(appart);
                 return RedirectToAction("Index");
             }
             return View(appart);
@@ -111,7 +108,7 @@ namespace Webb4___MVC.Controllers
         // GET: /Apartment/Delete/5
         public async Task<ActionResult> Delete(int id)
         {
-            var getFromR = await ApartmentMapping.FromBltoUiGetById(id);
+            var getFromR = await AppartmentMapping.FromBltoUiGetById(id);
             if (getFromR == null)
             {
                 return HttpNotFound();
@@ -125,7 +122,7 @@ namespace Webb4___MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            await ApartmentMapping.FromBltoUiDeleteAsync(id);
+            await AppartmentMapping.FromBltoUiDeleteAsync(id);
             return RedirectToAction("Index");
         }
     }

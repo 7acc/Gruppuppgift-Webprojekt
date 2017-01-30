@@ -4,26 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Webb4_DAL.ModelsV2;
-using Webb4_DAL.ViewModels2;
-using ViewModels.VyModels;
+using ViewModels2.VyModels;
+using ViewModels2.VyModels;
 
 
 namespace Webb4_businesslayer
 {
     static class Test_Helper
     {
-        public static UserDataViewModel UserToViewModel(this User UserToTransform)
+        public static UserViewModel UserToViewModel(this User UserToTransform)
         {
-            var UserViewModel = new UserDataViewModel();
+            var UserViewModel = new UserViewModel();
 
             UserViewModel.Id = UserToTransform.Id;
             UserViewModel.Email = UserToTransform.Email;
-            UserViewModel.UserName = $"{UserToTransform.Fname} {UserToTransform.Lname}";
+            UserViewModel.Username = $"{UserToTransform.Fname} {UserToTransform.Lname}";
 
             return UserViewModel;
         }
 
-        public static User ViewModelToUser(this UserDataViewModel ViewModelToTransform)
+        public static User ViewModelToUser(this UserViewModel ViewModelToTransform)
         {
             var User = new User();
 

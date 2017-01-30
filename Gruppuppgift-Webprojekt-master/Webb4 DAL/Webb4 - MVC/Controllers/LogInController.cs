@@ -1,12 +1,11 @@
 ﻿using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using ViewModels.VyModels;
 using Webb4___MVC.Models.User;
 using Webb4_businesslayer;
 using Webb4___MVC.Models;
 using System.Web;
-
+using ViewModels2.VyModels;
 
 
 namespace Webb4___MVC.Controllers
@@ -51,7 +50,7 @@ namespace Webb4___MVC.Controllers
             return PartialView();
         }
 
-        public ActionResult Register(UserDataViewModel newUser)
+        public ActionResult Register(UserViewModel newUser)
         {
             if (ModelState.IsValid)
             {
@@ -67,7 +66,7 @@ namespace Webb4___MVC.Controllers
         {
             var usermng = new UserManager();
 
-            UserDataViewModel userToLogin = usermng.GetUserToLogin2(Email, password);
+            UserViewModel userToLogin = usermng.GetUserToLogin2(Email, password);
 
             if (userToLogin != null)
             {
@@ -77,13 +76,13 @@ namespace Webb4___MVC.Controllers
             return false;
         }
 
-        private void SignInUser(UserDataViewModel userToLogin)
+        private void SignInUser(UserViewModel userToLogin)
         {
 
             {
                 var identity = new ClaimsIdentity(new[]
                  {
-                    new Claim(ClaimTypes.Name, userToLogin.UserName),
+                    new Claim(ClaimTypes.Name, userToLogin.Username),
                     new Claim(ClaimTypes.Email, userToLogin.Email),
                     new Claim(ClaimTypes.Sid, userToLogin.Id.ToString()),
                     new Claim(ClaimTypes.NameIdentifier, userToLogin.Id.ToString()),

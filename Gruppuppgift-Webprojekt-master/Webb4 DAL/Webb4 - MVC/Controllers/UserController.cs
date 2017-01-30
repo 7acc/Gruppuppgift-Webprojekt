@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using ViewModels.VyModels;
+using ViewModels2.VyModels;
 using Webb4_businesslayer.HelpMapper;
 
 namespace Webb4___MVC.Controllers
@@ -9,10 +9,10 @@ namespace Webb4___MVC.Controllers
 
     public class UserController : Controller
     {
-        public UserDataMapping UserDataMapping { get; set; }
+        public UserMapping UserDataMapping { get; set; }
         public UserController()
         {
-            UserDataMapping = new UserDataMapping();
+            UserDataMapping = new UserMapping();
         }
         // GET: /UserData/
         public ActionResult Index()
@@ -44,7 +44,7 @@ namespace Webb4___MVC.Controllers
         // POST: /UserData/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(UserDataViewModel user)
+        public async Task<ActionResult> Create(UserViewModel user)
         {
             if (ModelState.IsValid)
             {
@@ -74,7 +74,7 @@ namespace Webb4___MVC.Controllers
         // POST: /UserData/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit(UserDataViewModel adre)
+        public async Task<ActionResult> Edit(UserViewModel adre)
         {
             if (ModelState.IsValid)
             {
