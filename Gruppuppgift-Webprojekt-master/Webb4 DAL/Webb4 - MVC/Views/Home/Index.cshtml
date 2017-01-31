@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<ViewModels2.VyModels.AppartmentViewModel>
+
 @{
     ViewBag.Title = "Index";
 }
@@ -6,8 +7,10 @@
 <h2>Test</h2>
 <p> your loged in as @User.Identity.Name</p>
 
-<h1>Lediga just nu</h1>
-<div class="container ">
+@Html.Partial("~/Views/Home/ListOfApartments.cshtml", Model)
+
+
+@*<div class="container ">
     <div class="row lagenhetlist">
         <div class="col-md-2 ">
             <img src="http://placehold.it/150x150/292929/99cc66">
@@ -36,8 +39,8 @@
         <div class="col-md-2 mid">
             <button type="button" class="btn btn-default">Link till lägenhet</button>
         </div>
-    </div>
+    </div> 
    
 
-</div>
+ </div>*@
 

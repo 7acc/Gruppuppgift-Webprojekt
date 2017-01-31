@@ -228,7 +228,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\Apartment\Index.cshtml" />
     <Content Include="Views\User\Details.cshtml" />
     <Content Include="Views\User\Create.cshtml" />
     <Content Include="Views\User\Edit.cshtml" />
@@ -238,10 +237,6 @@
     <Content Include="Views\ApartmentPhoto\Create.cshtml" />
     <Content Include="Views\ApartmentPhoto\Edit.cshtml" />
     <Content Include="Views\ApartmentPhoto\Delete.cshtml" />
-    <Content Include="Views\Apartment\Details.cshtml" />
-    <Content Include="Views\Apartment\Create.cshtml" />
-    <Content Include="Views\Apartment\Edit.cshtml" />
-    <Content Include="Views\Apartment\Delete.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\UserDetails.cshtml" />
@@ -254,6 +249,12 @@
     <Content Include="Views\Adress\Details.cshtml" />
     <Content Include="Views\Adress\Edit.cshtml" />
     <Content Include="Views\Adress\Index.cshtml" />
+    <Content Include="Views\Apartment\Index.cshtml" />
+    <Content Include="Views\Apartment\Details.cshtml" />
+    <Content Include="Views\Apartment\Create.cshtml" />
+    <Content Include="Views\Apartment\Edit.cshtml" />
+    <Content Include="Views\Apartment\DeleteConfirmed.cshtml" />
+    <Content Include="Views\Apartment\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -270,7 +271,7 @@
       <Name>ViewModels2</Name>
     </ProjectReference>
     <ProjectReference Include="..\Webb4 DAL\Webb4 DAL.csproj">
-      <Project>{C92C9DCF-DD27-40E2-8B8F-438EDDCE165B}</Project>
+      <Project>{c92c9dcf-dd27-40e2-8b8f-438eddce165b}</Project>
       <Name>Webb4 DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Webb4-businesslayer\Webb4-businesslayer.csproj">

@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Webb4_DAL.ModelsV2;
 using ViewModels2.VyModels;
-using ViewModels2.VyModels;
 
 
 namespace Webb4_businesslayer

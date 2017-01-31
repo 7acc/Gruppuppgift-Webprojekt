@@ -1,49 +1,49 @@
-﻿@model ViewModels.VyModels.ApartmentViewModel
+﻿@model ViewModels2.VyModels.AppartmentViewModel
 
 <div>
-    <h4>ApartmentViewModel</h4>
-    <hr />
+    @*<h4>@Html.DisplayFor(model => model.Adress.Street)</h4>*@
+    <hr style="border-color: white;"/>
     <table>
         <tr>
             <td>
                 <dl class="dl-horizontal">
                     <dt>
-                        @Html.DisplayNameFor(model => model.ApartImgId)
+                        <img src="http://placehold.it/150x150/292929/99cc66">
                     </dt>
                 </dl>
             </td> 
             <td><dl class="dl-horizontal">
-    <dt>
-        @Html.DisplayNameFor(model => model.FormHId)
+    @*<dt>
+        @Html.DisplayNameFor(model => model.Housing)
     </dt>
 
     <dd>
-        @Html.DisplayFor(model => model.FormHId)
-    </dd>
+        @Html.DisplayFor(model => model.Housing)
+    </dd>*@
 
     <dt>
-        @Html.DisplayNameFor(model => model.SizeId)
+        @Html.DisplayNameFor(model => model.NrOfRooms)
     </dt>
 
     <dd>
-        @Html.DisplayFor(model => model.SizeId)
+        @Html.DisplayFor(model => model.NrOfRooms)
     </dd>
 
-    <dt>
-        @Html.DisplayNameFor(model => model.AreaId)
+    @*<dt>
+        @Html.DisplayNameFor(model => model.District)
     </dt>
 
     <dd>
-        @Html.DisplayFor(model => model.AreaId)
-    </dd>
+        @Html.DisplayFor(model => model.District)
+    </dd>*@
 
-    <dt>
-        @Html.DisplayNameFor(model => model.ApartImgId)
+    @*<dt>
+        @Html.DisplayNameFor(model => model.Photos)
     </dt>
 
     <dd>
-        @Html.DisplayFor(model => model.ApartImgId)
-    </dd>
+        @Html.DisplayFor(model => model.Photos)
+    </dd>*@
 
     <dt>
         @Html.DisplayNameFor(model => model.BuildYear)
@@ -54,19 +54,19 @@
     </dd>
 
     <dt>
-        @Html.DisplayNameFor(model => model.ApartArea)
+        @Html.DisplayNameFor(model => model.Area)
     </dt>
 
     <dd>
-        @Html.DisplayFor(model => model.ApartArea)
+        @Html.DisplayFor(model => model.Area)
     </dd>
 
     <dt>
-        @Html.DisplayNameFor(model => model.QuantityRooms)
+        @Html.DisplayNameFor(model => model.NrOfRooms)
     </dt>
 
     <dd>
-        @Html.DisplayFor(model => model.QuantityRooms)
+        @Html.DisplayFor(model => model.NrOfRooms)
     </dd>
 
     <dt>
@@ -78,67 +78,43 @@
     </dd>
 
     <dt>
-        @Html.DisplayNameFor(model => model.Price)
+        @Html.DisplayNameFor(model => model.Rent)
     </dt>
 
     <dd>
-        @Html.DisplayFor(model => model.Price)
+        @Html.DisplayFor(model => model.Rent)
+    </dd>
+
+    @*<dt>
+        @Html.DisplayNameFor(model => model.Adress)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Adress)
+    </dd>*@
+ 
+    <dt>
+        @Html.DisplayNameFor(model => model.Avalible)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Avalible)
     </dd>
 
     <dt>
-        @Html.DisplayNameFor(model => model.Address)
+        @Html.DisplayNameFor(model => model.MoveInDate)
     </dt>
 
     <dd>
-        @Html.DisplayFor(model => model.Address)
+        @Html.DisplayFor(model => model.MoveInDate)
     </dd>
 
     <dt>
-        @Html.DisplayNameFor(model => model.City)
+        @Html.DisplayNameFor(model => model.LastAdmissionDate)
     </dt>
 
     <dd>
-        @Html.DisplayFor(model => model.City)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.Region)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.Region)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.PostalCode)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.PostalCode)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.Country)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.Country)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.Available)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.Available)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.DeadlineDate)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.DeadlineDate)
+        @Html.DisplayFor(model => model.LastAdmissionDate)
     </dd>
 </dl>
     
@@ -146,7 +122,7 @@
             <td>
                 <dl class="dl-horizontal">
                     <dt>
-                        @Html.DisplayNameFor(model => model.FeatureId)
+                        @*@Html.DisplayNameFor(model => model.Features)*@
                     </dt>  
                 </dl>
             </td>  
@@ -160,6 +136,5 @@
     </p>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

@@ -10,17 +10,26 @@ namespace Webb4___MVC.Controllers
 {
     public class HomeController : Controller
     {
-        public AppartmentMapping AppartmentMapping { get; set; }
+        private AppartmentMapping AppartmentMapping { get; set; }
+        private AppartmentPhotoMapping AppartmentPhotoMapping { get; set; }
+        private DistrictMapping DistrictMapping { get; set; }
+        private FeaturesMapping FeaturesMapping { get; set; }
+        private HousingTypeMapping HousingTypeMapping { get; set; }
         public UserMapping UserMapping { get; set; }
         public HomeController()
         {
             AppartmentMapping = new AppartmentMapping();
+            AppartmentPhotoMapping = new AppartmentPhotoMapping();
+            DistrictMapping = new DistrictMapping();
+            FeaturesMapping = new FeaturesMapping();
+            HousingTypeMapping = new HousingTypeMapping();
             UserMapping = new UserMapping();
         }
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            var g = AppartmentMapping.FromBltoUiGetAll();
+            return View(g);
         }
 
 
