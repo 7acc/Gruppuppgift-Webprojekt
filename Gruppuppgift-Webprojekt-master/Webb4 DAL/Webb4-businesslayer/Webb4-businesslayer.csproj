@@ -45,6 +45,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApartmentManager.cs" />
     <Compile Include="HelpMapper\OrderApartMapping.cs" />
     <Compile Include="HelpMapper\ApartmentMapping.cs" />
     <Compile Include="AutoMapper\AutoMapperConfig.cs" />
@@ -64,6 +66,7 @@
     <Compile Include="HelpMapper\FormHousingDataMapping.cs" />
     <Compile Include="HelpMapper\SizeDataMapping.cs" />
     <Compile Include="HelpMapper\UserDataMapping.cs" />
+    <Compile Include="PhotoManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test_Helper.cs" />
     <Compile Include="UserManager.cs" />

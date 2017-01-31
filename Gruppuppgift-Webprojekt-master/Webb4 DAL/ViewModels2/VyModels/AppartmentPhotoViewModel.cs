@@ -8,7 +8,7 @@ namespace Webb4_DAL.ViewModels2
 {
     public class AppartmentPhotoViewModel
     { 
-        [Key]
+     
         public int Id { get; set; }
         public Guid Name { get; set; }
         public string URL { get; set; }
@@ -17,7 +17,6 @@ namespace Webb4_DAL.ViewModels2
 
 
         public int AppartmentId { get; set; }
-        [ForeignKey("AppartmentId")]
-        public virtual Appartment Appartment { get; set; }
+       
     }
 }

@@ -90,7 +90,7 @@ namespace Webb4_businesslayer
             return ApartmentViewModel;
         }
 
-        public static Appartment ViewModelToUser(this AppartmentViewModel ViewModelToTransform)
+        public static Appartment ViewModelToAppartment(this AppartmentViewModel ViewModelToTransform)
         {
             var Apartment = new Appartment();
 

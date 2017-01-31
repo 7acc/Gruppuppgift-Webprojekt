@@ -198,6 +198,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminUploadController.cs" />
     <Compile Include="Controllers\ApartmentPhotoController.cs" />
     <Compile Include="Controllers\AreaController.cs" />
     <Compile Include="Controllers\FeatuerController.cs" />
@@ -284,8 +285,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\AdminUpload\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ViewModels2\ViewModels2.csproj">
+      <Project>{52a3f234-922e-4c5b-8ad3-aeaefd5342eb}</Project>
+      <Name>ViewModels2</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ViewModels\ViewModels.csproj">
       <Project>{036A0E04-BAAE-411F-89D5-054311087A81}</Project>
       <Name>ViewModels</Name>

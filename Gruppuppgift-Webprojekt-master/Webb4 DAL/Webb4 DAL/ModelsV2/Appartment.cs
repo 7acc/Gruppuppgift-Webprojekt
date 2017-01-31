@@ -20,6 +20,7 @@ namespace Webb4_DAL.ModelsV2
         public int NrOfRooms { get; set; }
         public int BuildinFloors { get; set; }
         public int Floor { get; set; }
+        public string MainImgUrl { get; set; }
         public DateTime BuildYear{ get; set; }
         public DateTime MoveInDate { get; set; }
         public DateTime LastAdmissionDate { get; set; }
