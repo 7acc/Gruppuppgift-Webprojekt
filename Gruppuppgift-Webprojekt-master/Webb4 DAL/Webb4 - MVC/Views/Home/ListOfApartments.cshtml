@@ -1,37 +1,37 @@
-﻿@model IEnumerable<ViewModels.VyModels.ApartmentViewModel>
-<br />
-<b>
-    Lediga just nu:
-</b>
-<br /><br />
-
-
-<table class="table">
-    
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @*Image here ?*@
-            @Html.DisplayFor(modelItem => item.ApartImgId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SizeId) <br />
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            <b>City Area: </b>@Html.DisplayFor(modelItem => item.AreaId)<br />
-            <b>Floor: </b>@Html.DisplayFor(modelItem => item.Floor)<br />
-            <b>Area: </b>@Html.DisplayFor(modelItem => item.ApartArea)<br />
-            <b>Price: </b>@Html.DisplayFor(modelItem => item.Price)<br />
-            <b>Available: </b>@Html.DisplayFor(modelItem => item.Available)<br />
-            <b>Deadline Date: </b>@Html.DisplayFor(modelItem => item.DeadlineDate)<br />
-        </td>
-        <td>
-            <br /><br />
-            <input type="button" class="btn btn-info" value="Mer om lägenhet" onclick="location.href='@Url.Action("Details", "Home", new { id=item.Id })'" />
-        </td>
-    </tr>
+﻿@model IEnumerable<ViewModels2.VyModels.AppartmentViewModel>
+@{
+    ViewBag.Title = "ListOfApartments";
 }
 
-</table>
+
+
+<h1>Lediga just nu</h1>
+<div class="container">
+    @foreach (var item in Model)
+    {
+        <div class="row lagenhetlist">
+            <div class="col-md-2 ">
+                <img src="http://placehold.it/150x150/292929/99cc66">
+            </div>
+            <div class="col-md-2 mid">
+                @*@Html.DisplayFor(modelItem => item.Housing)*@
+            </div>
+            <div class="col-md-3">
+                @*<b>District: </b>@Html.DisplayFor(modelItem => item.District)<br />*@
+                <b>Floor: </b>@Html.DisplayFor(modelItem => item.Floor)<br />
+                <b>Area: </b>@Html.DisplayFor(modelItem => item.Area)<br />
+                <b>Price: </b>@Html.DisplayFor(modelItem => item.Rent)<br />
+                <b>Available: </b>@Html.DisplayFor(modelItem => item.MoveInDate)<br />
+                <b>Deadline Date: </b>@Html.DisplayFor(modelItem => item.LastAdmissionDate)<br />
+            </div>
+            <div class="col-md-3">
+                @*@Html.DisplayFor(modelItem => item.Adress)*@
+            </div>
+            <div class="col-md-2 mid">
+                <button type="button" class="btn btn-default" onclick="location.href='@Url.Action("Details", "Home", new { id=item.Id })'">Link till lägenhet</button>
+            </div>
+        </div>
+
+    }
+</div>
+

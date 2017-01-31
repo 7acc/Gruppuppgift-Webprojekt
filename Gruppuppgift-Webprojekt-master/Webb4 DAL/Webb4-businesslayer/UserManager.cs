@@ -1,10 +1,10 @@
 ﻿
 using System.Threading.Tasks;
-using ViewModels.VyModels;
+using ViewModels2.VyModels;
 
 using Webb4_businesslayer.HelpMapper;
 using Webb4_DAL;
-using Webb4_DAL.Models;
+using Webb4_DAL.ModelsV2;
 using Webb4_DAL.Repositories;
 
 
@@ -12,20 +12,20 @@ namespace Webb4_businesslayer
 {
    public class UserManager
     {
-        GenericRepository<UserData> userRepository = new GenericRepository<UserData>(new Webb4Context());
-        public UserDataMapping UserDataMapping { get; set; }
+        GenericRepository<User> userRepository = new GenericRepository<User>(new Webb4Context());
+        public UserMapping UserMapping { get; set; }
         public UserManager()
         {
-            UserDataMapping = new UserDataMapping();
+            UserMapping = new UserMapping();
         }
    
         //----------------------------------------------------------------------------
-        public void RegisterUser2(UserDataViewModel UserToRegister)
+        public void RegisterUser2(UserViewModel UserToRegister)
         {
             var repo = new TestRepo();
             repo.RegisterUser(UserToRegister.ViewModelToUser());
         }
-        public UserDataViewModel GetUserToLogin2(string email, string password)
+        public UserViewModel GetUserToLogin2(string email, string password)
         {
             var repo = new TestRepo();
             var userToLogin = repo.Login(email, password);

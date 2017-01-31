@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace Webb4_DAL
 {
@@ -10,6 +11,13 @@ namespace Webb4_DAL
     {
         static void Main(string[] args)
         {
+            //using (Webb4Context ctx = new Webb4Context())
+            //{
+            //    //ctx.Database.Delete();
+            //    ctx.Database.Create();
+
+            //};
         }
     }
-}
+    }
+

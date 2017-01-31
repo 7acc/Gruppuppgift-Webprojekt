@@ -1,30 +1,34 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
 using ViewModels2.VyModels;
 using Webb4_businesslayer.HelpMapper;
 
 namespace Webb4___MVC.Controllers
 {
-    public class FeatuerController : Controller
+    public class BookingController : Controller
     {
-        public FeaturesMapping FeaturesMapping { get; set; }
-        public FeatuerController()
+        public BookingMapping BookingMapping { get; set; }
+        public BookingController()
         {
-            FeaturesMapping = new FeaturesMapping();
+            BookingMapping = new BookingMapping();
         }
-        // GET: /Featuer/
+
+        // GET: /Booking/
         public ActionResult Index()
         {
-            var g = FeaturesMapping.FromBltoUiGetAll();
+            var g = BookingMapping.FromBltoUiGetAll();
             return View(g);
         }
 
         //
-        // GET: /Featuer/Details/5
+        // GET: /Booking/Details/5
         public async Task<ActionResult> Details(int id)
         {
-            var r = await FeaturesMapping.FromBltoUiGetById(id);
+            var r = await BookingMapping.FromBltoUiGetById(id);
             if (r == null)
             {
                 return HttpNotFound();
@@ -33,34 +37,34 @@ namespace Webb4___MVC.Controllers
         }
 
         //
-        // GET: /Featuer/Create
+        // GET: /Booking/Create
         public ActionResult Create()
         {
             return View();
         }
 
         //
-        // POST: /Featuer/Create
+        // POST: /Booking/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(FeaturesViewModel featur)
+        public async Task<ActionResult> Create(BookingViewModel appart)
         {
             if (ModelState.IsValid)
             {
-               
-                await FeaturesMapping.FromBltoUiInser(featur);
+              
+                await BookingMapping.FromBltoUiInser(appart);
                 return RedirectToAction("Index");
             }
 
-            return View(featur);
+            return View(appart);
         }
 
         //
-        // GET: /Featuer/Edit/5
+        // GET: /Booking/Edit/5
         public async Task<ActionResult> Edit(int id)
         {
 
-            var editMap = await FeaturesMapping.FromBltoUiGetById(id);
+            var editMap = await BookingMapping.FromBltoUiGetById(id);
 
             if (editMap == null)
             {
@@ -70,24 +74,24 @@ namespace Webb4___MVC.Controllers
         }
 
         //
-        // POST: /Featuer/Edit/5
+        // POST: /Booking/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit(FeaturesViewModel adre)
+        public async Task<ActionResult> Edit(BookingViewModel appart)
         {
             if (ModelState.IsValid)
             {
-                await FeaturesMapping.FromBltoUiEditAsync(adre);
+                await BookingMapping.FromBltoUiEditAsync(appart);
                 return RedirectToAction("Index");
             }
-            return View(adre);
+            return View(appart);
         }
 
         //
-        // GET: /Featuer/Delete/5
+        // GET: /Booking/Delete/5
         public async Task<ActionResult> Delete(int id)
         {
-            var getFromR = await FeaturesMapping.FromBltoUiGetById(id);
+            var getFromR = await BookingMapping.FromBltoUiGetById(id);
             if (getFromR == null)
             {
                 return HttpNotFound();
@@ -96,12 +100,12 @@ namespace Webb4___MVC.Controllers
         }
 
         //
-        // POST: /Featuer/Delete/5
+        // POST: /Booking/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            await FeaturesMapping.FromBltoUiDeleteAsync(id);
+            await BookingMapping.FromBltoUiDeleteAsync(id);
             return RedirectToAction("Index");
         }
     }

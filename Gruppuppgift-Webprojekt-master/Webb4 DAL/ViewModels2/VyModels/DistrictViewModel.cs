@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using Webb4_DAL.ModelsV2;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Webb4_DAL.ViewModels2
+namespace ViewModels2.VyModels
 {
-    public class AreaViewModel
+    public class DistrictViewModel
     { 
         
         public int Id { get; set; }

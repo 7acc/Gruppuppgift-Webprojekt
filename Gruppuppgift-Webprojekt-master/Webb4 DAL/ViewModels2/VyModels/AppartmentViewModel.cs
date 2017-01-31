@@ -3,21 +3,19 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Webb4_DAL.ModelsV2;
 
-
-namespace Webb4_DAL.ViewModels2
+namespace ViewModels2.VyModels
 {
     public class AppartmentViewModel
     {
 
         public AppartmentViewModel()
         {
-            Features = new HashSet<FeaturesViewModel>();
-            Photos = new HashSet<AppartmentPhotoViewModel>();
-           
+            Features = new HashSet<Features>();
+            Photos = new HashSet<AppartmentPhoto>();
         }
 
 
-      
+        [Key]
         public int Id { get; set; }
         public int Area { get; set; }
         public int Rent { get; set; }
@@ -31,15 +29,15 @@ namespace Webb4_DAL.ViewModels2
         public bool Avalible { get; set; }
 
 
-        public  AdressViewModel Adress { get; set; }
-        public  FormHousingViewModel Housing { get; set; }
-        public AreaViewModel  District { get; set; }
+        public virtual Adress Adress { get; set; }
+        public virtual HousingType Housing { get; set; }
+        public virtual District District { get; set; }
 
 
-        public  ICollection<FeaturesViewModel> Features { get; set; }
-        public  ICollection<AppartmentPhotoViewModel> Photos { get; set; }
+        public virtual ICollection<Features> Features { get; set; }
+        public virtual ICollection<AppartmentPhoto> Photos { get; set; }
 
-       
+        public virtual ICollection<User> UsersFollowing { get; set; }
 
     }
 }

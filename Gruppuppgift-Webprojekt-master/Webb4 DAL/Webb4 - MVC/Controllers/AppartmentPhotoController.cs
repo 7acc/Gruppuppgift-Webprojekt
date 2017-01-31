@@ -6,25 +6,25 @@ using Webb4_businesslayer.HelpMapper;
 
 namespace Webb4___MVC.Controllers
 {
-    public class FeatuerController : Controller
+    public class AppartmentPhotoController : Controller
     {
-        public FeaturesMapping FeaturesMapping { get; set; }
-        public FeatuerController()
+        public AppartmentPhotoMapping AppartmentPhotoMapping { get; set; }
+        public AppartmentPhotoController()
         {
-            FeaturesMapping = new FeaturesMapping();
+            AppartmentPhotoMapping = new AppartmentPhotoMapping();
         }
-        // GET: /Featuer/
+        // GET: /ApartmentPhoto/
         public ActionResult Index()
         {
-            var g = FeaturesMapping.FromBltoUiGetAll();
+            var g = AppartmentPhotoMapping.FromBltoUiGetAll();
             return View(g);
         }
 
         //
-        // GET: /Featuer/Details/5
+        // GET: /ApartmentPhoto/Details/5
         public async Task<ActionResult> Details(int id)
         {
-            var r = await FeaturesMapping.FromBltoUiGetById(id);
+            var r = await AppartmentPhotoMapping.FromBltoUiGetById(id);
             if (r == null)
             {
                 return HttpNotFound();
@@ -33,34 +33,34 @@ namespace Webb4___MVC.Controllers
         }
 
         //
-        // GET: /Featuer/Create
+        // GET: /ApartmentPhoto/Create
         public ActionResult Create()
         {
             return View();
         }
 
         //
-        // POST: /Featuer/Create
+        // POST: /ApartmentPhoto/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(FeaturesViewModel featur)
+        public async Task<ActionResult> Create(AppartmentPhotoViewModel adre)
         {
             if (ModelState.IsValid)
             {
-               
-                await FeaturesMapping.FromBltoUiInser(featur);
+
+                await AppartmentPhotoMapping.FromBltoUiInser(adre);
                 return RedirectToAction("Index");
             }
 
-            return View(featur);
+            return View(adre);
         }
 
         //
-        // GET: /Featuer/Edit/5
+        // GET: /ApartmentPhoto/Edit/5
         public async Task<ActionResult> Edit(int id)
         {
 
-            var editMap = await FeaturesMapping.FromBltoUiGetById(id);
+            var editMap = await AppartmentPhotoMapping.FromBltoUiGetById(id);
 
             if (editMap == null)
             {
@@ -70,24 +70,24 @@ namespace Webb4___MVC.Controllers
         }
 
         //
-        // POST: /Featuer/Edit/5
+        // POST: /ApartmentPhoto/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit(FeaturesViewModel adre)
+        public async Task<ActionResult> Edit(AppartmentPhotoViewModel adre)
         {
             if (ModelState.IsValid)
             {
-                await FeaturesMapping.FromBltoUiEditAsync(adre);
+                await AppartmentPhotoMapping.FromBltoUiEditAsync(adre);
                 return RedirectToAction("Index");
             }
             return View(adre);
         }
 
         //
-        // GET: /Featuer/Delete/5
+        // GET: /ApartmentPhoto/Delete/5
         public async Task<ActionResult> Delete(int id)
         {
-            var getFromR = await FeaturesMapping.FromBltoUiGetById(id);
+            var getFromR = await AppartmentPhotoMapping.FromBltoUiGetById(id);
             if (getFromR == null)
             {
                 return HttpNotFound();
@@ -96,12 +96,12 @@ namespace Webb4___MVC.Controllers
         }
 
         //
-        // POST: /Featuer/Delete/5
+        // POST: /ApartmentPhoto/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            await FeaturesMapping.FromBltoUiDeleteAsync(id);
+            await AppartmentPhotoMapping.FromBltoUiDeleteAsync(id);
             return RedirectToAction("Index");
         }
     }

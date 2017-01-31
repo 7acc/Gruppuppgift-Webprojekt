@@ -198,16 +198,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AdminUploadController.cs" />
-    <Compile Include="Controllers\ApartmentPhotoController.cs" />
-    <Compile Include="Controllers\AreaController.cs" />
+    <Compile Include="Controllers\AdressController.cs" />
+    <Compile Include="Controllers\AppartmentPhotoController.cs" />
+    <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\FeatuerController.cs" />
     <Compile Include="Controllers\FormHousingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogInController.cs" />
     <Compile Include="Controllers\ApartmentController.cs" />
-    <Compile Include="Controllers\OrderApartController.cs" />
-    <Compile Include="Controllers\SizeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -229,46 +227,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Area\Index.cshtml" />
-    <Content Include="Views\Area\Details.cshtml" />
-    <Content Include="Views\Area\Create.cshtml" />
-    <Content Include="Views\Area\Edit.cshtml" />
-    <Content Include="Views\Area\Delete.cshtml" />
-    <Content Include="Views\FormHousing\Index.cshtml" />
-    <Content Include="Views\FormHousing\Details.cshtml" />
-    <Content Include="Views\FormHousing\Create.cshtml" />
-    <Content Include="Views\FormHousing\Edit.cshtml" />
-    <Content Include="Views\FormHousing\Delete.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\Apartment\Index.cshtml" />
-    <Content Include="Views\OrderApart\Index.cshtml" />
-    <Content Include="Views\OrderApart\Details.cshtml" />
-    <Content Include="Views\OrderApart\Create.cshtml" />
-    <Content Include="Views\OrderApart\Edit.cshtml" />
-    <Content Include="Views\OrderApart\Delete.cshtml" />
     <Content Include="Views\User\Details.cshtml" />
     <Content Include="Views\User\Create.cshtml" />
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\Delete.cshtml" />
-    <Content Include="Views\Size\Index.cshtml" />
-    <Content Include="Views\Size\Details.cshtml" />
-    <Content Include="Views\Size\Create.cshtml" />
-    <Content Include="Views\Size\Edit.cshtml" />
-    <Content Include="Views\Size\Delete.cshtml" />
-    <Content Include="Views\Featuer\Index.cshtml" />
-    <Content Include="Views\Featuer\Details.cshtml" />
-    <Content Include="Views\Featuer\Create.cshtml" />
-    <Content Include="Views\Featuer\Edit.cshtml" />
-    <Content Include="Views\Featuer\Delete.cshtml" />
     <Content Include="Views\ApartmentPhoto\Index.cshtml" />
     <Content Include="Views\ApartmentPhoto\Details.cshtml" />
     <Content Include="Views\ApartmentPhoto\Create.cshtml" />
     <Content Include="Views\ApartmentPhoto\Edit.cshtml" />
     <Content Include="Views\ApartmentPhoto\Delete.cshtml" />
-    <Content Include="Views\Apartment\Details.cshtml" />
-    <Content Include="Views\Apartment\Create.cshtml" />
-    <Content Include="Views\Apartment\Edit.cshtml" />
-    <Content Include="Views\Apartment\Delete.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\UserDetails.cshtml" />
@@ -276,6 +244,17 @@
     <Content Include="Views\Home\InterestApartment.cshtml" />
     <Content Include="Views\Home\ListOfApartments.cshtml" />
     <Content Include="Views\LogIn\LoginFrom.cshtml" />
+    <Content Include="Views\Adress\Create.cshtml" />
+    <Content Include="Views\Adress\Delete.cshtml" />
+    <Content Include="Views\Adress\Details.cshtml" />
+    <Content Include="Views\Adress\Edit.cshtml" />
+    <Content Include="Views\Adress\Index.cshtml" />
+    <Content Include="Views\Apartment\Index.cshtml" />
+    <Content Include="Views\Apartment\Details.cshtml" />
+    <Content Include="Views\Apartment\Create.cshtml" />
+    <Content Include="Views\Apartment\Edit.cshtml" />
+    <Content Include="Views\Apartment\DeleteConfirmed.cshtml" />
+    <Content Include="Views\Apartment\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -285,19 +264,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\AdminUpload\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ViewModels2\ViewModels2.csproj">
-      <Project>{52a3f234-922e-4c5b-8ad3-aeaefd5342eb}</Project>
+      <Project>{52A3F234-922E-4C5B-8AD3-AEAEFD5342EB}</Project>
       <Name>ViewModels2</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ViewModels\ViewModels.csproj">
-      <Project>{036A0E04-BAAE-411F-89D5-054311087A81}</Project>
-      <Name>ViewModels</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Webb4 DAL\Webb4 DAL.csproj">
-      <Project>{C92C9DCF-DD27-40E2-8B8F-438EDDCE165B}</Project>
+      <Project>{c92c9dcf-dd27-40e2-8b8f-438eddce165b}</Project>
       <Name>Webb4 DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Webb4-businesslayer\Webb4-businesslayer.csproj">
