@@ -11,8 +11,8 @@
     {
         <div class="row lagenhetlist">
             <div class="col-md-4 ">
-                <b> @Html.DisplayFor(modelItem => item.Adress.Street)</b><br />
-                <img src="http://placehold.it/150x150/292929/99cc66">
+                @*<b> @Html.DisplayFor(modelItem => item.Adress.Street)</b><br />*@
+                <img src="@Url.Content(item.MainImgUrl)">
                 <img src="http://placehold.it/150x150/292929/99cc66">
 
             </div>

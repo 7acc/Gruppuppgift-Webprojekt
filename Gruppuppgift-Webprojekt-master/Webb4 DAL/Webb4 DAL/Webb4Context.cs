@@ -12,7 +12,7 @@ namespace Webb4_DAL
         }
         public DbSet<Adress> Adresses { get; set; }
         public DbSet<Appartment> Appartments { get; set; }
-        public DbSet<AppartmentPhoto> Photos { get; set; }
+        public DbSet<AppartmentPhoto> AppartmentPhotoes { get; set; }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<District> Districts { get; set; }
         public DbSet<Features> Features { get; set; }

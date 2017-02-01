@@ -198,6 +198,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminUploadController.cs" />
     <Compile Include="Controllers\AdressController.cs" />
     <Compile Include="Controllers\AppartmentPhotoController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
@@ -253,6 +254,10 @@
     <Content Include="Views\AppartmentPhoto\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\_apartments1.cshtml" />
+    <Content Include="Views\AdminUpload\AddAppartment.cshtml" />
+    <Content Include="Views\AdminUpload\NewAppartmentForm.cshtml" />
+    <Content Include="Views\AdminUpload\AddImagesToAppartment.cshtml" />
+    <Content Include="Views\AdminUpload\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -262,6 +267,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Photos\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ViewModels2\ViewModels2.csproj">

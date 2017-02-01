@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Webb4_DAL.ViewModels2;
 using Webb4_DAL.Repositories;
 using Webb4_DAL.ModelsV2;
 using System.Web;
+using ViewModels2.VyModels;
 
 namespace Webb4_businesslayer
 {
@@ -17,6 +17,7 @@ namespace Webb4_businesslayer
         public AppartmentManager()
         {
             apartmentRepo = new ApartmentRepository();
+            PhotoManager = new PhotoManager();
         }
 
         public List<AppartmentViewModel> GetAppartmentList()
@@ -27,26 +28,32 @@ namespace Webb4_businesslayer
             return viewList;
 
         }
-        public void AddAppartmentWithPhotosToDB(AppartmentViewModel appartmentToAdd, IEnumerable<HttpPostedFileBase> photos)
+        public void AddAppartmentWithPhotosToDB(AppartmentViewModel appartmentToAdd, HttpPostedFileBase MainIMG, IEnumerable<HttpPostedFileBase> photos, string root)
         {
+            var appartmentdata = appartmentToAdd.ViewModelToAppartment();
+            appartmentdata.PublicationDate = DateTime.Now;
+
 
             var listOfPhotos = new List<AppartmentPhoto>();
             foreach (var photo in photos)
             {
-                var photoData = new AppartmentPhoto() {
-                    Name = new Guid()                 
+                var photoData = new AppartmentPhoto()
+                {
+                    Name = Guid.NewGuid(),
+                    Appartment = appartmentdata
                 };
 
-               string url = PhotoManager.SavePhotoToCataloge(photo, photoData.Name);// not implemented!!!! LAZY AS BITCH
+                string url = PhotoManager.SavePhotoToCataloge(photo, root, photoData.Name);// not implemented!!!! LAZY AS BITCH
 
                 photoData.URL = url;
-                
+                listOfPhotos.Add(photoData);
             }
 
-            var appartmentdata = appartmentToAdd.ViewModelToAppartment();
+            var MainUrl = PhotoManager.SavePhotoToCataloge(MainIMG, root, Guid.NewGuid());
             appartmentdata.Photos = listOfPhotos;
-
+            appartmentdata.MainImgUrl = MainUrl;
             apartmentRepo.SaveAppartmentToDB(appartmentdata);
+            //apartmentRepo.SaveApartmentPhotos(listOfPhotos);
 
         }
 

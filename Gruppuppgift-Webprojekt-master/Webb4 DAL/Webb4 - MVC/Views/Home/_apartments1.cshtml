@@ -80,7 +80,7 @@
             <td>
                 @item.MoveInDate.ToShortDateString()
             </td>
-            <td>
+            @*<@*td>
                 @if (item.Housing.Type == "Direkt")
                     {
                     @:Direkt
@@ -90,7 +90,7 @@
 
                     @Html.DisplayFor(modelItem => item.UsersFollowing.Count)
                     }
-            </td>
+            </td>*@
             <td>
 
                 @Html.ActionLink("Gå till", "Details", new { id = item.Id })
