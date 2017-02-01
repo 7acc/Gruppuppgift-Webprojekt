@@ -13,11 +13,10 @@ namespace Webb4_DAL
         {
             //using (Webb4Context ctx = new Webb4Context())
             //{
-            //    //ctx.Database.Delete();
-            //    ctx.Database.Create();
+
 
             //};
         }
     }
-    }
+   }
 

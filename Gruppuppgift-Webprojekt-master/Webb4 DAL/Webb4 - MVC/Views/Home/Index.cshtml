@@ -1,46 +1,249 @@
-﻿@model IEnumerable<ViewModels2.VyModels.AppartmentViewModel>
+﻿
 
-@{
-    ViewBag.Title = "Index";
-}
+<style>
+    #btn1 {
+        background-color: forestgreen;
+        width: 100px;
+        border: 0;
+        padding: 10px 0;
+        margin: 5px 0;
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+    }
 
-<h2>Test</h2>
-<p> your loged in as @User.Identity.Name</p>
+        #btn1:hover {
+            text-decoration: underline;
+        }
 
-@Html.Partial("~/Views/Home/ListOfApartments.cshtml", Model)
+    #btn2 {
+        background-color: gray;
+        width: 100px;
+        border: 0;
+        padding: 10px 0;
+        margin: 5px 0;
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+    }
+
+        #btn2:hover {
+            text-decoration: underline;
+        }
+
+    #btn3 {
+        background-color: forestgreen;
+        width: 100px;
+        border: 0;
+        padding: 10px 0;
+        margin: 5px 0;
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+    }
+
+        #btn3:hover {
+            text-decoration: underline;
+        }
+</style>
+<script>
+        function btnclick() {
+            $("#spanbtn").html($("#spanbtn").html() == 'Stigande' ? 'Fallande' : 'Stigande');
+        };
+        function btnclick2() {
+            $("#spanbtn4").html($("#spanbtn4").html() == 'Visa med bilder' ? 'Visa utan bilder' : 'Visa med bilder');
+        };
+        function btnsok() {
+
+          var somrade = $("#op1 :selected").text(); // The text content of the selected option
+          var bform = $("#op2 :selected").text(); // The text content of the selected option
+          var srum = $("#op3 :selected").text(); // The text content of the selected option
+
+          var smaxhyra = $("#op4 :selected").text(); // The text content of the selected option
+          var sminyta = $("#op5 :selected").text(); // The text content of the selected option
+          var smaxyta = $("#op6 :selected").text(); // The text content of the selected option
+          var ssort = $("#op7 :selected").text(); // The text content of the selected option
+
+          window.location.href = '@Url.Action("Find", "Home")/' +  somrade+"/"+bform+"/"+srum+"/"+smaxhyra+"/"+sminyta+"/"+smaxyta+"/" +ssort
 
 
-@*<div class="container ">
-    <div class="row lagenhetlist">
-        <div class="col-md-2 ">
-            <img src="http://placehold.it/150x150/292929/99cc66">
+
+
+
+        };
+
+</script>
+
+</head>
+<body>
+    <div class="container">
+        <h2>Lediga lägenheter i Helsingborg</h2>
+        <div>
+            <div class="panel-body" style="background-color:antiquewhite">
+                <div class="row search">
+                    <div class="col-md-2">
+                        <p>Område</p>
+                        <select id="op1" name="selValue1" class="selectpicker">
+                            <option id="a1">Alla</option>
+                            <option id="a2">Centrum</option>
+                            <option id="a3">Dalhem</option>
+                            <option id="a4">Domsten</option>
+                            <option id="a5">Drottninghög</option>
+                            <option id="a6">Elineberg</option>
+                            <option id="a7">Fredriksdal</option>
+                            <option id="a8">Husensjö</option>
+                            <option id="a9">Högaborg</option>
+                            <option id="a10">Högasten</option>
+                            <option id="a11">Kattarp</option>
+                            <option id="a11">Laröd</option>
+                            <option id="a13">Lussebacken</option>
+                            <option id="a14">Mariastaden</option>
+                            <option id="a15">Miatorp</option>
+                            <option id="a16">Mörarp</option>
+                            <option id="a17">Norr</option>
+                            <option id="a18">Närlunda</option>
+                            <option id="a19">Olympia</option>
+                            <option id="a20">Planteringen</option>
+                            <option id="a21">Påarp</option>
+                            <option id="a22">Pålsjö Östra</option>
+                            <option id="a23">Raus</option>
+                            <option id="a24">Ringstorp</option>
+                            <option id="a25">Råå</option>
+                            <option id="a26">Slottshöjden</option>
+                            <option id="a27">Stattena</option>
+                            <option id="a28">Söder</option>
+                            <option id="a29">Tågaborg</option>
+                            <option id="a30">Wilson Park</option>
+                            <option id="a31">Ödåkra</option>
+                        </select>
+
+                    </div>
+                    <div id="op2" class="col-md-2">
+                        <p>Boendeform</p>
+                        <select class="selectpicker">
+                            <option>Alla</option>
+                            <option>Max 25</option>
+                            <option>Seniorboende</option>
+                            <option>Trygghetsboende</option>
+                            <option>Direkt</option>
+                            <option>Nybyggt</option>
+                            <option>Övrigt</option>
+
+                        </select>
+                    </div>
+                    <div id="op3" class="col-md-2">
+                        <p>Storlek</p>
+                        <select class="selectpicker">
+                            <option>Alla</option>
+                            <option>Ettor</option>
+                            <option>Tvåor</option>
+                            <option>Treor</option>
+                            <option>Fyror</option>
+                            <option>Femmor</option>
+                            <option>Sexor</option>
+                        </select>
+
+
+                    </div>
+                    <div id="op4" class="col-md-2">
+                        <p>Max hyra</p>
+                        <select class="selectpicker">
+                            <option>Alla</option>
+                            <option>2000 kr</option>
+                            <option>3000 kr</option>
+                            <option>4000 kr</option>
+                            <option>5000 kr</option>
+                            <option>6000 kr</option>
+                            <option>7000 kr</option>
+                            <option>8000 kr</option>
+                            <option>10000 kr</option>
+                            <option>12000 kr</option>
+                            <option>15000 kr</option>
+                            <option>20000 kr</option>
+                        </select>
+
+                    </div>
+                    <div id="op5" class="col-md-2">
+                        <p>Min yta</p>
+                        <select class="selectpicker">
+                            <option>Alla</option>
+                            <option>30 kvm</option>
+                            <option>40 kvm</option>
+                            <option>50 kvm</option>
+                            <option>60 kvm</option>
+                            <option>70 kvm</option>
+                            <option>80 kvm</option>
+                            <option>90 kvm</option>
+                            <option>100 kvm</option>
+                        </select>
+
+
+                    </div>
+                    <div id="op6" class="col-md-2">
+                        <p>Max yta</p>
+                        <select class="selectpicker">
+                            <option>Alla</option>
+                            <option>30 kvm</option>
+                            <option>40 kvm</option>
+                            <option>50 kvm</option>
+                            <option>60 kvm</option>
+                            <option>70 kvm</option>
+                            <option>80 kvm</option>
+                            <option>90 kvm</option>
+                            <option>100 kvm</option>
+                        </select>
+
+
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+
+                    <div class="col-md-2">
+                        @*@Html.ActionLink("Sök", "Find", "Home", new { Country = "Ringstorp", state = "2" }, null);*@
+                        <button id="btn1" onclick="btnsok()">Sök</button>
+
+                    </div>
+                    <div class="col-md-2">
+                        <button id="btn2">Rensa</button>
+
+                    </div>
+                </div>
+
+                <hr />
+                <div class="row">
+
+                    <div class="col-md-3">
+                        <p>Sortering</p>
+                        <select id="op7" class="selectpicker">
+                            <option>Publiceringsdatum</option>
+                            <option>Antal Intresseanmälningar</option>
+                            <option>Adress</option>
+                            <option>Hyra</option>
+                            <option>Inflyttning</option>
+                            <option>Område</option>
+                            <option>Antal rum</option>
+                            <option>Yta</option>
+                        </select>
+                    </div>
+
+
+                    <div class="col-md-2">
+                        <button id="btn3" onclick="btnclick()"><span id="spanbtn">Stigande</span></button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
         </div>
-        <div class="col-md-1 mid">
-            2 Rum
-        </div>
-        <div class="col-md-2">
-            Område:  <br />
-            Våning: <br />
-            Yta (ca): <br />
-            Hyra:    <br />
-            Inflyttning:<br />  
-        </div>
-        <div class="col-md-2">
-           Ringstorp <br />
-           2:a våningen<br />
-           80 m²<br />
-           10 940 kr/mån<br />
-           2017-02-01<br />
-        </div>
-        <div class="col-md-3">
-            Långarödsvägen 55<br />
-            2548 Helsingborg
-        </div>
-        <div class="col-md-2 mid">
-            <button type="button" class="btn btn-default">Link till lägenhet</button>
-        </div>
-    </div> 
-   
+    </div>
 
- </div>*@
 
+    <div id="result">
+        @*@Html.RenderAction()*@
+
+
+    </div>

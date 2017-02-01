@@ -5,7 +5,7 @@ namespace Webb4_DAL.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Webb4_DAL.Webb4Context>
+    internal sealed class Configuration : DbMigrationsConfiguration<Webb4Context>
     {
         public Configuration()
         {
@@ -16,7 +16,7 @@ namespace Webb4_DAL.Migrations
         {
             //  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data. E.g.
             //
             //    context.People.AddOrUpdate(

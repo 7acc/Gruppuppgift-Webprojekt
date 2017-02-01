@@ -233,7 +233,7 @@
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\Delete.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Index_old.cshtml" />
     <Content Include="Views\Home\UserDetails.cshtml" />
     <Content Include="Views\LogIn\Register.cshtml" />
     <Content Include="Views\Home\InterestApartment.cshtml" />
@@ -251,6 +251,8 @@
     <Content Include="Views\Apartment\Delete.cshtml" />
     <Content Include="Views\Apartment\Edit.cshtml" />
     <Content Include="Views\AppartmentPhoto\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\_apartments1.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
