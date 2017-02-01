@@ -1,0 +1,103 @@
+﻿@model IEnumerable<ViewModels2.VyModels.AppartmentViewModel>
+@{
+    ViewBag.Title = "Lediga Lägenheter";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            Sökresultat: @Model.Count()
+
+        </div>
+
+        <div class="col-md-2">
+            <button id="btn4" onclick="btnclick2()"><span id="spanbtn4">Visa med bilder</span></button>
+            <!--<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>Visa listan med bilder</p>-->
+
+        </div>
+    </div>
+</div>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            Bostadsområde
+        </th>
+        <th>
+            Adress
+        </th>
+        <th>
+            Rum
+        </th>
+        <th>
+            Yta
+        </th>
+        <th>
+            Hyra
+        </th>
+        <th>
+            Sista Anmäln.
+        </th>
+        <th>
+            Inflyttning
+        </th>
+        <th>
+            Anmäln.
+        </th>
+
+        <th>Länk</th>
+    </tr>
+
+
+    @foreach (var item in Model)
+
+        {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.District.Name)
+
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Adress.Street)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NrOfRooms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rent)
+            </td>
+            <td>
+                @item.LastAdmissionDate.ToShortDateString()
+            </td>
+            <td>
+                @item.MoveInDate.ToShortDateString()
+            </td>
+            <td>
+                @if (item.Housing.Type == "Direkt")
+                    {
+                    @:Direkt
+                }
+                else
+                    {
+
+                    @Html.DisplayFor(modelItem => item.UsersFollowing.Count)
+                    }
+            </td>
+            <td>
+
+                @Html.ActionLink("Gå till", "Details", new { id = item.Id })
+
+            </td>
+        </tr>
+        }
+
+</table>
+

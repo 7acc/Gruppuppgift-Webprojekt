@@ -85,6 +85,10 @@
     <Compile Include="Migrations\201701281313238_test.Designer.cs">
       <DependentUpon>201701281313238_test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702011612201_addimgurl.cs" />
+    <Compile Include="Migrations\201702011612201_addimgurl.Designer.cs">
+      <DependentUpon>201702011612201_addimgurl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelsV2\Adress.cs" />
     <Compile Include="ModelsV2\Appartment.cs" />
@@ -108,6 +112,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201701281313238_test.resx">
       <DependentUpon>201701281313238_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702011612201_addimgurl.resx">
+      <DependentUpon>201702011612201_addimgurl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
