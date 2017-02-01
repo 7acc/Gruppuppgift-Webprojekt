@@ -1,52 +1,52 @@
 ﻿
-
-<style>
-    #btn1 {
-        background-color: forestgreen;
-        width: 100px;
-        border: 0;
-        padding: 10px 0;
-        margin: 5px 0;
-        text-align: center;
-        color: #fff;
-        font-weight: bold;
-    }
-
-        #btn1:hover {
-            text-decoration: underline;
+<head>
+    <style>
+        #btn1 {
+            background-color: forestgreen;
+            width: 100px;
+            border: 0;
+            padding: 10px 0;
+            margin: 5px 0;
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
         }
 
-    #btn2 {
-        background-color: gray;
-        width: 100px;
-        border: 0;
-        padding: 10px 0;
-        margin: 5px 0;
-        text-align: center;
-        color: #fff;
-        font-weight: bold;
-    }
+            #btn1:hover {
+                text-decoration: underline;
+            }
 
-        #btn2:hover {
-            text-decoration: underline;
+        #btn2 {
+            background-color: gray;
+            width: 100px;
+            border: 0;
+            padding: 10px 0;
+            margin: 5px 0;
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
         }
 
-    #btn3 {
-        background-color: forestgreen;
-        width: 100px;
-        border: 0;
-        padding: 10px 0;
-        margin: 5px 0;
-        text-align: center;
-        color: #fff;
-        font-weight: bold;
-    }
+            #btn2:hover {
+                text-decoration: underline;
+            }
 
-        #btn3:hover {
-            text-decoration: underline;
+        #btn3 {
+            background-color: forestgreen;
+            width: 100px;
+            border: 0;
+            padding: 10px 0;
+            margin: 5px 0;
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
         }
-</style>
-<script>
+
+            #btn3:hover {
+                text-decoration: underline;
+            }
+    </style>
+    <script>
         function btnclick() {
             $("#spanbtn").html($("#spanbtn").html() == 'Stigande' ? 'Fallande' : 'Stigande');
         };
@@ -72,7 +72,7 @@
 
         };
 
-</script>
+    </script>
 
 </head>
 <body>
@@ -239,11 +239,22 @@
 
 
         </div>
+
     </div>
 
 
     <div id="result">
-        @*@Html.RenderAction()*@
+        @model IEnumerable<ViewModels2.VyModels.AppartmentViewModel>
+        @{
+            ViewBag.Title = "Index";
+        }
+        @*<h2>Test</h2>
+            <p> your loged in as @User.Identity.Name</p>*@
+        @*@{ Html.RenderPartial("~/Views/Home/ListOfApartments.cshtml", Model);  }*@
+        @Html.Partial("~/Views/Home/ListOfApartments.cshtml", Model)
+
+
 
 
     </div>
+</body>

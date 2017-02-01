@@ -177,6 +177,17 @@
     <Content Include="CSS\LoginPage.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Photos\Pic1.jpg" />
+    <Content Include="Photos\Pic2.jpg" />
+    <Content Include="Photos\Pic3.jpg" />
+    <Content Include="Photos\Pic4.jpg" />
+    <Content Include="Photos\Pic5.jpg" />
+    <Content Include="Photos\Pic6.jpg" />
+    <Content Include="Photos\Pic7.jpg" />
+    <Content Include="Photos\POe6PuG.jpg" />
+    <Content Include="Photos\qH0THFI.jpg" />
+    <Content Include="Photos\road_to_death_valley-wallpaper-1600x480.jpg" />
+    <Content Include="Photos\wJZkJCW.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -267,7 +278,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Photos\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ViewModels2\ViewModels2.csproj">

@@ -28,10 +28,10 @@ namespace Webb4___MVC.Controllers
         }
 
         public int convertrum(string instring)
-            {
+        {
             int maxrent = 0;
             switch (instring)
-                {
+            {
                 case "Alla":
                     maxrent = 9999;
                     break;
@@ -58,21 +58,21 @@ namespace Webb4___MVC.Controllers
 
 
 
-                }
+            }
 
             return maxrent;
 
 
 
-            }
+        }
 
 
 
         public int convertarea(string instring)
-            {
+        {
             int maxrent = 0;
             switch (instring)
-                {
+            {
                 case "Alla":
                     maxrent = 9999;
                     break;
@@ -105,21 +105,21 @@ namespace Webb4___MVC.Controllers
 
 
 
-                }
+            }
 
             return maxrent;
 
 
 
-            }
+        }
 
 
 
         public int convertrent(string instring)
-            {
+        {
             int maxrent = 0;
             switch (instring)
-                {
+            {
                 case "Alla":
                     maxrent = 999999;
                     break;
@@ -161,17 +161,17 @@ namespace Webb4___MVC.Controllers
 
 
 
-                }
+            }
 
             return maxrent;
 
 
 
-            }
+        }
 
 
         public ActionResult Find(string Omrade, string Boform, string Rum, string MaxHyra, string Minyta, string Maxyta, string Sort)
-            {
+        {
             var g = AppartmentMapping.FromBltoUiGetAll();
 
             string sortname;
@@ -185,7 +185,7 @@ namespace Webb4___MVC.Controllers
 
 
             switch (Sort)
-                {
+            {
                 case "Publiceringsdatum":
                     sortname = "PublicationDate";
                     break;
@@ -214,90 +214,90 @@ namespace Webb4___MVC.Controllers
 
                 default:
                     break;
-                }
+            }
 
 
-            if (Omrade == "Alla" && Boform == "Alla" && Rum == "Alla" && MaxHyra=="Alla" && Minyta=="Alla" && Maxyta=="Alla")
-                {
+            if (Omrade == "Alla" && Boform == "Alla" && Rum == "Alla" && MaxHyra == "Alla" && Minyta == "Alla" && Maxyta == "Alla")
+            {
 
-                return View("_apartments1", g);
+                return View("Index", g);
 
-                }
+            }
             else
 
 
             if (Omrade == "Alla" && Boform == "Alla" && Rum == "Alla")
-                {
+            {
                 var r2 = from p in g where (p.Area >= minarea && p.Area < maxarea && p.Rent <= maxrent) select p;
-                return View("_apartments1", r2);
-
-                }
-            else
-            if (Omrade == "Alla" && Boform == "Alla")
-                {
-                var r2 = from p in g where (p.Area >= minarea && p.Area < maxarea && p.NrOfRooms == antalrum && p.Rent <= maxrent) select p;
-                return View("_apartments1", r2);
-
-                }
-            else
-            if (Omrade == "Alla" && Rum == "Alla")
-                {
-                var r2 = from p in g where (p.Area >= minarea && p.Area < maxarea && p.Housing.Type == Boform && p.Rent <= maxrent) select p;
-                return View("_apartments1", r2);
-
-                }
-            if (Rum == "Alla" && Boform == "Alla")
-                {
-                var r2 = from p in g where (p.Area >= minarea && p.Area < maxarea && p.District.Name == Omrade && p.Rent <= maxrent) select p;
-                return View("_apartments1", r2);
-
-                }
-            else
-                if (Omrade == "Alla")
-                {
-                var r2 = from p in g where (p.Area >= minarea && p.Area < maxarea && p.NrOfRooms == antalrum && p.Housing.Type == Boform && p.Rent <= maxrent) select p;
-                return View("_apartments1", r2);
-
-                }
-            else
-            if (Rum == "Alla")
-                {
-                var r2 = from p in g where (p.Area >= minarea && p.Area < maxarea && p.Housing.Type == Boform && p.District.Name == Omrade && p.Rent <= maxrent) select p;
-                return View("_apartments1", r2);
-
-                }
-            else
-            if (Boform == "Alla")
-                {
-                var r2 = from p in g where (p.Area >= minarea && p.Area < maxarea && p.NrOfRooms == antalrum && p.District.Name == Omrade && p.Rent <= maxrent) select p;
-                return View("_apartments1", r2);
-
-                }
-            else
-                {
-                var r2 = from p in g where (p.Area >= minarea && p.Area < maxarea && p.NrOfRooms == antalrum && p.Housing.Type == Boform && p.District.Name == Omrade && p.Rent <= maxrent) select p;
-                return View("_apartments1", r2);
-
-                }
-
-
-            //return View("_apartments1", g.ToList());
-
-
+                return View("Index", r2);
 
             }
+            else
+            if (Omrade == "Alla" && Boform == "Alla")
+            {
+                var r2 = from p in g where (p.Area >= minarea && p.Area < maxarea && p.NrOfRooms == antalrum && p.Rent <= maxrent) select p;
+                return View("Index", r2);
+
+            }
+            else
+            if (Omrade == "Alla" && Rum == "Alla")
+            {
+                var r2 = from p in g where (p.Area >= minarea && p.Area < maxarea && p.Housing.Type == Boform && p.Rent <= maxrent) select p;
+                return View("Index", r2);
+
+            }
+            if (Rum == "Alla" && Boform == "Alla")
+            {
+                var r2 = from p in g where (p.Area >= minarea && p.Area < maxarea && p.District.Name == Omrade && p.Rent <= maxrent) select p;
+                return View("Index", r2);
+
+            }
+            else
+                if (Omrade == "Alla")
+            {
+                var r2 = from p in g where (p.Area >= minarea && p.Area < maxarea && p.NrOfRooms == antalrum && p.Housing.Type == Boform && p.Rent <= maxrent) select p;
+                return View("Index", r2);
+
+            }
+            else
+            if (Rum == "Alla")
+            {
+                var r2 = from p in g where (p.Area >= minarea && p.Area < maxarea && p.Housing.Type == Boform && p.District.Name == Omrade && p.Rent <= maxrent) select p;
+                return View("Index", r2);
+
+            }
+            else
+            if (Boform == "Alla")
+            {
+                var r2 = from p in g where (p.Area >= minarea && p.Area < maxarea && p.NrOfRooms == antalrum && p.District.Name == Omrade && p.Rent <= maxrent) select p;
+                return View("Index", r2);
+
+            }
+            else
+            {
+                var r2 = from p in g where (p.Area >= minarea && p.Area < maxarea && p.NrOfRooms == antalrum && p.Housing.Type == Boform && p.District.Name == Omrade && p.Rent <= maxrent) select p;
+                return View("Index", r2);
+
+            }
+
+
+            //return PartialView("ListOfApartments", g.ToList());
+
+
+
+        }
 
 
         // GET: Home
         public ActionResult Index()
         {
             var g = AppartmentMapping.FromBltoUiGetAll();
-            return View();
+            return View(g);
         }
 
 
         // GET: /Apartment/Details
-        public ActionResult ListOfApartments( )
+        public ActionResult ListOfApartments()
         {
             var g = AppartmentMapping.FromBltoUiGetAll();
             return View(g);
@@ -327,7 +327,7 @@ namespace Webb4___MVC.Controllers
         }
 
         // GET: /UserData/Apartments // Alltså hämta en list av lägenheter som en user har gjort intresse för.
-        public ActionResult InterestApartment (int id)
+        public ActionResult InterestApartment(int id)
         {
             //var ListOfUsers = AppartmentMapping.FromBltoUiGetAllUserInterestApartment(id);
 
