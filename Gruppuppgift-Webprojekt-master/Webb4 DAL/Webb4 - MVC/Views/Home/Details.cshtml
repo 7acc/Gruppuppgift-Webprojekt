@@ -1,7 +1,8 @@
 ﻿@model ViewModels2.VyModels.AppartmentViewModel
 
 <div>
-    @*<h4>@Html.DisplayFor(model => model.Adress.Street)</h4>*@
+    <br />
+    <h4>@Html.DisplayFor(model => model.Adress.Street)</h4>
     <hr style="border-color: white;"/>
     <table>
         <tr>
@@ -13,29 +14,29 @@
                 </dl>
             </td> 
             <td><dl class="dl-horizontal">
-    @*<dt>
-        @Html.DisplayNameFor(model => model.Housing)
+    <dt>
+        Hustyp
     </dt>
 
     <dd>
-        @Html.DisplayFor(model => model.Housing)
-    </dd>*@
+        @Html.DisplayFor(model => model.Housing.Type)
+    </dd>
 
     <dt>
-        @Html.DisplayNameFor(model => model.NrOfRooms)
+        Antal rum
     </dt>
 
     <dd>
         @Html.DisplayFor(model => model.NrOfRooms)
     </dd>
 
-    @*<dt>
-        @Html.DisplayNameFor(model => model.District)
+    <dt>
+        Båstadsområde
     </dt>
 
     <dd>
-        @Html.DisplayFor(model => model.District)
-    </dd>*@
+        @Html.DisplayFor(model => model.District.Name)
+    </dd>
 
     @*<dt>
         @Html.DisplayNameFor(model => model.Photos)
@@ -46,23 +47,23 @@
     </dd>*@
 
     <dt>
-        @Html.DisplayNameFor(model => model.BuildYear)
+        Byggår
     </dt>
 
     <dd>
-        @Html.DisplayFor(model => model.BuildYear)
+        @Model.BuildYear.ToShortDateString()
     </dd>
 
     <dt>
-        @Html.DisplayNameFor(model => model.Area)
+        Yta(Kvm)
     </dt>
 
     <dd>
-        @Html.DisplayFor(model => model.Area)
+        @Html.DisplayFor(model => model.Area) m²
     </dd>
 
     <dt>
-        @Html.DisplayNameFor(model => model.NrOfRooms)
+        Antal rum
     </dt>
 
     <dd>
@@ -70,7 +71,7 @@
     </dd>
 
     <dt>
-        @Html.DisplayNameFor(model => model.Floor)
+        Våning
     </dt>
 
     <dd>
@@ -78,20 +79,22 @@
     </dd>
 
     <dt>
-        @Html.DisplayNameFor(model => model.Rent)
+        Hyra
     </dt>
 
     <dd>
-        @Html.DisplayFor(model => model.Rent)
+        @Html.DisplayFor(model => model.Rent) kr/mån
     </dd>
 
-    @*<dt>
-        @Html.DisplayNameFor(model => model.Adress)
+    <dt>
+        Adress
     </dt>
 
     <dd>
-        @Html.DisplayFor(model => model.Adress)
-    </dd>*@
+        @Html.DisplayFor(model => model.Adress.Street), 
+        @Html.DisplayFor(model => model.Adress.PostalNr) 
+        @Html.DisplayFor(model => model.Adress.City) 
+    </dd>
  
     <dt>
         @Html.DisplayNameFor(model => model.Avalible)
@@ -102,28 +105,33 @@
     </dd>
 
     <dt>
-        @Html.DisplayNameFor(model => model.MoveInDate)
+        Tillträde
     </dt>
 
     <dd>
-        @Html.DisplayFor(model => model.MoveInDate)
+        @Model.MoveInDate.ToShortDateString()
     </dd>
 
     <dt>
-        @Html.DisplayNameFor(model => model.LastAdmissionDate)
+        Sista anmälningsdag
     </dt>
 
     <dd>
-        @Html.DisplayFor(model => model.LastAdmissionDate)
+        @Model.LastAdmissionDate.ToShortDateString()
     </dd>
 </dl>
     
             </td> 
             <td>
                 <dl class="dl-horizontal">
-                    <dt>
-                        @*@Html.DisplayNameFor(model => model.Features)*@
-                    </dt>  
+                    <dd><b>Lägenheten/Byggnaden har</b></dd>
+                    <br />
+                    @foreach(var a in Model.Features)
+                    { 
+                    <dd>
+                        ✔ @Html.DisplayFor(Model => a.name)
+                    </dd>
+                    } 
                 </dl>
             </td>  
         </tr>  

@@ -68,12 +68,21 @@ namespace Webb4_businesslayer.HelpMapper
                 .ToList();
             return getData;
         } 
-        public  async Task<AppartmentViewModel> FromBltoUiGetById(int id)
+        public  AppartmentViewModel FromBltoUiGetById(int id)
         {
-            var getRepo = await _genericRepository.GetByIdAsync(id);
+            var getRepo = _genericRepository.GetAll().Include("Adress")
+                .Include("Housing").Include("District").Include("Features").First(x=>x.Id == id);
             var detailsId = Mapper.Map<Appartment, AppartmentViewModel>(getRepo);
             return detailsId;
         }
+
+        //public async Task<AppartmentViewModel> FromBltoUiGetById(int id)
+        //{
+        //    var getRepo = await _genericRepository.GetByIdAsync(id);
+        //    var detailsId = Mapper.Map<Appartment, AppartmentViewModel>(getRepo);
+        //    return detailsId;
+        //}
+
 
         public  async Task FromBltoUiInser(AppartmentViewModel Appart)
         {

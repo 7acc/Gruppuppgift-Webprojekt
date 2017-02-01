@@ -35,9 +35,9 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /Apartment/Details/5
-        public async Task<ActionResult> Details(int id)
+        public /*async Task<ActionResult>*/ ActionResult Details(int id)
         {
-            var r = await AppartmentMapping.FromBltoUiGetById(id);
+            var r = /*await*/ AppartmentMapping.FromBltoUiGetById(id);
             if (r == null)
             {
                 return HttpNotFound();
@@ -79,10 +79,10 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /Apartment/Edit/5
-        public async Task<ActionResult> Edit(int id)
+        public /*async Task<ActionResult>*/ ActionResult Edit(int id)
         {
 
-            var editMap = await AppartmentMapping.FromBltoUiGetById(id);
+            var editMap = /*await*/ AppartmentMapping.FromBltoUiGetById(id);
 
             if (editMap == null)
             {
@@ -115,9 +115,9 @@ namespace Webb4___MVC.Controllers
 
         //
         // GET: /Apartment/Delete/5
-        public async Task<ActionResult> Delete(int id)
+        public /*async Task<ActionResult>*/ ActionResult Delete(int id)
         {
-            var getFromR = await AppartmentMapping.FromBltoUiGetById(id);
+            var getFromR = /*await*/ AppartmentMapping.FromBltoUiGetById(id);
             if (getFromR == null)
             {
                 return HttpNotFound();

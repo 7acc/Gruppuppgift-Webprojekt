@@ -28,11 +28,7 @@
                 <b>Hyra: </b>@Html.DisplayFor(modelItem => item.Rent)<br />
                 <b>Tillträde: </b>@item.MoveInDate.ToShortDateString()<br />
                 <b>Sista anmälningsdag: </b>@item.LastAdmissionDate.ToShortDateString()<br />
-            </div>
-            @*<div class="col-md-3">
-                    @Html.DisplayFor(modelItem => item.Adress.PostalNr)<br />
-                    @Html.DisplayFor(modelItem => item.Adress.City)
-                </div>*@
+            </div> 
             <div class="col-md-2 mid">
                 <button type="button" class="btn btn-default" onclick="location.href='@Url.Action("Details", "Home", new { id=item.Id })'">Mer information</button>
             </div>

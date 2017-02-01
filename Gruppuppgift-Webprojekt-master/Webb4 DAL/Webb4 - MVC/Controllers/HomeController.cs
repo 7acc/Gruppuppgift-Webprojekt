@@ -41,9 +41,9 @@ namespace Webb4___MVC.Controllers
         }
 
         // GET: /Apartment/Details
-        public async Task<ActionResult> Details(int id)
+        public /*async Task<ActionResult>*/ ActionResult Details(int id)
         {
-            var r = await AppartmentMapping.FromBltoUiGetById(id);
+            var r = /*await*/ AppartmentMapping.FromBltoUiGetById(id);
             if (r == null)
             {
                 return HttpNotFound();
