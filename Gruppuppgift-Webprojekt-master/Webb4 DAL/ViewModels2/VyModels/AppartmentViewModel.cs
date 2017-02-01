@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Webb4_DAL.ModelsV2;
 
 namespace ViewModels2.VyModels
 {
@@ -10,8 +9,8 @@ namespace ViewModels2.VyModels
 
         public AppartmentViewModel()
         {
-            Features = new HashSet<Features>();
-            Photos = new HashSet<AppartmentPhoto>();
+            Features = new HashSet<FeaturesViewModel>();
+            Photos = new HashSet<AppartmentPhotoViewModel>();
         }
 
 
@@ -29,15 +28,14 @@ namespace ViewModels2.VyModels
         public bool Avalible { get; set; }
 
 
-        public virtual Adress Adress { get; set; }
-        public virtual HousingType Housing { get; set; }
-        public virtual District District { get; set; }
-
-
-        public virtual ICollection<Features> Features { get; set; }
-        public virtual ICollection<AppartmentPhoto> Photos { get; set; }
-
-        public virtual ICollection<User> UsersFollowing { get; set; }
+        public virtual  AdressViewModel Adress { get; set; }
+        public virtual  HousingTypeViewModel Housing { get; set; }
+        public virtual  DistrictViewModel District { get; set; }
+               
+        public virtual  ICollection<FeaturesViewModel> Features { get; set; }
+        public virtual  ICollection<AppartmentPhotoViewModel> Photos { get; set; }
+             
+        public virtual ICollection<UserViewModel> UsersFollowing { get; set; }
 
     }
 }

@@ -232,11 +232,6 @@
     <Content Include="Views\User\Create.cshtml" />
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\Delete.cshtml" />
-    <Content Include="Views\ApartmentPhoto\Index.cshtml" />
-    <Content Include="Views\ApartmentPhoto\Details.cshtml" />
-    <Content Include="Views\ApartmentPhoto\Create.cshtml" />
-    <Content Include="Views\ApartmentPhoto\Edit.cshtml" />
-    <Content Include="Views\ApartmentPhoto\Delete.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\UserDetails.cshtml" />
@@ -252,9 +247,10 @@
     <Content Include="Views\Apartment\Index.cshtml" />
     <Content Include="Views\Apartment\Details.cshtml" />
     <Content Include="Views\Apartment\Create.cshtml" />
-    <Content Include="Views\Apartment\Edit.cshtml" />
     <Content Include="Views\Apartment\DeleteConfirmed.cshtml" />
     <Content Include="Views\Apartment\Delete.cshtml" />
+    <Content Include="Views\Apartment\Edit.cshtml" />
+    <Content Include="Views\AppartmentPhoto\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

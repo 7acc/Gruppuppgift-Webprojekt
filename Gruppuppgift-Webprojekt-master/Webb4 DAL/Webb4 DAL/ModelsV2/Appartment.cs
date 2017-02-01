@@ -28,9 +28,9 @@ namespace Webb4_DAL.ModelsV2
         public bool Avalible { get; set; }
 
 
-        public virtual Adress Adress { get; set; }
-        public virtual HousingType Housing { get; set; }
-        public virtual District District { get; set; }
+        public  Adress Adress { get; set; }
+        public  HousingType Housing { get; set; }
+        public  District District { get; set; }
 
 
         public virtual ICollection<Features> Features { get; set; }                     

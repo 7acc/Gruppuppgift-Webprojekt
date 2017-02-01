@@ -14,7 +14,7 @@
                 <img src="http://placehold.it/150x150/292929/99cc66">
             </div>
             <div class="col-md-2 mid">
-                @*@Html.DisplayFor(modelItem => item.Housing)*@
+                @Html.DisplayFor(modelItem => item.Housing.Type)
             </div>
             <div class="col-md-3">
                 @*<b>District: </b>@Html.DisplayFor(modelItem => item.District)<br />*@
@@ -25,7 +25,7 @@
                 <b>Deadline Date: </b>@Html.DisplayFor(modelItem => item.LastAdmissionDate)<br />
             </div>
             <div class="col-md-3">
-                @*@Html.DisplayFor(modelItem => item.Adress)*@
+                @Html.DisplayFor(modelItem => item.Adress.Street)
             </div>
             <div class="col-md-2 mid">
                 <button type="button" class="btn btn-default" onclick="location.href='@Url.Action("Details", "Home", new { id=item.Id })'">Link till lägenhet</button>

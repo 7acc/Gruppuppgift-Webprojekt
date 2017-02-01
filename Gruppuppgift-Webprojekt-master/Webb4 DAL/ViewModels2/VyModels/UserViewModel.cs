@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Webb4_DAL.ModelsV2;
+
 
 namespace ViewModels2.VyModels
 {
@@ -8,7 +8,7 @@ namespace ViewModels2.VyModels
     {
         public UserViewModel()
         {
-            SavedAppartments = new HashSet<Appartment>();
+            SavedAppartments = new HashSet<AppartmentViewModel>();
         }
         [Key]
         public int Id { get; set; }
@@ -17,8 +17,8 @@ namespace ViewModels2.VyModels
         public string Lname { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public virtual Adress Adress { get; set; }
+        public  AdressViewModel Adress { get; set; }
 
-        public virtual ICollection<Appartment> SavedAppartments { get; set; }
+        public virtual ICollection<AppartmentViewModel> SavedAppartments { get; set; }
     }
 }
