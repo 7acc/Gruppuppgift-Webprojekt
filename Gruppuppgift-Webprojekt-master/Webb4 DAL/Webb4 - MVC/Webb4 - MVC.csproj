@@ -172,6 +172,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\bg-sok.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\stylehyrahem.css" />
     <Content Include="CSS\LoginPage.css" />
