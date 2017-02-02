@@ -65,7 +65,9 @@ namespace Webb4_businesslayer.HelpMapper
                    LastAdmissionDate = p.LastAdmissionDate,
                    PublicationDate = p.PublicationDate,
                    Avalible = p.Avalible,
-
+                   Adress = new AdressViewModel() { Id = p.Adress.Id, Street = p.Adress.Street, City = p.Adress.City, PostalNr = p.Adress.PostalNr },
+                   Housing = new HousingTypeViewModel() { Id = p.Housing.Id, Type = p.Housing.Type },
+                   District = new DistrictViewModel() { Id = p.District.Id, Name = p.District.Name, Description = p.District.Description }
                })
                 .ToList();
             return getData;

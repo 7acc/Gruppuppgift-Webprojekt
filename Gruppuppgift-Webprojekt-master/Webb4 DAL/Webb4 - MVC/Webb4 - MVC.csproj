@@ -172,6 +172,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\bg-sok.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\stylehyrahem.css" />
     <Content Include="CSS\LoginPage.css" />
@@ -184,6 +185,7 @@
     <Content Include="Photos\Pic5.jpg" />
     <Content Include="Photos\Pic6.jpg" />
     <Content Include="Photos\Pic7.jpg" />
+    <Content Include="Photos\Pic8.jpg" />
     <Content Include="Photos\POe6PuG.jpg" />
     <Content Include="Photos\qH0THFI.jpg" />
     <Content Include="Photos\road_to_death_valley-wallpaper-1600x480.jpg" />
@@ -278,6 +280,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ApartmentPhoto\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ViewModels2\ViewModels2.csproj">
