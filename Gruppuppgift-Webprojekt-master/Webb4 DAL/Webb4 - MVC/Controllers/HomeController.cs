@@ -221,7 +221,7 @@ namespace Webb4___MVC.Controllers
             {
 
                 return View("Index", g);
-
+          
             }
             else
 
@@ -294,7 +294,7 @@ namespace Webb4___MVC.Controllers
             var g = AppartmentMapping.FromBltoUiGetAll();
             return View(g);
         }
-
+     
 
         // GET: /Apartment/Details
         public ActionResult ListOfApartments()

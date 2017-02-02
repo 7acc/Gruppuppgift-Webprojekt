@@ -17,7 +17,7 @@ namespace Webb4_businesslayer
 
             UserViewModel.Id = UserToTransform.Id;
             UserViewModel.Email = UserToTransform.Email;
-            UserViewModel.Username = $"{UserToTransform.Fname} {UserToTransform.Lname}";
+            UserViewModel.Username = UserToTransform.Username;
 
             return UserViewModel;
         }
