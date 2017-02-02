@@ -7,20 +7,23 @@
     <table>
         <tr>
             <td>
-                <dl class="dl">
-                    <dt>
+                <dl class="dl-horizontal">
+                    <dt style="width: 400px;">
+
                         @foreach (var p in Model.Photos)
-                        { 
-                          <img class="mySlides" src="@Url.Content(p.URL)"> 
+                        {
+                            <img class="mySlides" src="@Url.Content(p.URL)" style="width: 380px; height: 400px; ">
                         }
-                            <button class="btn btn-default" onclick="plusDivs(-1)">❮ Prev</button>
-                            <button class="btn btn-default" onclick="plusDivs(1)">Next ❯</button><br />
-                            <button class="btn btn-default" onclick="currentDiv(1)">1</button>
-                            <button class="btn btn-default" onclick="currentDiv(2)">2</button>
-                            <button class="btn btn-default" onclick="currentDiv(3)">3</button>
+                        <br />
+                        <button class="btn btn-default" onclick="plusDivs(-1)">❮ Prev</button>
+                        <button class="btn btn-default" onclick="plusDivs(1)">Next ❯</button><br />
+                        <button class="btn btn-default" onclick="currentDiv(1)">1</button>
+                        <button class="btn btn-default" onclick="currentDiv(2)">2</button>
+                        <button class="btn btn-default" onclick="currentDiv(3)">3</button>
                     </dt>
                 </dl>
             </td>
+
             <td>
                 <dl class="dl-horizontal">
                     <dt>
