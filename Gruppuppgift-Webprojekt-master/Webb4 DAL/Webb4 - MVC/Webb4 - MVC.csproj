@@ -215,6 +215,7 @@
     <Compile Include="Controllers\AdressController.cs" />
     <Compile Include="Controllers\AppartmentPhotoController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\FeatuerController.cs" />
     <Compile Include="Controllers\FormHousingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -230,7 +231,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -271,6 +274,9 @@
     <Content Include="Views\AdminUpload\NewAppartmentForm.cshtml" />
     <Content Include="Views\AdminUpload\AddImagesToAppartment.cshtml" />
     <Content Include="Views\AdminUpload\Index.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\ServerError.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
