@@ -10,25 +10,25 @@
     @foreach (var item in Model)
     {
         <div class="row lagenhetlist">
-            <div class="col-md-2 ">
-                <img src="http://placehold.it/150x150/292929/99cc66">
+            <div class="col-md-4 ">
+                <b> @Html.DisplayFor(modelItem => item.Adress.Street)</b><br />
+                <img src="@Url.Content(item.MainImgUrl)" class="thumbnail"  style="max-width: 300px; min-width: 300px; max-height: 300px;" min-height: 300px;">
+           </div>
+            <div class="col-md-3 mid">
+                <b>Antal rum: </b>@Html.DisplayFor(modelItem => item.NrOfRooms)<br />
+                <b>Hus Typ: </b>@Html.DisplayFor(modelItem => item.Housing.Type)
             </div>
+            <div class="col-md-3 ">
+                <br />
+                <b>Bostadsområde: </b>@Html.DisplayFor(modelItem => item.District.Name)<br />
+                <b>Våning: </b>@Html.DisplayFor(modelItem => item.Floor)<br />
+                <b>Yta(Kvm): </b>@Html.DisplayFor(modelItem => item.Area)<br />
+                <b>Hyra: </b>@Html.DisplayFor(modelItem => item.Rent)<br />
+                <b>Tillträde: </b>@item.MoveInDate.ToShortDateString()<br />
+                <b>Sista anmälningsdag: </b>@item.LastAdmissionDate.ToShortDateString()<br />
+            </div> 
             <div class="col-md-2 mid">
-                @*@Html.DisplayFor(modelItem => item.Housing)*@
-            </div>
-            <div class="col-md-3">
-                @*<b>District: </b>@Html.DisplayFor(modelItem => item.District)<br />*@
-                <b>Floor: </b>@Html.DisplayFor(modelItem => item.Floor)<br />
-                <b>Area: </b>@Html.DisplayFor(modelItem => item.Area)<br />
-                <b>Price: </b>@Html.DisplayFor(modelItem => item.Rent)<br />
-                <b>Available: </b>@Html.DisplayFor(modelItem => item.MoveInDate)<br />
-                <b>Deadline Date: </b>@Html.DisplayFor(modelItem => item.LastAdmissionDate)<br />
-            </div>
-            <div class="col-md-3">
-                @*@Html.DisplayFor(modelItem => item.Adress)*@
-            </div>
-            <div class="col-md-2 mid">
-                <button type="button" class="btn btn-default" onclick="location.href='@Url.Action("Details", "Home", new { id=item.Id })'">Link till lägenhet</button>
+                <button type="button" class="btn btn-default" onclick="location.href='@Url.Action("Details", "Home", new { id=item.Id })'">Mer information</button>
             </div>
         </div>
 

@@ -88,15 +88,42 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Avalible, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Avalible, htmlAttributes: new {@class = "control-label col-md-2"})
             <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.Avalible)
-                    @Html.ValidationMessageFor(model => model.Avalible, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.Avalible, "", new {@class = "text-danger"})
                 </div>
             </div>
         </div>
-
+        <div class="form-group">
+            @Html.LabelFor(model => model.Adress.Id, "Adress", htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.DropDownList("Adress_Id", null, htmlAttributes: new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.Adress.Id, "", new {@class = "text-danger"})
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.District.Id, "District", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("District_Id", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.District.Id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Housing.Id, "Housing Type", htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.DropDownList("Housing_Id", null, htmlAttributes: new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.Housing.Id, "", new {@class = "text-danger"})
+            </div>
+        </div>
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.MainImgUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MainImgUrl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MainImgUrl, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />

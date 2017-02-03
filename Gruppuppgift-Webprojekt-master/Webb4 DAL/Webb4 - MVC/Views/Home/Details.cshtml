@@ -1,132 +1,153 @@
 ﻿@model ViewModels2.VyModels.AppartmentViewModel
-
+ 
 <div>
-    @*<h4>@Html.DisplayFor(model => model.Adress.Street)</h4>*@
-    <hr style="border-color: white;"/>
+    <br />
+    <h4>@Html.DisplayFor(model => model.Adress.Street)</h4>
+    
+   
+
     <table>
         <tr>
             <td>
                 <dl class="dl-horizontal">
                     <dt>
-                        <img src="http://placehold.it/150x150/292929/99cc66">
+
+                        @foreach (var p in Model.Photos)
+                        {
+                            <img class="mySlides" src="@Url.Content(p.URL)" >
+                        }
+                        <br />
+                        <button class="btn btn-default" onclick="plusDivs(-1)">❮ Prev</button>
+                        <button class="btn btn-default" onclick="plusDivs(1)">Next ❯</button><br />
+                        <button class="btn btn-default" onclick="currentDiv(1)">1</button>
+                        <button class="btn btn-default" onclick="currentDiv(2)">2</button>
+                        <button class="btn btn-default" onclick="currentDiv(3)">3</button>
                     </dt>
                 </dl>
-            </td> 
-            <td><dl class="dl-horizontal">
-    @*<dt>
-        @Html.DisplayNameFor(model => model.Housing)
-    </dt>
+            </td>
 
-    <dd>
-        @Html.DisplayFor(model => model.Housing)
-    </dd>*@
-
-    <dt>
-        @Html.DisplayNameFor(model => model.NrOfRooms)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.NrOfRooms)
-    </dd>
-
-    @*<dt>
-        @Html.DisplayNameFor(model => model.District)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.District)
-    </dd>*@
-
-    @*<dt>
-        @Html.DisplayNameFor(model => model.Photos)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.Photos)
-    </dd>*@
-
-    <dt>
-        @Html.DisplayNameFor(model => model.BuildYear)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.BuildYear)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.Area)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.Area)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.NrOfRooms)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.NrOfRooms)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.Floor)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.Floor)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.Rent)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.Rent)
-    </dd>
-
-    @*<dt>
-        @Html.DisplayNameFor(model => model.Adress)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.Adress)
-    </dd>*@
- 
-    <dt>
-        @Html.DisplayNameFor(model => model.Avalible)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.Avalible)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.MoveInDate)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.MoveInDate)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.LastAdmissionDate)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.LastAdmissionDate)
-    </dd>
-</dl>
-    
-            </td> 
             <td>
                 <dl class="dl-horizontal">
                     <dt>
-                        @*@Html.DisplayNameFor(model => model.Features)*@
-                    </dt>  
+                        Hustyp
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Housing.Type)
+                    </dd>
+
+                    <dt>
+                        Antal rum
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NrOfRooms)
+                    </dd>
+
+                    <dt>
+                        Båstadsområde
+                    </dt>
+
+                    <dd>
+                        Båstadsområde : @Html.DisplayFor(model => model.District.Name)
+                    </dd>
+
+                    <dt>
+                            @Html.DisplayNameFor(model => model.Photos)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Photos)
+                        </dd>
+
+                    <dt>
+                        Byggår
+                    </dt>
+
+                    <dd>
+                        @Model.BuildYear.ToShortDateString()
+                    </dd>
+
+                    <dt>
+                        Yta(Kvm)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Area) m²
+                    </dd>
+
+                    <dt>
+                        Antal rum
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NrOfRooms)
+                    </dd>
+
+                    <dt>
+                        Våning
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Floor)
+                    </dd>
+
+                    <dt>
+                        Hyra
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Rent) kr/mån
+                    </dd>
+
+                    <dt>
+                        Adress
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Adress.Street),
+                        @Html.DisplayFor(model => model.Adress.PostalNr)
+                        @Html.DisplayFor(model => model.Adress.City)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Avalible)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Avalible)
+                    </dd>
+
+                    <dt>
+                        Tillträde
+                    </dt>
+
+                    <dd>
+                        @Model.MoveInDate.ToShortDateString()
+                    </dd>
+
+                    <dt>
+                        Sista anmälningsdag
+                    </dt>
+
+                    <dd>
+                        @Model.LastAdmissionDate.ToShortDateString()
+                    </dd>
                 </dl>
-            </td>  
-        </tr>  
+
+            </td>
+            <td>
+                <dl class="dl-horizontal">
+                    <dd><b>Lägenheten/Byggnaden har</b></dd>
+                    @foreach (var a in Model.Features)
+                    {
+                        <dd>
+                            ✔ @Html.DisplayFor(Model => a.name)
+                        </dd>
+                    }
+                </dl>
+            </td>
+        </tr>
     </table>
     <br /><br />
     <p>
@@ -138,3 +159,31 @@
 <p>
     @Html.ActionLink("Back to List", "Index")
 </p>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-red", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-red";
+}
+</script>

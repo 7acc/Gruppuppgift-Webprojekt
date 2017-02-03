@@ -172,11 +172,24 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\bg-sok.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\stylehyrahem.css" />
     <Content Include="CSS\LoginPage.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Photos\Pic1.jpg" />
+    <Content Include="Photos\Pic2.jpg" />
+    <Content Include="Photos\Pic3.jpg" />
+    <Content Include="Photos\Pic4.jpg" />
+    <Content Include="Photos\Pic5.jpg" />
+    <Content Include="Photos\Pic6.jpg" />
+    <Content Include="Photos\Pic7.jpg" />
+    <Content Include="Photos\Pic8.jpg" />
+    <Content Include="Photos\POe6PuG.jpg" />
+    <Content Include="Photos\qH0THFI.jpg" />
+    <Content Include="Photos\road_to_death_valley-wallpaper-1600x480.jpg" />
+    <Content Include="Photos\wJZkJCW.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -198,9 +211,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminUploadController.cs" />
     <Compile Include="Controllers\AdressController.cs" />
     <Compile Include="Controllers\AppartmentPhotoController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\FeatuerController.cs" />
     <Compile Include="Controllers\FormHousingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -216,7 +231,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -232,13 +249,8 @@
     <Content Include="Views\User\Create.cshtml" />
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\Delete.cshtml" />
-    <Content Include="Views\ApartmentPhoto\Index.cshtml" />
-    <Content Include="Views\ApartmentPhoto\Details.cshtml" />
-    <Content Include="Views\ApartmentPhoto\Create.cshtml" />
-    <Content Include="Views\ApartmentPhoto\Edit.cshtml" />
-    <Content Include="Views\ApartmentPhoto\Delete.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Index_old.cshtml" />
     <Content Include="Views\Home\UserDetails.cshtml" />
     <Content Include="Views\LogIn\Register.cshtml" />
     <Content Include="Views\Home\InterestApartment.cshtml" />
@@ -252,9 +264,20 @@
     <Content Include="Views\Apartment\Index.cshtml" />
     <Content Include="Views\Apartment\Details.cshtml" />
     <Content Include="Views\Apartment\Create.cshtml" />
-    <Content Include="Views\Apartment\Edit.cshtml" />
     <Content Include="Views\Apartment\DeleteConfirmed.cshtml" />
     <Content Include="Views\Apartment\Delete.cshtml" />
+    <Content Include="Views\Apartment\Edit.cshtml" />
+    <Content Include="Views\AppartmentPhoto\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\_apartments1.cshtml" />
+    <Content Include="Views\AdminUpload\AddAppartment.cshtml" />
+    <Content Include="Views\AdminUpload\NewAppartmentForm.cshtml" />
+    <Content Include="Views\AdminUpload\AddImagesToAppartment.cshtml" />
+    <Content Include="Views\AdminUpload\Index.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\ServerError.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Error\Error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -264,6 +287,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ApartmentPhoto\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ViewModels2\ViewModels2.csproj">

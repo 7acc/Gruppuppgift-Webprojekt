@@ -88,12 +88,6 @@
     <Compile Include="VyModels\HousingTypeViewModel.cs" />
     <Compile Include="VyModels\UserViewModel.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Webb4 DAL\Webb4 DAL.csproj">
-      <Project>{C92C9DCF-DD27-40E2-8B8F-438EDDCE165B}</Project>
-      <Name>Webb4 DAL</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Webb4_DAL.ModelsV2;
 
 namespace ViewModels2.VyModels
 {
@@ -17,6 +16,6 @@ namespace ViewModels2.VyModels
 
         public int AppartmentId { get; set; }
         [ForeignKey("AppartmentId")]
-        public virtual Appartment Appartment { get; set; }
+        public virtual AppartmentViewModel Appartment { get; set; }
     }
 }

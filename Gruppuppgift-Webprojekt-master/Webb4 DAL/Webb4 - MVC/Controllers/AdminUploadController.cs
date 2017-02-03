@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ViewModels2.VyModels;
 using Webb4_businesslayer;
-using Webb4_DAL.ViewModels2;
+
 
 namespace Webb4___MVC.Controllers
 {
@@ -17,7 +18,7 @@ namespace Webb4___MVC.Controllers
         }
         // GET: AdminUpload
         public ActionResult Index()
-        {            
+        {
 
             return View();
         }
@@ -25,19 +26,34 @@ namespace Webb4___MVC.Controllers
         {
             var listOfAppartments = AppartmentManager.GetAppartmentList();
 
-            return PartialView("partialURl",listOfAppartments);
+            return PartialView("partialURl", listOfAppartments);
         }
         public ActionResult AddAppartment()
         {
+
+
             return View();
         }
+
         [HttpPost]
-        public ActionResult AddAppartment(AppartmentViewModel NewAppartment, IEnumerable<HttpPostedFileBase> photos)
+        public ActionResult AddAppartment(AppartmentViewModel newAppartment, HttpPostedFileBase MainIMG, List<HttpPostedFileBase> Images)
         {
-            AppartmentManager.AddAppartmentWithPhotosToDB(NewAppartment, photos);
+            var root = Server.MapPath("~/Photos/");
+            AppartmentManager.AddAppartmentWithPhotosToDB(newAppartment, MainIMG, Images, root);
             return View();
         }
-       
+
+        public ActionResult NewAppartmentForm()
+        {
+            return PartialView();
+        }
+
+        public ActionResult AddImagesToAppartment()
+        {
+            return PartialView();
+        }
+
+
         public ActionResult UpdateAppartment(int AppartmentId)
         {
             var appartmentToUpdate = AppartmentManager.GetAppartmentById(AppartmentId);

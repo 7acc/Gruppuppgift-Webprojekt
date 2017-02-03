@@ -9,7 +9,11 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<div>
+    @*@Html.Partial("ListOfApartments")*@
+    @Html.Partial("~/Views/Home/ListOfApartments.cshtml", Model)
+</div>
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Area)
@@ -84,4 +88,4 @@
     </tr>
 }
 
-</table>
+</table>*@

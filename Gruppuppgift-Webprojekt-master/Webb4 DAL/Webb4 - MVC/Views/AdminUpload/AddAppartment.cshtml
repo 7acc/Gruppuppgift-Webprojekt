@@ -1,0 +1,50 @@
+﻿@model ViewModels2.VyModels.AppartmentViewModel
+
+@using (Html.BeginForm("AddAppartment", "AdminUpload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @{
+            Html.RenderPartial("NewAppartmentForm");
+        }
+    </div>
+    <div>
+        @{
+            Html.RenderPartial("AddImagesToAppartment");
+        }
+    </div>
+    @*<div>
+            @{
+                Html.RenderPartial("AddHousingType");
+            }
+        </div>
+        <div>
+            @{
+                Html.RenderPartial("AddFeatures");
+            }
+        </div>
+        <div>
+            @{
+                Html.RenderPartial("AddFeatures");
+            }
+        </div>
+        <div>
+            @{
+                Html.RenderPartial("AddAdress");
+            }
+        </div>
+        <div>
+            @{
+                Html.RenderPartial("AddDistrict");
+            }
+        </div>*@
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Add" class="btn btn-default" />
+                </div>
+            </div>
+            }
+<div>
+</div>

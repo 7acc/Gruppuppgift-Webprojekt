@@ -17,7 +17,7 @@ namespace Webb4_businesslayer
 
             UserViewModel.Id = UserToTransform.Id;
             UserViewModel.Email = UserToTransform.Email;
-            UserViewModel.Username = $"{UserToTransform.Fname} {UserToTransform.Lname}";
+            UserViewModel.Username = UserToTransform.Username;
 
             return UserViewModel;
         }
@@ -78,13 +78,13 @@ namespace Webb4_businesslayer
             ApartmentViewModel.PublicationDate = ApartmentToTransform.PublicationDate;
             ApartmentViewModel.Avalible = ApartmentToTransform.Avalible;
 
-            ApartmentViewModel.Adress = ApartmentToTransform.Adress;
-            ApartmentViewModel.Housing = ApartmentToTransform.Housing;
-            ApartmentViewModel.District = ApartmentToTransform.District;
+            //ApartmentViewModel.Adress = ApartmentToTransform.Adress;
+            //ApartmentViewModel.Housing = ApartmentToTransform.Housing;
+            //ApartmentViewModel.District = ApartmentToTransform.District;
 
-            ApartmentViewModel.Features = ApartmentToTransform.Features;
-            ApartmentViewModel.Photos = ApartmentToTransform.Photos;
-            ApartmentViewModel.UsersFollowing = ApartmentToTransform.UsersFollowing;
+            //ApartmentViewModel.Features = ApartmentToTransform.Features;
+            //ApartmentViewModel.Photos = ApartmentToTransform.Photos;
+            //ApartmentViewModel.UsersFollowing = ApartmentToTransform.UsersFollowing;
 
             return ApartmentViewModel;
         }
@@ -105,13 +105,13 @@ namespace Webb4_businesslayer
             Apartment.PublicationDate = ViewModelToTransform.PublicationDate;
             Apartment.Avalible = ViewModelToTransform.Avalible;
 
-            Apartment.Adress = ViewModelToTransform.Adress;
-            Apartment.Housing = ViewModelToTransform.Housing;
-            Apartment.District = ViewModelToTransform.District;
+            //Apartment.Adress = ViewModelToTransform.Adress;
+            //Apartment.Housing = ViewModelToTransform.Housing;
+            //Apartment.District = ViewModelToTransform.District;
 
-            Apartment.Features = ViewModelToTransform.Features;
-            Apartment.Photos = ViewModelToTransform.Photos;
-            Apartment.UsersFollowing = ViewModelToTransform.UsersFollowing;
+            //Apartment.Features = ViewModelToTransform.Features;
+            //Apartment.Photos = ViewModelToTransform.Photos;
+            //Apartment.UsersFollowing = ViewModelToTransform.UsersFollowing;
 
             return Apartment;
         }
@@ -128,7 +128,7 @@ namespace Webb4_businesslayer
             AppartmentPhotoViewModel.URL = AppartmentPhotoToTransform.URL;
             AppartmentPhotoViewModel.Description = AppartmentPhotoToTransform.Description;
             AppartmentPhotoViewModel.AppartmentId = AppartmentPhotoToTransform.AppartmentId;
-            AppartmentPhotoViewModel.Appartment = AppartmentPhotoToTransform.Appartment;
+            //AppartmentPhotoViewModel.Appartment = AppartmentPhotoToTransform.Appartment;
 
             return AppartmentPhotoViewModel;
         }
@@ -142,7 +142,7 @@ namespace Webb4_businesslayer
             AppartmentPhoto.URL = ViewModelToTransform.URL;
             AppartmentPhoto.Description = ViewModelToTransform.Description;
             AppartmentPhoto.AppartmentId = ViewModelToTransform.AppartmentId;
-            AppartmentPhoto.Appartment = ViewModelToTransform.Appartment;
+            //AppartmentPhoto.Appartment = ViewModelToTransform.Appartment;
 
             return AppartmentPhoto;
         }
@@ -155,8 +155,8 @@ namespace Webb4_businesslayer
             var BookingViewModel = new BookingViewModel();
 
             BookingViewModel.Id = BookingToTransform.Id;
-            BookingViewModel.booker = BookingToTransform.booker;
-            BookingViewModel.Appartment = BookingToTransform.Appartment; 
+            //BookingViewModel.booker = BookingToTransform.booker;
+            //BookingViewModel.Appartment = BookingToTransform.Appartment; 
 
             return BookingViewModel;
         }
@@ -166,8 +166,8 @@ namespace Webb4_businesslayer
             var Booking = new Booking();
 
             Booking.Id = ViewModelToTransform.Id;
-            Booking.booker = ViewModelToTransform.booker;
-            Booking.Appartment = ViewModelToTransform.Appartment; 
+            //Booking.booker = ViewModelToTransform.booker;
+            //Booking.Appartment = ViewModelToTransform.Appartment; 
 
             return Booking;
         }
